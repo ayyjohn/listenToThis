@@ -1,5 +1,11 @@
 #Component Hierarchy
 
+**AppContainer**
+* SplashPageContainer
+* SignInFormContainer
+* SignUpFormContainer
+* LandingPageContainer
+
 **SplashPageContainer**
 - Logo
 * SignInFormContainer
@@ -7,12 +13,34 @@
 * SearchContainer
 - SplashPhoto
 - Tag Line
+- if logged in redirects to LandingPageContainer
+
+**SignInFormContainer**
+* SignInForm
+  - Username Input
+  - Password Input
+  - Log In Button
+  - Demo Login Button
+* ErrorsContainer
+  * Errors
+
+**SignUpFormContainer**
+* SignUpForm
+  - Email Input
+  - Username Input
+  - Password Input
+  - Sign Up Button
+  - Demo Login Button
+* ErrorsContainer
+  * Errors
 
 **LandingPageContainer**
 * NavBarContainer
 - Music Type Header (Stream?)
 * TrackIndexContainer
+  + TrackIndex
 * PlayBarContainer
+  + PlayBar
 
 **NavBarContainer**
 * SearchContainer
@@ -82,15 +110,6 @@
   - currentTrack
     - Track Info
 
-**SignInFormContainer**
-* SignInForm
-  - Username Input
-  - Password Input
-  - Log In Button
-  - Demo Login Button
-* ErrorsContainer
-  * Errors
-
 **NewTrackFormContainer**
 * NewTrackForm
   - Title Input
@@ -102,16 +121,6 @@
   - Save Button
   - Cancel Button
 
-**SignUpFormContainer**
-* SignUpForm
-  - Email Input
-  - Username Input
-  - Password Input
-  - Sign Up Button
-  - Demo Login Button
-* ErrorsContainer
-  * Errors
-
 **EditUserFormContainer**
 * EditUserForm
   - Update Bio Input
@@ -119,8 +128,8 @@
 #Routes
 Path            | Component
 ----------------|-------------------
-/app            | SplashPageContainer
-/               | LandingPageContainer
+/               | SplashContainer
+/app            | LandingPageContainer
 /signup         | SignUpFormContainer
 /login          | SignInFormContainer
 /user/:id       | UserDetailContainer
