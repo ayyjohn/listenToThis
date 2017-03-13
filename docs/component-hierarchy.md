@@ -10,6 +10,7 @@
 
 **LandingPageContainer**
 * NavBarContainer
+- Music Type Header (Stream?)
 * TrackIndexContainer
 * PlayBarContainer
 
@@ -38,6 +39,9 @@
   - Name
   - Location
   - Photo
+  - Bio
+  + EditUserFormContainer
+    + EditUserForm
 + TrackIndexContainer
   + TrackIndex
     + TrackContainer
@@ -48,10 +52,12 @@
   - Image
   - User
   - Waveform
-+ CommentForm
-+ UserDetail
-  - Photo
-  - Username
++ CommentFormContainer
+ - CommentForm
++ UserInfoContainer
+  + UserInfo
+    - Photo
+    - Username
 + TrackDescriptionContainer
   + TrackDescription
 + CommentIndexContainer
@@ -66,13 +72,15 @@
 + Delete Button
 
 **SearchContainer**
++ SearchForm
 - Search Result Dropdown
 
 **PlayBarContainer**
-- Play/Pause Buttons
-- Progress Bar
-- currentTrack
-  - Track Info
++ PlayBar
+  - Play/Pause Buttons
+  - Progress Bar
+  - currentTrack
+    - Track Info
 
 **SignInFormContainer**
 * SignInForm
@@ -104,6 +112,9 @@
 * ErrorsContainer
   * Errors
 
+**EditUserFormContainer**
+* EditUserForm
+  - Update Bio Input
 #Routes
 Path            | Component
 ----------------|-------------------
