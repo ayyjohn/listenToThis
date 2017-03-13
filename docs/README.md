@@ -1,11 +1,11 @@
-# FresherNote
+# ListenToThis
 
 [Heroku link][heroku] **Note:** This should be a link to your production site
 
 [Trello link][trello]
 
 [heroku]: http://www.herokuapp.com
-[trello]: https://trello.com/b/ALgfuX0Q/freshernote
+[trello]: https://trello.com/b/d9d4lmC8/listentothis
 
 ## Minimum Viable Product
 
@@ -15,7 +15,7 @@ following criteria with a smooth, bug free-navigation, adequate seed data, and
 sufficient CSS styling:
 
 - [ ] Hosting on Heroku
-- [ ] Production README [sample](docs/production_readme.md)
+- [ ] Production README
 - [ ] New account creation, login, and guest/demo login
 - [ ] Song CRUD
 - [ ] Ability to play songs with a progress bar and continuous play
