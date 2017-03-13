@@ -28,7 +28,7 @@
 + Track
   - Title
   - Image
-  - Artist
+  - User
   - Waveform
   - Play Button
 
