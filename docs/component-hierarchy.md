@@ -66,18 +66,19 @@
 + Delete Button
 
 **SearchContainer**
-- Search result dropdown
+- Search Result Dropdown
 
 **PlayBarContainer**
 - Play/Pause Buttons
 - Progress Bar
-- Track Info
+- currentTrack
+  - Track Info
 
 **SignInFormContainer**
 * SignInForm
   - Username Input
   - Password Input
-  - Log In button
+  - Log In Button
   - Demo Login Button
 * ErrorsContainer
   * Errors
