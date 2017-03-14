@@ -1,9 +1,9 @@
 export const RECEIVE_CURRENT_USER = 'RECEIVE_CURRENT_USER';
 
-import * as SessionAPIUtil from '../util/session_api_util';
 import { receiveSignUpErrors,
          receiveLogInErrors,
          receiveLogOutErrors } from './error_actions';
+import * as SessionAPIUtil from '../util/session_api_util';
 
 export const logIn = user => dispatch => (
   SessionAPIUtil.logIn(user)
