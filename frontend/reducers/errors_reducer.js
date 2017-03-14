@@ -1,9 +1,9 @@
 import merge from 'lodash/merge';
 
-import { RECEIVE_LOG_IN_ERRORS,
+import { CLEAR_ERRORS,
+         RECEIVE_LOG_IN_ERRORS,
          RECEIVE_LOG_OUT_ERRORS,
-         RECEIVE_SIGN_UP_ERRORS,
-         CLEAR_ERRORS } from '../actions/error_actions';
+         RECEIVE_SIGN_UP_ERRORS } from '../actions/error_actions';
 
 // TODO: implement metaprogramming to make the errors reducer cleaner
 // TODO: make the default state for the errors reducer cleaner
