@@ -14,10 +14,10 @@
     image_url: "discovery.png",
     playing: false
   }
-  forms: {
-    signUp: { errors: []},
-    logIn: { errors: []},
-    createTrack: { errors: []}
+  errors: {
+    signUp: [],
+    signIn: [],
+    createTrack: []
   }
   user: {
     id: 1,
