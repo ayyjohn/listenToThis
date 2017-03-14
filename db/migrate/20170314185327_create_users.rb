@@ -7,8 +7,10 @@ class CreateUsers < ActiveRecord::Migration[5.0]
       t.string :location
       t.text :bio
       t.string :image_url
-      
+
       t.timestamps
     end
+    add_index :users, :username, unique: true
+    add_index :users, :session_token, unique: true
   end
 end
