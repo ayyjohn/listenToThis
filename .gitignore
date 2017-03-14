@@ -11,3 +11,6 @@ bundle.js.map
 .DS_store
 npm-debug.log
 Gemfile.lock
+bug_log.txt
+deviations_from_proposal.txt
+work_log.txt
