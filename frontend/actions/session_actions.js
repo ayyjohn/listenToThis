@@ -9,6 +9,18 @@ export const logIn = user => dispatch => (
     error => dispatch(receiveErrors(error.responseJSON)))
 );
 
+export const logOut = () => dispatch => (
+  SessionAPIUtil.logOut()
+    .then( currentUser => dispatch(receiveCurrentUser(null)),
+    error => dispatch(receiveErrors(error.responseJSON)))
+);
+
+export const signUp = user => dispatch => (
+  SessionAPIUtil.signUp(user)
+    .then( currentUser => dispatch(receiveCurrentUser(currentUser)),
+    error => dispatch(receiveErrors(error.responseJSON)))
+);
+
 export const receiveCurrentUser = currentUser => ({
   type: RECEIVE_CURRENT_USER,
   currentUser
