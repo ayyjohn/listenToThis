@@ -1,8 +1,10 @@
 ```js
 {
-  currentUser: {
-    id: 1,
-    username: "Ayyjohn"
+  session: {
+    currentUser: {
+      id: 1,
+      username: "Ayyjohn"
+    }
   }
   currentTrack: {
     id: 1,
