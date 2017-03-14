@@ -1,5 +1,5 @@
 module.exports = {
-  entry: './frontend/root.jsx',
+  entry: './frontend/listen_to_this.jsx',
   output: {
     filename: './app/assets/javascripts/bundle.js',
   },
