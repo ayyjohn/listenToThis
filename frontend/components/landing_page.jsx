@@ -1,13 +1,21 @@
 import React from 'react';
+import { withRouter } from 'react-router';
 
-const LandingPage = (props) => {
-  return (
-    <div>
-      <h1>Listen To This!!</h1>
-      <h4>Welcome, { props.currentUser.username }</h4>
-      <button onClick={ props.logOut }>Log Out</button>
-    </div>
-  )
-;};
+class LandingPage extends React.Component {
 
-export default LandingPage;
+  constructor(props) {
+    super(props);
+  }
+
+  render() {
+    return(
+        <div>
+          <h1>Listen To This!!</h1>
+          <h4>Welcome, { this.props.currentUser.username }</h4>
+          <button onClick={ this.props.logOut }>Log Out</button>
+        </div>
+      );
+  }
+
+}
+export default withRouter(LandingPage);

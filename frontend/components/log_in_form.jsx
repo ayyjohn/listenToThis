@@ -7,6 +7,16 @@ class LogInForm extends React.Component {
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
+  redirectIfLoggedIn() {
+    if (this.props.currentUser) {
+      this.props.router.push("/listen");
+    }
+  }
+
+  componentDidUpdate() {
+    this.redirectIfLoggedIn();
+  }
+
   update(field) {
     return event => this.setState({
       [field]: event.currentTarget.value
