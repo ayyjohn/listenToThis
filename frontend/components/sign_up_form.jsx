@@ -5,6 +5,7 @@ class SignUpForm extends React.Component {
     super(props);
     this.state = { username: "", password: ""};
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.guestLogin = this.guestLogin.bind(this);
   }
 
   redirectIfLoggedIn() {
@@ -21,6 +22,16 @@ class SignUpForm extends React.Component {
     return event => this.setState({
       [field]: event.currentTarget.value
     });
+  }
+
+  guestLogin(event) {
+    event.preventDefault();
+    this.setState({
+      username: "guest",
+      password: "password"
+    });
+    setTimeout(() => this.props.logIn(this.state), 1500);
+    {/* TODO actually log in*/}
   }
 
   handleSubmit(event) {
@@ -57,6 +68,7 @@ class SignUpForm extends React.Component {
         </label>
         { this.renderErrors() }
         <br/>
+        <button onClick={ this.guestLogin }>Demo</button>
         <input type="submit" value="Sign Up" />
       </form>
     );

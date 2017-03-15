@@ -5,7 +5,6 @@ class LogInForm extends React.Component {
     super(props);
     this.state = { username: "", password: "" };
     this.handleSubmit = this.handleSubmit.bind(this);
-    this.guestLogin = this.guestLogin.bind(this);
   }
 
   redirectIfLoggedIn() {
@@ -40,14 +39,6 @@ class LogInForm extends React.Component {
     );
   }
 
-  guestLogin(event) {
-    event.preventDefault();
-    this.setState({
-      username: "guest",
-      password: "password"
-    });
-    {/* TODO actually log in*/}
-  }
 
   render() {
     return(
@@ -67,7 +58,6 @@ class LogInForm extends React.Component {
         </label>
         <br/>
         { this.renderErrors() }
-        <button onClick={ this.guestLogin }>Demo</button>
         <input type="submit" value="Log In" />
       </form>
     );
