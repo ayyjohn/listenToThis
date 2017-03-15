@@ -1,8 +1,11 @@
 #Component Hierarchy
 
-**AppContainer**
-* SplashPageContainer
-* LandingPageContainer
+**App**
+* SplashPage
+* LandingPage
+* UserDetail
+* NewTrackFormContainer
+* TrackDetail
 
 **SplashPage**
 - Logo
@@ -122,8 +125,11 @@
 #Routes
 Path            | Component
 ----------------|-------------------
+/               | App
 /welcome        | SplashPageContainer
 /listen         | LandingPageContainer
+/signup         | SignUpFormContainer
+/login          | LogInFormContainer
 /user/:id       | UserDetailContainer
 /upload         | NewTrackFormContainer
 /tracks/:id     | TrackDetailContainer
