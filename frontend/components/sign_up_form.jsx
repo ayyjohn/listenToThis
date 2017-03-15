@@ -44,7 +44,7 @@ class SignUpForm extends React.Component {
     return(
       <ul>
         { this.props.errors.map( (error, index) => (
-          <li className="error" key={`error-${index}`}>{error}</li>
+          <li className="signup-error" key={`error-${index}`}>{error}</li>
         ))}
       </ul>
     );
@@ -54,20 +54,22 @@ class SignUpForm extends React.Component {
     return(
       <form className="signup-form" onSubmit={this.handleSubmit}>
         <input
-          className="text-input"
+          className="signup-text-input"
           type="text"
           value={this.state.username}
           placeholder="username"
           onChange={this.update("username")} />
         <input
-          className="text-input"
+          className="signup-text-input"
           type="password"
           value={this.state.password}
           placeholder="password"
           onChange={this.update("password")} />
-        { this.renderErrors() }
-        <input className="continue" type="submit" value="Sign Up" />
-        <button className="continue" onClick={ this.guestLogin }>Demo</button>
+        <div className="signup-errors">
+          { this.renderErrors() }
+        </div>
+        <input className="signup" type="submit" value="Sign Up" />
+        <button className="signup" onClick={ this.guestLogin }>Demo</button>
       </form>
     );
   }

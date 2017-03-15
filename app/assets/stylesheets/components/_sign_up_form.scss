@@ -1,11 +1,10 @@
 .signup-form {
   background: white;
-  height: 550px;
+  height: 350px;
   width: 450px;
   display: flex;
-  flex-wrap: wrap;
+  flex-direction: column;
   align-items: center;
-  align-content: flex-start;
   justify-content: center;
   border: 2px solid $orange;
   border-radius: 5%;
@@ -13,7 +12,7 @@
   font-size: 18px;
 }
 
-input.continue {
+input.signup {
   display: flex;
   background: $orange;
   height: 40px;
@@ -21,9 +20,11 @@ input.continue {
   justify-content: center;
   border-radius: 5px;
   color: white;
+  margin-top: 10px;
+  margin-bottom: 20px;
 }
 
-button.continue {
+button.signup {
   display: flex;
   justify-content: center;
   background: $orange;
@@ -33,7 +34,7 @@ button.continue {
   color: white;
 }
 
-input.text-input {
+input.signup-text-input {
   display: flex;
   width: 400px;
   height: 40px;
@@ -41,8 +42,18 @@ input.text-input {
   border: 1px solid $gray;
   border-radius: 5px;
   padding-left: 5px;
+  margin-bottom: 15px;
 }
 
-li.error {
+input.signup-text-input:last-of-type {
+    margin-bottom: 25px;
+}
+
+li.signup-error {
   color: $orange;
+}
+
+div.signup-errors {
+  height: 50px;
+  width: 400px;
 }
