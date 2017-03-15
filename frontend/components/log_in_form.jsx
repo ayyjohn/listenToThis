@@ -5,6 +5,7 @@ class LogInForm extends React.Component {
     super(props);
     this.state = { username: "", password: "" };
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.guestLogin = this.guestLogin.bind(this);
   }
 
   redirectIfLoggedIn() {
@@ -23,6 +24,15 @@ class LogInForm extends React.Component {
     });
   }
 
+  guestLogin(event) {
+    event.preventDefault();
+    this.setState({
+      username: "guest",
+      password: "password"
+    });
+    setTimeout(() => this.props.logIn(this.state), 500);
+  }
+
   handleSubmit(event) {
     event.preventDefault();
     const user = this.state;
@@ -33,7 +43,7 @@ class LogInForm extends React.Component {
     return(
       <ul>
         { this.props.errors.map( (error, index) => (
-          <li key={`error-${index}`}>{error}</li>
+          <li className="login-error" key={`error-${index}`}>{error}</li>
         ))}
       </ul>
     );
@@ -42,23 +52,24 @@ class LogInForm extends React.Component {
 
   render() {
     return(
-      <form onSubmit={this.handleSubmit}>
-        <label>Username:
-          <input
-            type="text"
-            value={this.state.username}
-            onChange={this.update("username")} />
-        </label>
-        <br/>
-        <label>Password:
-          <input
-            type="password"
-            value={this.state.password}
-            onChange={this.update("password")} />
-        </label>
-        <br/>
-        { this.renderErrors() }
-        <input type="submit" value="Log In" />
+      <form className="login-form" onSubmit={this.handleSubmit}>
+        <input
+          className="login-text-input"
+          type="text"
+          value={this.state.username}
+          placeholder="username"
+          onChange={this.update("username")} />
+        <input
+          className="login-text-input"
+          type="password"
+          placeholder="password"
+          value={this.state.password}
+          onChange={this.update("password")} />
+        <div className="login-errors">
+          { this.renderErrors() }
+        </div>
+        <input className="login-submit" type="submit" value="Log In" />
+        <button className="guest-login" onClick={ this.guestLogin }>Demo</button>
       </form>
     );
   }

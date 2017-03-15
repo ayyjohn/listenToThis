@@ -1,4 +1,4 @@
-.signup-form {
+.login-form {
   background: white;
   height: 350px;
   width: 450px;
@@ -12,7 +12,7 @@
   font-size: 18px;
 }
 
-input.signup-submit {
+input.login-submit {
   display: flex;
   background: $orange;
   height: 40px;
@@ -24,17 +24,7 @@ input.signup-submit {
   margin-bottom: 20px;
 }
 
-button.guest-login {
-  display: flex;
-  justify-content: center;
-  background: $orange;
-  height: 40px;
-  width: 400px;
-  border-radius: 5px;
-  color: white;
-}
-
-input.signup-text-input {
+input.login-text-input {
   display: flex;
   width: 400px;
   height: 40px;
@@ -45,15 +35,15 @@ input.signup-text-input {
   margin-bottom: 15px;
 }
 
-input.signup-text-input:last-of-type {
+input.login-text-input:last-of-type {
     margin-bottom: 25px;
 }
 
-li.signup-error {
+li.login-error {
   color: $orange;
 }
 
-div.signup-errors {
-  height: 50px;
+div.login-errors {
+  height: 30px;
   width: 400px;
 }

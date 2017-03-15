@@ -31,7 +31,6 @@ class SignUpForm extends React.Component {
       password: "password"
     });
     setTimeout(() => this.props.logIn(this.state), 500);
-    {/* TODO actually log in*/}
   }
 
   handleSubmit(event) {
@@ -68,8 +67,8 @@ class SignUpForm extends React.Component {
         <div className="signup-errors">
           { this.renderErrors() }
         </div>
-        <input className="signup" type="submit" value="Sign Up" />
-        <button className="signup" onClick={ this.guestLogin }>Demo</button>
+        <input className="signup-submit" type="submit" value="Sign Up" />
+        <button className="guest-login" onClick={ this.guestLogin }>Demo</button>
       </form>
     );
   }
