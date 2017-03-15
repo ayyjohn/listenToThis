@@ -66,8 +66,8 @@ class SignUpForm extends React.Component {
           onChange={this.update("password")} />
         { this.renderErrors() }
         <br/>
-        <button className="continue" onClick={ this.guestLogin }>Demo</button>
         <input className="continue" type="submit" value="Sign Up" />
+        <button className="continue" onClick={ this.guestLogin }>Demo</button>
       </form>
     );
   }
