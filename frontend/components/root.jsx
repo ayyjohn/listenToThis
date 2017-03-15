@@ -32,6 +32,7 @@ const Root = ({ store }) => {
     <Provider store={ store }>
       <Router history={ hashHistory }>
         <Route path="/" component={ App } >
+          <IndexRedirect to="/welcome" />
           <Route path="/listen" component={ LandingPageContainer } onEnter={ _ensureLoggedIn }/>
           <Route path="/welcome" component={ SplashPage } onEnter={ _redirectIfLoggedIn }/>
           <Route path="/signup" component={ SignUpFormContainer } onEnter={ _redirectIfLoggedIn }/>
