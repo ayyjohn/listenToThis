@@ -1,0 +1,37 @@
+body {
+  background: $gray;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.signup-form {
+  background: white;
+  height: 550px;
+  width: 450px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+}
+
+input.continue {
+  display: flex;
+  background: $orange;
+  height: 40px;
+  width: 4000px;
+  justify-content: center;
+}
+
+button.continue {
+  display: flex;
+  justify-content: center;
+  background: $orange;
+  height: 40px;
+  width: 400px;
+}
+
+input.text-input {
+  display: flex;
+  width: 400px;
+  height: 40px;
+}
