@@ -1,5 +1,5 @@
 
-html, body, div, h1, h2, h3, h4, input[type="submit"], button, label, a {
+html, body, div, h1, h2, h3, h4, ul, input, button, label, a {
   margin: 0;
   padding: 0;
   border: 0;
@@ -15,13 +15,23 @@ html, body, div, h1, h2, h3, h4, input[type="submit"], button, label, a {
 
 html {
   height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
+
 body {
   height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 #root  {
   height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 
