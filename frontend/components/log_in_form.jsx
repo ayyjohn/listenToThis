@@ -5,6 +5,7 @@ class LogInForm extends React.Component {
     super(props);
     this.state = { username: "", password: "" };
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.guestLogin = this.guestLogin.bind(this);
   }
 
   redirectIfLoggedIn() {
@@ -39,6 +40,14 @@ class LogInForm extends React.Component {
     );
   }
 
+  guestLogin(event) {
+    event.preventDefault();
+    this.setState({
+      username: "guest",
+      password: "password"
+    });
+  }
+
   render() {
     return(
       <form onSubmit={this.handleSubmit}>
@@ -51,11 +60,12 @@ class LogInForm extends React.Component {
         <br/>
         <label>Password:
           <input
-            type="text"
+            type="password"
             value={this.state.password}
             onChange={this.update("password")} />
         </label>
         <br/>
+        <button onClick={ this.guestLogin }>Demo</button>
         <input type="submit" value="Log In" />
       </form>
     );
