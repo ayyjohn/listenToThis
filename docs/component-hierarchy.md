@@ -2,8 +2,6 @@
 
 **AppContainer**
 * SplashPageContainer
-* SignInFormContainer
-* SignUpFormContainer
 * LandingPageContainer
 
 **SplashPageContainer**
