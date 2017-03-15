@@ -42,15 +42,19 @@ class LogInForm extends React.Component {
   render() {
     return(
       <form onSubmit={this.handleSubmit}>
-        <input
-          type="text"
-          value={this.state.username}
-          onChange={this.update("username")} />
+        <label>Username:
+          <input
+            type="text"
+            value={this.state.username}
+            onChange={this.update("username")} />
+        </label>
         <br/>
-        <input
-          type="text"
-          value={this.state.password}
-          onChange={this.update("password")} />
+        <label>Password:
+          <input
+            type="text"
+            value={this.state.password}
+            onChange={this.update("password")} />
+        </label>
         <br/>
         <input type="submit" value="Log In" />
       </form>
