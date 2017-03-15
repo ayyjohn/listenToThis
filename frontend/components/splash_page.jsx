@@ -5,6 +5,7 @@ const SplashPage = () => (
   <div>
     <h1>Listen to This!!</h1>
     <Link to="/signup">Sign Up</Link>
+    <br/>
     <Link to="/login">Log In</Link>
   </div>
 );
