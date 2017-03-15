@@ -126,10 +126,9 @@
 #Routes
 Path            | Component
 ----------------|-------------------
-/               | SplashContainer
-/app            | LandingPageContainer
-/signup         | SignUpFormContainer
-/login          | SignInFormContainer
+/               | App
+/welcome        | SplashPageContainer
+/listen         | LandingPageContainer
 /user/:id       | UserDetailContainer
 /user/edit      | EditProfileContainer
 /upload         | NewTrackFormContainer
