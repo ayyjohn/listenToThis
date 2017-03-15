@@ -3,7 +3,7 @@ import React from 'react';
 class SignUpForm extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { username: "", password: "", email: "" };
+    this.state = { username: "", password: ""};
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
@@ -42,13 +42,6 @@ class SignUpForm extends React.Component {
   render() {
     return(
       <form onSubmit={this.handleSubmit}>
-        <label>Email:
-          <input
-            type="text"
-            value={this.state.email}
-            onChange={this.update("email")} />
-        </label>
-        <br/>
         <label>Username:
           <input
             type="text"
