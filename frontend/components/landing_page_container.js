@@ -3,8 +3,8 @@ import { connect } from 'react-redux';
 import { logOut } from '../actions/session_actions';
 import LandingPage from './landing_page';
 
-const mapStateToProps = state => ({
-  currentUser: state.session.currentUser
+const mapStateToProps = ({ session }) => ({
+  currentUser: session.currentUser
 });
 
 const mapDispatchToProps = dispatch => ({
