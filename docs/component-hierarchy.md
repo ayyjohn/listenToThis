@@ -126,11 +126,8 @@
 #Routes
 Path            | Component
 ----------------|-------------------
-/               | App
 /welcome        | SplashPageContainer
 /listen         | LandingPageContainer
 /user/:id       | UserDetailContainer
-/user/edit      | EditProfileContainer
 /upload         | NewTrackFormContainer
 /tracks/:id     | TrackDetailContainer
-/tracks/:id/edit| NewTrackFormContainer

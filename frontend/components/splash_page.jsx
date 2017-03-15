@@ -1,6 +1,6 @@
 import React from 'react';
 
-const App = ({ children }) => (
+const SplashPage = ({ children }) => (
   <div>
     <h1>Listen to This!!</h1>
     { children }
