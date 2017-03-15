@@ -52,24 +52,22 @@ class SignUpForm extends React.Component {
 
   render() {
     return(
-      <form onSubmit={this.handleSubmit}>
-        <label>Username:
-          <input
-            type="text"
-            value={this.state.username}
-            onChange={this.update("username")} />
-        </label>
+      <form className="signup-form" onSubmit={this.handleSubmit}>
+        <input
+          type="text"
+          value={this.state.username}
+          placeholder="username"
+          onChange={this.update("username")} />
         <br/>
-        <label>Password:
-          <input
-            type="password"
-            value={this.state.password}
-            onChange={this.update("password")} />
-        </label>
+        <input
+          type="password"
+          value={this.state.password}
+          placeholder="password"
+          onChange={this.update("password")} />
         { this.renderErrors() }
         <br/>
-        <button onClick={ this.guestLogin }>Demo</button>
-        <input type="submit" value="Sign Up" />
+        <button className="continue" onClick={ this.guestLogin }>Demo</button>
+        <input className="continue" type="submit" value="Sign Up" />
       </form>
     );
   }
