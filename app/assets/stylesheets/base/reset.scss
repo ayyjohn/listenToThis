@@ -1,3 +1,4 @@
+@import "base/colors.scss";
 
 html, body, div, h1, h2, h3, h4, ul, input, button, label, a {
   margin: 0;
@@ -22,6 +23,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  background: $light-gray;
 }
 
 #root  {
