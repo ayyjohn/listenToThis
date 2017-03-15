@@ -5,6 +5,7 @@ const LandingPage = (props) => {
     <div>
       <h1>Listen To This!!</h1>
       <h4>Welcome, { props.currentUser.username }</h4>
+      <button onClick={ props.logOut }>Log Out</button>
     </div>
   )
 ;};
