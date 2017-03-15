@@ -17,5 +17,19 @@ class LandingPage extends React.Component {
       );
   }
 
+  componentWillReceiveProps(nextProps) {
+    this.ensureLoggedIn(nextProps);
+  }
+
+  ensureLoggedIn(props) {
+    if (!props.currentUser) {
+      this.props.router.push("/welcome");
+    }
+  }
+
+  shouldComponentUpdate(nextProps) {
+    return Boolean(nextProps.currentUser);
+  }
+
 }
 export default withRouter(LandingPage);
