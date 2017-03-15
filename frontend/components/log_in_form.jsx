@@ -46,6 +46,7 @@ class LogInForm extends React.Component {
       username: "guest",
       password: "password"
     });
+    {/* TODO actually log in*/}
   }
 
   render() {
@@ -65,6 +66,7 @@ class LogInForm extends React.Component {
             onChange={this.update("password")} />
         </label>
         <br/>
+        { this.renderErrors() }
         <button onClick={ this.guestLogin }>Demo</button>
         <input type="submit" value="Log In" />
       </form>

@@ -62,6 +62,7 @@ class SignUpForm extends React.Component {
             value={this.state.password}
             onChange={this.update("password")} />
         </label>
+        { this.renderErrors() }
         <br/>
         <input type="submit" value="Sign Up" />
       </form>
