@@ -16,7 +16,7 @@ class SignUpForm extends React.Component {
   componentDidUpdate() {
     this.redirectIfLoggedIn();
   }
-  
+
   update(field) {
     return event => this.setState({
       [field]: event.currentTarget.value
