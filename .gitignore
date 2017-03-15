@@ -12,5 +12,5 @@ bundle.js.map
 npm-debug.log
 Gemfile.lock
 bug_log.txt
-deviations_from_proposal.txt
+proposal_updates/
 work_log.txt

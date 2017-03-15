@@ -4,7 +4,7 @@
 * SplashPageContainer
 * LandingPageContainer
 
-**SplashPageContainer**
+**SplashPage**
 - Logo
 * SignInFormContainer
 * SignUpFormContainer
@@ -32,7 +32,7 @@
 * ErrorsContainer
   * Errors
 
-**LandingPageContainer**
+**LandingPage**
 * NavBarContainer
 - Music Type Header (Stream?)
 * TrackIndexContainer
@@ -59,33 +59,29 @@
   - Waveform
   - Play Button
 
-**UserDetailContainer**
-+ UserDetail
-  - Username
-  - Name
-  - Location
-  - Photo
-  - Bio
+**UserDetail**
+- Username
+- Name
+- Location
+- Photo
+- Bio
   + EditUserFormContainer
     + EditUserForm
 + TrackIndexContainer
   + TrackIndex
     + TrackContainer
 
-**TrackDetailContainer**
-+ TrackDetail
-  - Title
-  - Image
-  - User
-  - Waveform
+**TrackDetail**
+- Title
+- Image
+- User
+- Waveform (bonus)
 + CommentFormContainer
  - CommentForm
-+ UserInfoContainer
-  + UserInfo
-    - Photo
-    - Username
-+ TrackDescriptionContainer
-  + TrackDescription
++ UserInfo
+  - Photo
+  - Username
++ TrackDescription
 + CommentIndexContainer
   + CommentIndex
     + CommentContainer
