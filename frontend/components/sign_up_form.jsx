@@ -30,7 +30,7 @@ class SignUpForm extends React.Component {
       username: "guest",
       password: "password"
     });
-    setTimeout(() => this.props.logIn(this.state), 500);
+    setTimeout(() => this.props.logIn(this.state), 0);
   }
 
   handleSubmit(event) {
