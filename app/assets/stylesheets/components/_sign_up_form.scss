@@ -12,6 +12,12 @@
   font-size: 18px;
 }
 
+.ReactModal__Overlay--after-open {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 input.signup-submit {
   display: flex;
   background: $orange;
