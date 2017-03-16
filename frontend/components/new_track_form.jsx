@@ -46,6 +46,7 @@ class NewTrackForm extends React.Component {
           </select>
           <textarea
             placeholder="describe your track"></textarea>
+          <button>Cancel</button>
           <button>Save</button>
         </form>
       </div>
