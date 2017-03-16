@@ -6,24 +6,27 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  border: 2px solid $orange;
+  border: 2px solid $darker-orange;
   border-radius: 5%;
   font-family: $sans-serif;
   font-size: 18px;
 }
 
 .splash-sign-up-modal-hide {
+  position: fixed;
+  top: -450;
   opacity: 0;
 }
 
 .splash-sign-up-modal-show {
-  transition: opacity 1s;
+  top: 300;
   opacity: 1;
+  transition: opacity 1s, top 1s;
 }
 
 input.signup-submit {
   display: flex;
-  background: $orange;
+  background: $darker-orange;
   height: 40px;
   width: 400px;
   justify-content: center;
@@ -31,16 +34,6 @@ input.signup-submit {
   color: white;
   margin-top: 10px;
   margin-bottom: 20px;
-}
-
-button.guest-login {
-  display: flex;
-  justify-content: center;
-  background: $orange;
-  height: 40px;
-  width: 400px;
-  border-radius: 5px;
-  color: white;
 }
 
 input.signup-text-input {
@@ -59,7 +52,7 @@ input.signup-text-input:last-of-type {
 }
 
 li.signup-error {
-  color: $orange;
+  color: $darker-orange;
 }
 
 div.signup-errors {

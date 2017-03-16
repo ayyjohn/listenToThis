@@ -6,7 +6,7 @@ div.splash-page {
   align-items: center;
   font-family: $sans-serif;
   font-size: 24px;
-  background: url("https://s3-us-west-1.amazonaws.com/listentothis-dev/splash.jpg");
+  background: url("https://s3-us-west-1.amazonaws.com/listentothis-dev/splash_compressed.jpg");
   // credit to Jan Senderek, unsplash.com
   background-size: 1400px 100%;
   background-repeat: no-repeat;
@@ -16,8 +16,6 @@ div.splash-page {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #000000;
-  overflow: visible;
 }
 
 section.splash-tag-line {
@@ -33,12 +31,26 @@ section.splash-tag-line {
   // border: 1px solid $orange;
 }
 
+button.guest-login {
+  display: flex;
+  justify-content: center;
+  background: $darker-orange;
+  height: 40px;
+  width: 400px;
+  border-radius: 5px;
+  color: white;
+}
+
 a#splash-get-started {
   color: white;
   border: 1px solid $orange;
   border-radius: 5px;
   padding: 10px 15px;
   background: $darker-orange;
+}
+
+a#splash-get-started:hover {
+  cursor: pointer;
 }
 
 header.nav-bar {
