@@ -5,7 +5,6 @@ import Modal from 'react-modal';
 import LogInFormContainer from './log_in_form_container';
 import SignUpFormContainer from './sign_up_form_container';
 
-
 class SplashPage extends React.Component {
 
   constructor(props) {
