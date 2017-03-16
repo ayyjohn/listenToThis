@@ -36,7 +36,6 @@ const Root = ({ store }) => {
           <Route path="/listen" component={ LandingPageContainer } onEnter={ _ensureLoggedIn }/>
           <Route path="/welcome" component={ SplashPage } onEnter={ _redirectIfLoggedIn }/>
           <Route path="/signup" component={ SignUpFormContainer } onEnter={ _redirectIfLoggedIn }/>
-          <Route path="/login" component={ LogInFormContainer } onEnter={ _redirectIfLoggedIn }/>
         </Route>
         {/*
         <Route path="/user/:id" component={ UserDetailContainer } />

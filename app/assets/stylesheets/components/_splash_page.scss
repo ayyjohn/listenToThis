@@ -56,7 +56,7 @@ h1.splash-logo {
   color: $light-gray;
 }
 
-a.splash-auth-button {
+button.splash-auth-button {
   width: 80px;
   height: 30px;
   color: $light-gray;
@@ -65,14 +65,15 @@ a.splash-auth-button {
   padding: 5px;
 }
 
-a.splash-auth-button:hover {
+button.splash-auth-button:hover {
   color: white;
 }
 
-a.splash-auth-button:first-of-type {
+button.splash-auth-button:first-of-type {
   margin-right: 10px;
+  width: 90px
 }
 
-a.splash-auth-button:last-of-type {
+button.splash-auth-button:last-of-type {
   margin-right: 20px;
 }
