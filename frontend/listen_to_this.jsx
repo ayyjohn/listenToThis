@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 
 import configureStore from './store/store';
 import Root from './components/root';
-// import { createTrack } from './util/track_api_util';
+import { createTrack } from './actions/track_actions';
 // import { logIn, logOut, signUp } from './actions/session_actions';
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -23,4 +23,4 @@ document.addEventListener('DOMContentLoaded', () => {
 // window.logIn = logIn;
 // window.logOut = logOut;
 // window.signUp = signUp;
-// window.createTrack = createTrack;
+window.createTrack = createTrack;
