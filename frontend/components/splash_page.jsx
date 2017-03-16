@@ -12,6 +12,7 @@ const SplashPage = () => (
     </header>
     <section className="splash-tag-line">
       <h1 id="tag-line">Love to Explore. Love to Share</h1>
+      <Link id="splash-get-started" to="/signup">Get Started</Link>
     </section>
   </div>
 );

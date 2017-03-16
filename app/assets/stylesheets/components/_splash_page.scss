@@ -16,12 +16,21 @@ section.splash-tag-line {
   width: 500px;
   height: 300px;
   border-radius: 5px;
-  margin-top: 410px;
+  margin-top: 450px;
   margin-left: 4px;
   display: flex;
   align-items: center;
+  flex-direction: column;
   justify-content: center;
   // border: 1px solid $orange;
+}
+
+a#splash-get-started {
+  color: white;
+  border: 1px solid $orange;
+  border-radius: 5px;
+  padding: 10px 15px;
+  background: $darker-orange;
 }
 
 header.nav-bar {
@@ -36,6 +45,7 @@ h1#tag-line {
   padding: 10px;
   border-radius: 5px;
   color: $light-gray;
+  margin-bottom: 10px;
 }
 
 h1.splash-logo {
