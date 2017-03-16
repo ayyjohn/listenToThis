@@ -11,7 +11,7 @@ class Api::TracksController < ApplicationController
   end
 
   def show
-    
+
   end
 
   def update
@@ -24,6 +24,10 @@ class Api::TracksController < ApplicationController
 
   def index
     # implement a filterability here?
+    # @tracks = Track.find_by_sql()
+    search_query = params[:searchParam]
+    search_query = "%" + search_query + "%"
+    @tracks = Track.where("name LIKE ?", search_query)
   end
 
   private
