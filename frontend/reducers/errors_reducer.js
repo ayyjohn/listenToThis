@@ -1,4 +1,4 @@
-import merge from 'lodash/merge';
+import { merge } from 'lodash';
 
 import { CLEAR_ERRORS,
          RECEIVE_LOG_IN_ERRORS,
