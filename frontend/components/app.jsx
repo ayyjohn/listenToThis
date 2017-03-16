@@ -1,7 +1,7 @@
 import React from 'react';
 
 const App = ({ children }) => (
-  <div>
+  <div id="app">
     { children }
   </div>
 );

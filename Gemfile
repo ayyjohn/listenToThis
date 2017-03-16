@@ -44,6 +44,7 @@ group :development do
   gem 'web-console', '>= 3.3.0'
   gem 'listen', '~> 3.0.5'
   gem 'better_errors'
+  gem 'figaro'
   gem 'binding_of_caller'
   gem 'pry-rails'
   gem 'annotate'

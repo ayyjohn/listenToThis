@@ -16,3 +16,6 @@ proposal_updates/
 work_log.txt
 bug_log/
 work_log/
+
+# Ignore application configuration
+/config/application.yml
