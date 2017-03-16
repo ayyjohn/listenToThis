@@ -47,6 +47,10 @@ input.signup-text-input {
   margin-bottom: 15px;
 }
 
+input.signup-text-input:focus {
+  border: 1px solid black;
+}
+
 input.signup-text-input:last-of-type {
     margin-bottom: 25px;
 }

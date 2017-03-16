@@ -44,6 +44,10 @@ input.login-text-input {
   margin-bottom: 15px;
 }
 
+input.login-text-input:focus {
+  border: 1px solid black;
+}
+
 input.login-text-input:last-of-type {
     margin-bottom: 25px;
 }

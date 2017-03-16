@@ -57,19 +57,21 @@ class LogInForm extends React.Component {
         <input
           className="login-text-input"
           type="text"
+          tabindex="1"
           value={this.state.username}
           placeholder="username"
           onChange={this.update("username")} />
         <input
           className="login-text-input"
           type="password"
+          tabindex="2"
           placeholder="password"
           value={this.state.password}
           onChange={this.update("password")} />
         <div className="login-errors">
           { this.renderErrors() }
         </div>
-        <input className="login-submit" type="submit" value="Log In" />
+        <input className="login-submit" type="submit" tabindex="3" value="Log In" />
         <button className="guest-login" onClick={ this.guestLogin }>Demo</button>
       </form>
     );
