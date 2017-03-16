@@ -15,7 +15,7 @@
 
 class Track < ApplicationRecord
 
-  validates :name, :release_date, :genre, :user_id, presence: true
+  validates :name, :release_date, :genre, :user, presence: true
 
   belongs_to :user
   has_many :comments, dependent: :destroy
