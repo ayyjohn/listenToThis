@@ -11,7 +11,10 @@ div.splash-page {
   background-size: 1400px 100%;
   background-repeat: no-repeat;
 }
-
+.ReactModalPortal {
+  width: 100%;
+  height: 100%;
+}
 .ReactModal__Overlay, .ReactModal__Overlay--after-open {
   display: flex;
   justify-content: center;
@@ -35,10 +38,16 @@ button.guest-login {
   display: flex;
   justify-content: center;
   background: $darker-orange;
-  height: 40px;
   width: 400px;
+  height: 40px;
   border-radius: 5px;
   color: white;
+}
+
+button.guest-login:focus {
+  width: 398px;
+  height: 38px;
+  border: 1px solid black;
 }
 
 a#splash-get-started {

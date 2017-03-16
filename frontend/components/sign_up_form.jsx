@@ -56,20 +56,22 @@ class SignUpForm extends React.Component {
         <input
           className="signup-text-input"
           type="text"
+          tabIndex="1"
           value={this.state.username}
           placeholder="username"
           onChange={this.update("username")} />
         <input
           className="signup-text-input"
           type="password"
+          tabIndex="2"
           value={this.state.password}
           placeholder="password"
           onChange={this.update("password")} />
         <div className="signup-errors">
           { this.renderErrors() }
         </div>
-        <input className="signup-submit" type="submit" value="Sign Up" />
-        <button className="guest-login" onClick={ this.guestLogin }>Demo</button>
+        <input className="signup-submit" type="submit" tabIndex="3" value="Sign Up" />
+        <button className="guest-login" tabIndex="4" onClick={ this.guestLogin }>Demo</button>
       </form>
     );
   }

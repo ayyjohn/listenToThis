@@ -33,6 +33,12 @@ input.login-submit {
   margin-bottom: 20px;
 }
 
+input.login-submit:focus {
+  width: 398px;
+  height: 38px;
+  border: 1px solid black;
+}
+
 input.login-text-input {
   display: flex;
   width: 400px;
