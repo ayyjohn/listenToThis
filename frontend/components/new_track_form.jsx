@@ -42,6 +42,7 @@ class NewTrackForm extends React.Component {
             <option value="reggaeton">Reggaeton</option>
             <option value="rock">Rock</option>
             <option value="soundtrack">Soundtrack</option>
+            <option value="soft-rock">Soft Rock</option>
             <option value="techno">Techno</option>
           </select>
           <textarea
