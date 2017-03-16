@@ -12,10 +12,13 @@
   font-size: 18px;
 }
 
-.ReactModal__Overlay--after-open {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+.splash-sign-up-modal-hide {
+  opacity: 0;
+}
+
+.splash-sign-up-modal-show {
+  transition: opacity 1s;
+  opacity: 1;
 }
 
 input.signup-submit {

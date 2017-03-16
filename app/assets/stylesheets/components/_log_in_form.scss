@@ -12,6 +12,15 @@
   font-size: 18px;
 }
 
+.splash-log-in-modal-hide {
+  opacity: 0;
+}
+
+.splash-log-in-modal-show {
+  transition: opacity 1s;
+  opacity: 1;
+}
+
 input.login-submit {
   display: flex;
   background: $orange;

@@ -12,6 +12,14 @@ div.splash-page {
   background-repeat: no-repeat;
 }
 
+.ReactModal__Overlay, .ReactModal__Overlay--after-open {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #000000;
+  overflow: visible;
+}
+
 section.splash-tag-line {
   width: 500px;
   height: 300px;
