@@ -4,7 +4,7 @@ class Api::TracksController < ApplicationController
     @track = Track.new(track_params)
 
     if @track.save
-      render :detail_show
+      render :show
     else
       render json: @track.errors.full_messages, status: 422
     end
