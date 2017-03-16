@@ -17,7 +17,7 @@ ActiveRecord::Schema.define(version: 20170316172839) do
 
   create_table "tracks", force: :cascade do |t|
     t.string   "name",         null: false
-    t.string   "image_url",    null: false
+    t.string   "image_url"
     t.date     "release_date", null: false
     t.text     "description"
     t.string   "genre",        null: false

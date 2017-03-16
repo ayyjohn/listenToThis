@@ -4,10 +4,10 @@ import { Provider } from 'react-redux';
 
 import App from './app';
 import LandingPageContainer from './landing_page_container';
+import LogInFormContainer from './log_in_form_container';
 {/* import NewTrackFormContainer from './new_track_form_container'; */}
 import SplashPage from './splash_page';
 import SignUpFormContainer from './sign_up_form_container';
-import LogInFormContainer from './log_in_form_container';
 {/* import TrackDetailContainer from './track_detail_container';
 import UserDetailContainer from './user_detail_container'; */}
 
