@@ -5,6 +5,10 @@ class LandingPage extends React.Component {
 
   constructor(props) {
     super(props);
+    this.state = {
+      searchParam: ""
+    };
+    this.props.getTracks(this.state.searchParam);
   }
 
   render() {
