@@ -14,6 +14,10 @@
 #  album_artwork_content_type :string
 #  album_artwork_file_size    :integer
 #  album_artwork_updated_at   :datetime
+#  mp3_file_file_name         :string
+#  mp3_file_content_type      :string
+#  mp3_file_file_size         :integer
+#  mp3_file_updated_at        :datetime
 #
 
 require 'test_helper'

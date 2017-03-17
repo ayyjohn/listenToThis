@@ -14,6 +14,10 @@
 #  album_artwork_content_type :string
 #  album_artwork_file_size    :integer
 #  album_artwork_updated_at   :datetime
+#  mp3_file_file_name         :string
+#  mp3_file_content_type      :string
+#  mp3_file_file_size         :integer
+#  mp3_file_updated_at        :datetime
 #
 
 class Track < ApplicationRecord
@@ -26,5 +30,5 @@ class Track < ApplicationRecord
   has_attached_file :album_artwork, default_url: "https://s3-us-west-1.amazonaws.com/listentothis-dev/no_album.png"
   validates_attachment_content_type :album_artwork, content_type: /\Aimage\/.*\Z/
 
-  has_attatched_file :mp3_file
+  has_attached_file :mp3_file, default_url: nil
 end
