@@ -20,6 +20,11 @@ export const getTrack = id => dispatch => (
     .then( () => dispatch(clearErrors()))
 );
 
+export const getTracks = searchParam => dispatch => (
+  TrackAPIUtil.getTracks(searchParam)
+  .then( tracks => dispatch(receiveTracks(tracks)))
+);
+
 const receiveTrack = track => ({
   type: RECEIVE_TRACK,
   track
