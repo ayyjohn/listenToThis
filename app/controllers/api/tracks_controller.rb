@@ -36,6 +36,7 @@ class Api::TracksController < ApplicationController
     search_query = params[:searchParam]
     search_query = "%" + search_query + "%"
     @tracks = Track.where("name LIKE ?", search_query)
+    render :index
   end
 
   private
@@ -51,5 +52,5 @@ class Api::TracksController < ApplicationController
     :user_id
     )
   end
-  
+
 end
