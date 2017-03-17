@@ -31,11 +31,9 @@ const Root = ({ store }) => {
   return (
     <Provider store={ store }>
       <Router history={ hashHistory }>
-        <Route path="/" component={ App } >
-          <IndexRedirect to="/welcome" />
-          <Route path="/listen" component={ LandingPageContainer } onEnter={ _ensureLoggedIn }/>
-          <Route path="/welcome" component={ SplashPage } onEnter={ _redirectIfLoggedIn }/>
-          <Route path="/signup" component={ SignUpFormContainer } onEnter={ _redirectIfLoggedIn }/>
+        <Route path="/welcome" component={ SplashPage } onEnter={ _redirectIfLoggedIn }/>
+        <Route path="/" component={ App } onEnter={ _ensureLoggedIn } >
+          <Route path="/listen" component={ LandingPageContainer } />
           <Route path="/upload" component={ NewTrackFormContainer } />
           <Route path="/tracks/:trackId" component={ TrackDetailContainer } />
         </Route>
