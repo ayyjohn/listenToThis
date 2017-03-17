@@ -8,8 +8,8 @@ import LogInFormContainer from './log_in_form_container';
 import NewTrackFormContainer from './new_track_form_container';
 import SplashPage from './splash_page';
 import SignUpFormContainer from './sign_up_form_container';
-{/* import TrackDetailContainer from './track_detail_container';
-import UserDetailContainer from './user_detail_container'; */}
+import TrackDetailContainer from './track_detail_container';
+{/* import UserDetailContainer from './user_detail_container'; */}
 
 
 const Root = ({ store }) => {
@@ -37,10 +37,10 @@ const Root = ({ store }) => {
           <Route path="/welcome" component={ SplashPage } onEnter={ _redirectIfLoggedIn }/>
           <Route path="/signup" component={ SignUpFormContainer } onEnter={ _redirectIfLoggedIn }/>
           <Route path="/upload" component={ NewTrackFormContainer } />
+          <Route path="/tracks/:trackId" component={ TrackDetailContainer } />
         </Route>
         {/*
         <Route path="/user/:id" component={ UserDetailContainer } />
-        <Route path="/tracks/:id" component={ TrackDetailContainer } />
         */}
       </Router>
     </Provider>
