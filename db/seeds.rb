@@ -17,9 +17,9 @@ u7 = User.create(username: "ridethebus", password: "password", location: "San Fr
 u8 = User.create(username: "strozzapreti", password: "password", location: "Montreal, Canada", bio: "I like funk and rhythm stuff, but I have a keen ear for jazz too. I've been known to enjoy a really deep rap song or two.")
 
 Track.destroy_all
-Track.create!(name: "Shelter", release_date: "2016/06/18", genre: "Electronica", user_id: u1.id)
-Track.create(name: "Moments", release_date: "2016/06/18", genre: "House", user_id: u2.id)
-Track.create(name: "Nevada", release_date: "2016/06/18", genre: "House", user_id: u3.id)
-Track.create(name: "Ava", release_date: "2016/06/18", genre: "Soundtrack", user_id: u3.id)
-Track.create(name: "Our Last Days as Children", release_date: "2016/06/18", genre: "Soft Rock", user_id: u3.id)
-Track.create(name: "The Night Passes the Earth to Day", release_date: "2016/06/18", genre: "Soft Rock", user_id: u4.id)
+Track.create!(title: "Shelter", release_date: "2016/06/18", genre: "Electronica", user_id: u1.id)
+Track.create(title: "Moments", release_date: "2016/06/18", genre: "House", user_id: u2.id)
+Track.create(title: "Nevada", release_date: "2016/06/18", genre: "House", user_id: u3.id)
+Track.create(title: "Ava", release_date: "2016/06/18", genre: "Soundtrack", user_id: u3.id)
+Track.create(title: "Our Last Days as Children", release_date: "2016/06/18", genre: "Soft Rock", user_id: u3.id)
+Track.create(title: "The Night Passes the Earth to Day", release_date: "2016/06/18", genre: "Soft Rock", user_id: u4.id)
