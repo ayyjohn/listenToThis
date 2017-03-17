@@ -36,6 +36,7 @@ class Api::TracksController < ApplicationController
     params.require(:track).permit(
     :title,
     :album_artwork,
+    :mp3_file,
     :release_date,
     :description,
     :genre,

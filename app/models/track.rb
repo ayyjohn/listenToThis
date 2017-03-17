@@ -25,4 +25,6 @@ class Track < ApplicationRecord
 
   has_attached_file :album_artwork, default_url: "https://s3-us-west-1.amazonaws.com/listentothis-dev/no_album.png"
   validates_attachment_content_type :album_artwork, content_type: /\Aimage\/.*\Z/
+
+  has_attatched_file :mp3_file
 end
