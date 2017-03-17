@@ -7,7 +7,7 @@ class NewTrackForm extends React.Component {
     this.state = {
       title: "",
       release_date: this.getCurrentDate(),
-      genre: null,
+      genre: "",
       description: "",
       user_id: this.props.currentUser.id,
       album_artwork: "https://s3-us-west-1.amazonaws.com/listentothis-dev/no_album.png",
