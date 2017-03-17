@@ -1,6 +1,8 @@
 import React from 'react';
 import { withRouter } from 'react-router';
 
+import TrackIndexContainer from './track_index_container';
+
 class LandingPage extends React.Component {
 
   constructor(props) {
@@ -8,16 +10,18 @@ class LandingPage extends React.Component {
     this.state = {
       searchParam: ""
     };
-    this.props.getTracks(this.state.searchParam);
   }
 
   render() {
     return(
+      <div>
         <div>
           <h1>Listen To This!!</h1>
           <h4>Welcome, { this.props.currentUser.username }</h4>
           <button onClick={ this.props.logOut }>Log Out</button>
+          <TrackIndexContainer />
         </div>
+      </div>
       );
   }
 
