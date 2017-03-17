@@ -9,7 +9,7 @@ class NewTrackForm extends React.Component {
       genre: null,
       user_id: this.props.currentUser.id,
       album_artwork: null,
-      album_artwork_url: null,
+      album_artwork_url: "https://s3-us-west-1.amazonaws.com/listentothis-dev/no_album.png",
       mp3_file: null,
     };
     this.updateAlbumArtwork = this.updateAlbumArtwork.bind(this);
