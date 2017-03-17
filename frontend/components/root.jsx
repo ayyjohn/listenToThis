@@ -33,6 +33,7 @@ const Root = ({ store }) => {
       <Router history={ hashHistory }>
         <Route path="/welcome" component={ SplashPage } onEnter={ _redirectIfLoggedIn }/>
         <Route path="/" component={ App } onEnter={ _ensureLoggedIn } >
+          <IndexRedirect to="/listen" />
           <Route path="/listen" component={ LandingPageContainer } />
           <Route path="/upload" component={ NewTrackFormContainer } />
           <Route path="/tracks/:trackId" component={ TrackDetailContainer } />
