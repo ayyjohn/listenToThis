@@ -4,7 +4,9 @@ import { createTrack } from '../actions/track_actions';
 import NewTrackForm from './new_track_form';
 
 const mapStateToProps = ({ session, errors, track }) => ({
-  currentUser: session.currentUser
+  currentUser: session.currentUser,
+  track: track,
+  errors: errors.new_track_form
 });
 
 const mapDispatchToProps = dispatch => ({
