@@ -35,7 +35,7 @@ class Api::TracksController < ApplicationController
     # @tracks = Track.find_by_sql()
     search_query = params[:searchParam]
     search_query = "%" + search_query + "%"
-    @tracks = Track.where("name LIKE ?", search_query)
+    @tracks = Track.where("name LIKE ?", search_query).limit(10).order('created_at DESC')
     render :index
   end
 
