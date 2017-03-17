@@ -4,6 +4,7 @@ import { clearErrors,
          receiveGetTrackErrors } from './error_actions';
 
 export const RECEIVE_TRACK = 'RECEIVE_TRACK';
+export const RECEIVE_TRACKS = 'RECEIVE_TRACKS';
 
 export const createTrack = track => dispatch => (
   TrackAPIUtil.createTrack(track)
@@ -22,4 +23,9 @@ export const getTrack = id => dispatch => (
 const receiveTrack = track => ({
   type: RECEIVE_TRACK,
   track
+});
+
+const receiveTracks = tracks => ({
+  type: RECEIVE_TRACKS,
+  tracks
 });
