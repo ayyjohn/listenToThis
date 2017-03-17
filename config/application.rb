@@ -15,6 +15,7 @@ module ListenToThis
       storage: :s3,
       s3_host_name: "s3-us-west-1.amazonaws.com",
       s3_credentials: {
+        s3_region: 'us-west-1',
         bucket: ENV["s3_bucket"],
         access_key_id: ENV["s3_access_key_id"],
         secret_access_key: ENV["s3_secret_access_key"]
