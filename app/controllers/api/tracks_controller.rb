@@ -8,9 +8,17 @@ class Api::TracksController < ApplicationController
     else
       render json: @track.errors.full_messages, status: 422
     end
+
   end
 
   def show
+    @track = Track.find_by_id(params[:id])
+
+    if @track
+      render :show
+    else
+      render json: ["that track does not exist"], status: 404
+    end
 
   end
 
@@ -43,4 +51,5 @@ class Api::TracksController < ApplicationController
     :user_id
     )
   end
+  
 end
