@@ -14,6 +14,7 @@ class NewTrackForm extends React.Component {
       album_artwork_url: "https://s3-us-west-1.amazonaws.com/listentothis-dev/no_album.png",
       mp3_file: null,
     };
+
     this.updateAlbumArtwork = this.updateAlbumArtwork.bind(this);
     this.updateMP3 = this.updateMP3.bind(this);
     this.cancelAndGoBack = this.cancelAndGoBack.bind(this);
