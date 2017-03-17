@@ -1,4 +1,5 @@
 import React from 'react';
+import { withRouter } from 'react-router';
 
 class NewTrackForm extends React.Component {
   constructor(props) {
@@ -7,6 +8,7 @@ class NewTrackForm extends React.Component {
       title: "",
       date: this.getCurrentDate(),
       genre: null,
+      description: "",
       user_id: this.props.currentUser.id,
       album_artwork: null,
       album_artwork_url: "https://s3-us-west-1.amazonaws.com/listentothis-dev/no_album.png",
@@ -14,6 +16,7 @@ class NewTrackForm extends React.Component {
     };
     this.updateAlbumArtwork = this.updateAlbumArtwork.bind(this);
     this.updateMP3 = this.updateMP3.bind(this);
+    this.cancelAndGoBack = this.cancelAndGoBack.bind(this);
   }
 
   update(field) {
@@ -39,6 +42,11 @@ class NewTrackForm extends React.Component {
     }
   }
 
+  cancelAndGoBack(event) {
+    event.preventDefault();
+    this.props.router.push("/");
+  }
+
   getCurrentDate() {
     let today = new Date();
     let dd = today.getDate();
@@ -52,7 +60,6 @@ class NewTrackForm extends React.Component {
   }
 
   render() {
-    debugger;
     return (
       <div>
         <header className="navBar">
@@ -74,13 +81,17 @@ class NewTrackForm extends React.Component {
           </label>
           <input
             type="text"
-            placeholder="title" />
+            placeholder="title"
+            onChange={ this.update("title") } />
           <input
             type="text"
-            placeholder="genre" />
+            placeholder="genre"
+            onChange={ this.update("genre") } />
           <textarea
-            placeholder="describe your track"></textarea>
-          <button>Cancel</button>
+            placeholder="describe your track"
+            onChange={ this.update("description") }></textarea>
+          <button
+            onClick={ this.cancelAndGoBack }>Cancel</button>
           <button>Save</button>
         </form>
       </div>
@@ -88,4 +99,4 @@ class NewTrackForm extends React.Component {
   }
 }
 
-export default NewTrackForm;
+export default withRouter(NewTrackForm);
