@@ -1,6 +1,5 @@
 json.extract! @track,
-              :name,
-              :image_url,
+              :title,
               :release_date,
               :description,
               :genre,

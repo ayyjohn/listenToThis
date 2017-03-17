@@ -4,7 +4,7 @@ class NewTrackForm extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      name: "",
+      title: "",
       date: this.getCurrentDate(),
       genre: null,
       user_id: this.props.currentUser.id,

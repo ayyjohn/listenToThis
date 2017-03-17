@@ -16,8 +16,7 @@ ActiveRecord::Schema.define(version: 20170316223421) do
   enable_extension "plpgsql"
 
   create_table "tracks", force: :cascade do |t|
-    t.string   "name",                       null: false
-    t.string   "image_url"
+    t.string   "title",                      null: false
     t.date     "release_date",               null: false
     t.text     "description"
     t.string   "genre",                      null: false
@@ -29,7 +28,7 @@ ActiveRecord::Schema.define(version: 20170316223421) do
     t.integer  "album_artwork_file_size"
     t.datetime "album_artwork_updated_at"
     t.index ["genre"], name: "index_tracks_on_genre", using: :btree
-    t.index ["name"], name: "index_tracks_on_name", using: :btree
+    t.index ["title"], name: "index_tracks_on_title", using: :btree
     t.index ["user_id"], name: "index_tracks_on_user_id", using: :btree
   end
 

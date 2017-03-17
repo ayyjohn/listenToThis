@@ -21,7 +21,7 @@ class Api::TracksController < ApplicationController
   def destroy
 
   end
-  
+
   def index
     # implement a filterability here?
     # @tracks = Track.find_by_sql()
@@ -34,7 +34,7 @@ class Api::TracksController < ApplicationController
 
   def track_params
     params.require(:track).permit(
-    :name,
+    :title,
     :image_url,
     :release_date,
     :description,
