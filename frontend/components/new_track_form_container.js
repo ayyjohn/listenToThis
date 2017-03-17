@@ -6,7 +6,7 @@ import NewTrackForm from './new_track_form';
 const mapStateToProps = ({ session, errors, track }) => ({
   currentUser: session.currentUser,
   track: track,
-  errors: errors.new_track_form
+  errors: errors.newTrack
 });
 
 const mapDispatchToProps = dispatch => ({

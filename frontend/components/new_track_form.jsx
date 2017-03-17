@@ -43,13 +43,7 @@ class NewTrackForm extends React.Component {
 
   updateMP3(event) {
     let mp3 = event.currentTarget.files[0];
-    let fileReader = new FileReader();
-    fileReader.onloadend = () => {
-      this.setState({ mp3_file: mp3 });
-    };
-    if (mp3) {
-      fileReader.readAsDataURL(mp3);
-    }
+    this.setState({ mp3_file: mp3 });
   }
 
   updateAlbumArtwork(event) {
@@ -67,6 +61,16 @@ class NewTrackForm extends React.Component {
   cancelAndGoBack(event) {
     event.preventDefault();
     this.props.router.push("/");
+  }
+
+  renderErrors() {
+    return(
+      <ul>
+        { this.props.errors.map( (error, index) => (
+          <li className="new-track-error" key={`error-${index}`}>{error}</li>
+        ))}
+      </ul>
+    );
   }
 
   getCurrentDate() {
@@ -115,6 +119,7 @@ class NewTrackForm extends React.Component {
           <button
             onClick={ this.cancelAndGoBack }>Cancel</button>
           <button onClick={ this.handleSubmit }>Save</button>
+          { this.renderErrors() }
         </form>
       </div>
     );
