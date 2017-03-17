@@ -6,24 +6,38 @@ class NewTrackForm extends React.Component {
     super(props);
     this.state = {
       title: "",
-      date: this.getCurrentDate(),
+      release_date: this.getCurrentDate(),
       genre: null,
       description: "",
       user_id: this.props.currentUser.id,
       album_artwork: null,
       album_artwork_url: "https://s3-us-west-1.amazonaws.com/listentothis-dev/no_album.png",
       mp3_file: null,
+      upload_complete: false
     };
 
     this.updateAlbumArtwork = this.updateAlbumArtwork.bind(this);
     this.updateMP3 = this.updateMP3.bind(this);
     this.cancelAndGoBack = this.cancelAndGoBack.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   update(field) {
     return event => this.setState({
       [field]: event.currentTarget.value
     });
+  }
+
+  handleSubmit(event) {
+    event.preventDefault();
+    let formData = new FormData();
+    formData.append("track[title]", this.state.title);
+    formData.append("track[release_date]", this.state.release_date);
+    formData.append("track[genre]", this.state.genre);
+    formData.append("track[description]", this.state.description);
+    formData.append("track[user_id]", this.state.user_id);
+    formData.append("track[album_artwork]", this.state.album_artwork);
+    this.props.createTrack(formData);
   }
 
   updateMP3(event) {
@@ -93,7 +107,7 @@ class NewTrackForm extends React.Component {
             onChange={ this.update("description") }></textarea>
           <button
             onClick={ this.cancelAndGoBack }>Cancel</button>
-          <button>Save</button>
+          <button onClick={ this.handleSubmit }>Save</button>
         </form>
       </div>
     );
