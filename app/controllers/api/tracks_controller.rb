@@ -21,7 +21,7 @@ class Api::TracksController < ApplicationController
   def destroy
 
   end
-
+  
   def index
     # implement a filterability here?
     # @tracks = Track.find_by_sql()
