@@ -15,6 +15,7 @@ class TrackDetail extends React.Component {
           <p>{ this.props.track.description }</p>
           <p>{ this.props.track.genre }</p>
           <p>{ this.props.track.user.username }</p>
+          <img src={ this.props.track.album_artwork_url }></img>
         </div>
       );
     }
