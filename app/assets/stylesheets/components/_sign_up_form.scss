@@ -13,15 +13,12 @@
 }
 
 .splash-sign-up-modal-hide {
-  position: fixed;
-  top: -450;
   opacity: 0;
 }
 
 .splash-sign-up-modal-show {
-  top: 300;
+  transition: opacity 1s;
   opacity: 1;
-  transition: opacity 1s, top 1s;
 }
 
 input.signup-submit {
@@ -51,14 +48,14 @@ input.signup-text-input:focus {
   border: 1px solid black;
 }
 
-input.signup-text-input:last-of-type {
-    margin-bottom: 25px;
-}
-
 input.signup-submit:focus {
   width: 398px;
   height: 38px;
   border: 1px solid black;
+}
+
+input.signup-text-input:last-of-type {
+  margin-bottom: 25px;
 }
 
 li.signup-error {
