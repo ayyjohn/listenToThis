@@ -6,6 +6,21 @@ class NavBar extends React.Component {
     super(props);
   }
 
+
+  componentWillReceiveProps(nextProps) {
+    this.ensureLoggedIn(nextProps);
+  }
+
+  ensureLoggedIn(props) {
+    if (!props.currentUser) {
+      this.props.router.push("/welcome");
+    }
+  }
+
+  shouldComponentUpdate(nextProps) {
+    return Boolean(nextProps.currentUser);
+  }
+  
   render() {
     return(
       <header className="nav-bar">
