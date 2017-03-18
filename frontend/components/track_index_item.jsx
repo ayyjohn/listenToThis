@@ -2,11 +2,33 @@ import React from 'react';
 import { Link } from 'react-router';
 
 const TrackIndexItem = ({ track }) => (
-  <li className="track-index-item">
-    <Link to={`/users/${track.user.user_id}`}>{ track.user.username }</Link>
-    <Link to={`/tracks/${track.id}`}>{ track.title }</Link>
-    <img src={ track.album_artwork_url }></img>
-  </li>
+  <ul className="track-index-item">
+    <li className="track-index-item">
+      <img
+        className="track-index-album-artwork"
+        src={ track.album_artwork_url }>
+      </img>
+    </li>
+    <li>
+      <i className="fa fa-play fa-lg" aria-hidden="true"></i>
+    </li>
+    <ul className="track-index-item-information">
+      <li>
+        <Link
+          to={`/users/${track.user.user_id}`}
+          className="track-index-username">
+          { track.user.username }
+        </Link>
+      </li>
+      <li>
+        <Link
+          to={`/tracks/${track.id}`}
+          className="track-index-track-title">
+          { track.title }
+        </Link>
+      </li>
+    </ul>
+  </ul>
 );
 
 export default TrackIndexItem;

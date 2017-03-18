@@ -15,11 +15,9 @@ class TrackIndex extends React.Component {
     }
     else {
       return (
-        <div>
-          <ul>
-            {tracks.map( track => <TrackIndexItem key={`track-${track.id}`} track={ track }/>)}
-          </ul>
-        </div>
+        <ul className="track-index">
+          {tracks.map( track => <TrackIndexItem key={`track-${track.id}`} track={ track }/>)}
+        </ul>
       );
     }
 

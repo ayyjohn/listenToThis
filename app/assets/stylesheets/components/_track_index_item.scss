@@ -1,0 +1,39 @@
+ul.track-index-item {
+  height: 170px;
+  width: 650px;
+  display: flex;
+  font-family: $sans-serif;
+  font-size: 14px;
+  color: $light-medium-gray;
+  margin-bottom: 20px;
+}
+
+ul.track-index-item-information {
+  display: flex;
+  flex-direction: column;
+}
+img.track-index-album-artwork {
+  height: 160px;
+  width: 160px;
+  margin-right: 20px;
+}
+
+a.track-index-username:hover {
+  color: $gray;
+}
+
+a.track-index-track-title {
+  color: black;
+}
+
+i.fa-play {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 100%;
+  background-color: $orange;
+  color: white;
+  margin-right: 5px;
+}
