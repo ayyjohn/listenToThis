@@ -15,12 +15,8 @@ class LandingPage extends React.Component {
   render() {
     return(
       <div>
-        <div>
-          <h1>Listen To This!!</h1>
-          <h4>Welcome, { this.props.currentUser.username }</h4>
-          <button onClick={ this.props.logOut }>Log Out</button>
-          <TrackIndexContainer />
-        </div>
+        <h1>Most Recently Uploaded</h1>
+        <TrackIndexContainer />
       </div>
       );
   }
