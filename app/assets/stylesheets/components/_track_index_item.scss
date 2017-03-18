@@ -5,14 +5,19 @@ ul.track-index-item {
   font-family: $sans-serif;
   font-size: 14px;
   color: $light-medium-gray;
-  margin-bottom: 20px;
+  margin: 20px 0px;
 }
 
 ul.track-index-item-information {
   display: flex;
   flex-direction: column;
 }
-img.track-index-album-artwork {
+
+ul.track-index-item-information li {
+  margin-bottom: 5px;
+}
+
+img.track-index-item-album-artwork {
   height: 160px;
   width: 160px;
   margin-right: 20px;

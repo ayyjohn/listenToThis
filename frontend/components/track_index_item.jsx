@@ -5,7 +5,7 @@ const TrackIndexItem = ({ track }) => (
   <ul className="track-index-item">
     <li className="track-index-item">
       <img
-        className="track-index-album-artwork"
+        className="track-index-item-album-artwork"
         src={ track.album_artwork_url }>
       </img>
     </li>

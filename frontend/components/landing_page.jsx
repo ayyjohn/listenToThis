@@ -15,7 +15,7 @@ class LandingPage extends React.Component {
   render() {
     return(
       <section id="most-recent">
-        <h1>Most Recently Uploaded</h1>
+        <h1 id="new-tracks-header">Newly Uploaded Tracks</h1>
         <TrackIndexContainer />
       </section>
       );
