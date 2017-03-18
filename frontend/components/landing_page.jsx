@@ -14,10 +14,10 @@ class LandingPage extends React.Component {
 
   render() {
     return(
-      <div>
+      <section id="track-index">
         <h1>Most Recently Uploaded</h1>
         <TrackIndexContainer />
-      </div>
+      </section>
       );
   }
 

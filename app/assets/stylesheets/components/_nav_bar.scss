@@ -10,6 +10,7 @@ header.nav-bar {
 }
 
 .nav-bar ul.nav-bar-list {
+  flex-shrink: 0;
   top:0;
   width: 1200px;
   height: 46px;
