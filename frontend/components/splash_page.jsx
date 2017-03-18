@@ -33,8 +33,8 @@ class SplashPage extends React.Component {
   }
 
   closeLogInModal() {
-    this.setState({ logInModalIsOpen: false });
     this.setState({ logInModalIsShown: false });
+    setTimeout(() => this.setState({ logInModalIsOpen: false }), 800);
   }
 
   openSignUpModal() {
@@ -43,8 +43,8 @@ class SplashPage extends React.Component {
   }
 
   closeSignUpModal() {
-    this.setState({ signUpModalIsOpen: false });
     this.setState({ signUpModalIsShown: false });
+    setTimeout(() => this.setState({ signUpModalIsOpen: false }), 800);
   }
 
   componentWillMount() {

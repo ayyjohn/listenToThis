@@ -14,11 +14,12 @@
 
 .splash-log-in-modal-hide {
   opacity: 0;
+  transition: opacity .75s;
 }
 
 .splash-log-in-modal-show {
-  transition: opacity 1s;
   opacity: 1;
+  transition: opacity .75s;
 }
 
 input.login-submit {
