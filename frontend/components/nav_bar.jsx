@@ -20,7 +20,7 @@ class NavBar extends React.Component {
   shouldComponentUpdate(nextProps) {
     return Boolean(nextProps.currentUser);
   }
-  
+
   render() {
     return(
       <header className="nav-bar">
@@ -59,4 +59,4 @@ class NavBar extends React.Component {
   }
 }
 
-export default NavBar;
+export default withRouter(NavBar);
