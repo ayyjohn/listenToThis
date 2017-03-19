@@ -31,7 +31,7 @@ a.track-index-track-title {
   color: black;
 }
 
-i.fa-play {
+.track-index-item i.fa-play {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -43,7 +43,7 @@ i.fa-play {
   margin-right: 5px;
 }
 
-i.fa-play:before {
+.track-index-item i.fa-play:before {
   position: relative;
   left: 3px;
 }

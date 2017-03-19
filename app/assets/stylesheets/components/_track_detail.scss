@@ -1,6 +1,41 @@
 section#track-detail {
   margin: auto;
-  padding-top: 100px;
   background: white;
   width: 1200px;
+}
+
+section.track-detail-billboard {
+  height: 380px;
+  background: linear-gradient(135deg, rgb(126, 111, 101) 0%, rgb(50, 52, 52) 100%);
+}
+
+img.track-detail-album-artwork {
+  height: 334px;
+  width: 334px;
+}
+
+ul.track-detail-billboard-0 {
+  display: flex;
+  justify-content: space-between;
+}
+
+ul.track-detail-billboard-1 {
+  display: flex;
+}
+
+.track-detail-billboard i.fa-play {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 60px;
+  height: 60px;
+  border-radius: 100%;
+  background-color: $orange;
+  color: white;
+  margin-right: 5px;
+}
+
+.track-detail-billboard i.fa-play:before {
+  position: relative;
+  left: 3px;
 }
