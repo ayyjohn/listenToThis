@@ -125,3 +125,30 @@ img.track-detail-add-comment-user-picture {
   height: 42px;
   border-right: 1px solid $gray;
 }
+
+section.track-detail-center {
+  display: flex;
+  align-items: center;
+}
+
+section.track-detail-edit-and-delete {
+  width: 358px;
+  display: flex;
+  justify-content: center;
+}
+section.track-detail-edit-and-delete-hidden {
+  display: none;
+}
+
+button.track-detail-delete-button {
+  padding: 5px 8px;
+  border: 1px solid $gray;
+  border-radius: 5px;
+  margin-left: 10px;
+}
+
+a.track-detail-edit-button {
+  padding: 5px 8px;
+  border: 1px solid $gray;
+  border-radius: 5px;
+}
