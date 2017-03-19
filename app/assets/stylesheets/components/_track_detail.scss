@@ -94,10 +94,12 @@ h1.track-detail-billboard-4-genre {
 
 section.track-detail-add-comment-area {
   display: flex;
-  padding: 30px 0;
+  margin: 10px 0;
+  padding: 20px 0;
   padding-left: 30px;
-  width: 1170px;
+  width: 813px;
   align-items: center;
+  border-right: 1px solid $light-gray;
 }
 
 section.track-detail-add-comment-box {
@@ -109,7 +111,7 @@ section.track-detail-add-comment-box {
 }
 
 input.track-detail-new-comment {
-  width: 760px;
+  width: 710px;
   height: 27px;
   border-radius: 4px;
   padding-left: 5px;
