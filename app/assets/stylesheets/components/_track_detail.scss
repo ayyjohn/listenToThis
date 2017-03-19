@@ -3,10 +3,17 @@ section#track-detail {
   background: white;
   width: 1200px;
   font-family: $sans-serif;
+  display: flex;
+  flex-direction: column;
 }
 
 #track-detail a:hover {
   color: white;
+}
+
+section.track-detail-billboard {
+  height: 380px;
+  background: linear-gradient(135deg, rgb(138, 86, 129) 0%, rgb(40, 32, 44) 100%);
 }
 
 img.track-detail-album-artwork {
@@ -18,8 +25,6 @@ img.track-detail-album-artwork {
 section.track-detail-billboard-0 {
   display: flex;
   justify-content: space-between;
-  height: 380px;
-  background: linear-gradient(135deg, rgb(138, 86, 129) 0%, rgb(40, 32, 44) 100%);
 }
 
 section.track-detail-billboard-1 {
@@ -85,5 +90,36 @@ h1.track-detail-billboard-4-genre {
   background-color: $off-black;
   color: white;
   font-size: 24px;
+}
 
+section.track-detail-add-comment-area {
+  display: flex;
+  padding: 30px 0;
+  padding-left: 30px;
+  width: 1170px;
+  align-items: center;
+}
+
+section.track-detail-add-comment-box {
+  display: flex;
+  align-items: center;
+  background-color: $comment-box-gray;
+  padding-right: 10px;
+  border: 1px solid $gray;
+}
+
+input.track-detail-new-comment {
+  width: 760px;
+  height: 27px;
+  border-radius: 4px;
+  padding-left: 5px;
+  background-color: white;
+  margin-left: 10px;
+  border: 1px solid $gray;
+}
+
+img.track-detail-add-comment-user-picture {
+  width: 42px;
+  height: 42px;
+  border-right: 1px solid $gray;
 }
