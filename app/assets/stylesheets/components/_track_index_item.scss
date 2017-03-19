@@ -42,3 +42,8 @@ i.fa-play {
   color: white;
   margin-right: 5px;
 }
+
+i.fa-play:before {
+  position: relative;
+  left: 3px;
+}
