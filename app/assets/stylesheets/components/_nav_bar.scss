@@ -7,6 +7,7 @@ header.nav-bar {
   color: $light-gray;
   display: flex;
   background-color: #333333;
+  z-index: 5;
 }
 
 .nav-bar ul.nav-bar-list {
@@ -18,6 +19,7 @@ header.nav-bar {
   justify-content: space-between;
   align-items: center;
   background-color: #333333;
+  // z-index: 5;
 }
 
 .nav-bar ul li a {
