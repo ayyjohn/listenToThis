@@ -54,12 +54,6 @@ t3 = Track.create!(title: "Planet",
   user_id: u1.id,
   album_artwork: "https://s3-us-west-1.amazonaws.com/listentothis-dev/seed_album_artwork/endless_fantasy.jpg",
   mp3_file: "https://s3-us-west-1.amazonaws.com/listentothis-dev/seed_mp3s/Anamanaguchi+-+Planet.mp3")
-t5 = Track.create!(title: "Skinny Love",
-  release_date: "2016/06/18",
-  genre: "Soft Rock",
-  user_id: u1.id,
-  album_artwork: "https://s3-us-west-1.amazonaws.com/listentothis-dev/seed_album_artwork/for_emma_forever_ago.jpg",
-  mp3_file: "https://s3-us-west-1.amazonaws.com/listentothis-dev/seed_mp3s/Bon+Iver+-+Skinny+Love.mp3")
 t4 = Track.create!(title: "Mr. Brightside",
   release_date: "2016/06/18",
   genre: "Rock",
