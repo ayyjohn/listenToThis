@@ -35,10 +35,6 @@ class TrackDetail extends React.Component {
             </section>
           </section>
           <p>{ this.props.track.title }</p>
-          <p>{ this.props.track.release_date }</p>
-          <p>{ this.props.track.description }</p>
-          <p>{ this.props.track.genre }</p>
-          <p>{ this.props.track.user.username }</p>
         </section>
       );
     }
