@@ -1,0 +1,24 @@
+div.upload-form {
+  width: 1200px;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  height: 100%;
+}
+
+h1.upload-form-tagline {
+  font-size: 32px;
+  font-family: $sans-serif;
+  text-align: center;
+}
+
+input[type="file"].new-mp3 {
+  width: 0.1px;
+  height: 0.1px;
+  opacity: 0;
+  overflow: hidden;
+  position: absolute;
+  z-index: -1;
+}

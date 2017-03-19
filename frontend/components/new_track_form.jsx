@@ -87,13 +87,13 @@ class NewTrackForm extends React.Component {
 
   render() {
     return (
-      <div>
-        <header className="navBar">
-        </header>
+      <div className="upload-form">
         <section>
-          <h1>Spread the Music</h1>
-          <label> Choose an MP3 file
+          <h1 className="upload-form-tagline">Spread the Music</h1>
+          <label for="new-mp3">Choose a file
           <input
+            name="new-mp3"
+            className="new-mp3"
             onChange={ this.updateMP3 }
             type="file" />
           </label>
