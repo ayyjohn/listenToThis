@@ -2,27 +2,61 @@ section#track-detail {
   margin: auto;
   background: white;
   width: 1200px;
+  font-family: $sans-serif;
+}
+
+#track-detail a:hover {
+  color: white;
 }
 
 section.track-detail-billboard {
   height: 380px;
-  background: linear-gradient(135deg, rgb(126, 111, 101) 0%, rgb(50, 52, 52) 100%);
+  background: linear-gradient(135deg, rgb(138, 86, 129) 0%, rgb(40, 32, 44) 100%);
 }
 
 img.track-detail-album-artwork {
   height: 334px;
   width: 334px;
+  margin: 23px;
 }
 
-ul.track-detail-billboard-0 {
+section.track-detail-billboard-0 {
   display: flex;
   justify-content: space-between;
 }
 
-ul.track-detail-billboard-1 {
+section.track-detail-billboard-1 {
+  display: flex;
+  margin-left: 75px;
+  margin-top: 23px;
+}
+
+section.track-detail-billboard-3 {
   display: flex;
 }
 
+section.track-detail-billboard-4 {
+  margin-top: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+section.track-detail-billboard-4 h1 {
+  color: $lightest-gray;
+}
+
+h1.track-detail-billboard-4-release-date {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+h1.track-detail-billboard-4-genre {
+  background: $gray;
+  display: inline-block;
+  padding: 4px 8px;
+  border-radius: 13px;
+}
 .track-detail-billboard i.fa-play {
   display: flex;
   align-items: center;
@@ -32,10 +66,27 @@ ul.track-detail-billboard-1 {
   border-radius: 100%;
   background-color: $orange;
   color: white;
-  margin-right: 5px;
+  margin-right: 10px;
 }
 
 .track-detail-billboard i.fa-play:before {
   position: relative;
   left: 3px;
+}
+
+.track-detail-billboard-username {
+  display: inline-block;
+  padding: 4px 7px;
+  background-color: $off-black;
+  color: $gray;
+  margin-bottom: 10px;
+}
+
+.track-detail-billboard-title {
+  display: inline-block;
+  padding: 4px 7px;
+  background-color: $off-black;
+  color: white;
+  font-size: 24px;
+
 }

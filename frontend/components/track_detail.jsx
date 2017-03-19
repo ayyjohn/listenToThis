@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router';
 
 class TrackDetail extends React.Component {
   constructor(props) {
@@ -11,24 +12,27 @@ class TrackDetail extends React.Component {
       return (
         <section id="track-detail">
           <section className="track-detail-billboard">
-            <ul className="track-detail-billboard-0">
-              <li>
-                <ul className="track-detail-billboard-1">
-                  <li><i className="fa fa-play fa-2x" aria-hidden="true"></i></li>
-                  <li>
+            <section className="track-detail-billboard-0">
+                <section className="track-detail-billboard-1">
+                  <i className="fa fa-play fa-2x" aria-hidden="true"></i>
                     <ul className="track-detail-billboard-2">
-                      <li className="track-detail-billboard-title">{ this.props.track.title }</li>
-                      <li className="track-detail-billboard-username">{ this.props.track.user.username }</li>
+                      <li><Link
+                        to={`/users/${this.props.track.user.user_id}`}
+                        className="track-detail-billboard-username">{ this.props.track.user.username }
+                      </Link></li>
+                      <li><h1 className="track-detail-billboard-title">{ this.props.track.title }</h1></li>
                     </ul>
-                  </li>
-                </ul>
-              </li>
-              <li>
-                <img
-                  src={ this.props.track.album_artwork_url }
-                  className="track-detail-album-artwork"></img>
-              </li>
-            </ul>
+                </section>
+                <section className="track-detail-billboard-3">
+                  <section className="track-detail-billboard-4">
+                    <h1 className="track-detail-billboard-4-release-date">{this.props.track.release_date}</h1>
+                    <h1 className="track-detail-billboard-4-genre"># {this.props.track.genre}</h1>
+                  </section>
+                  <img
+                    src={ this.props.track.album_artwork_url }
+                    className="track-detail-album-artwork"></img>
+                </section>
+            </section>
           </section>
           <p>{ this.props.track.title }</p>
           <p>{ this.props.track.release_date }</p>
