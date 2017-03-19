@@ -26,6 +26,7 @@ div#app {
   display: flex;
   flex-direction: column;
   background-color: $lightest-gray;
+  overflow-y: scroll;
 }
 
 body {
