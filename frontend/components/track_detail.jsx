@@ -34,7 +34,9 @@ class TrackDetail extends React.Component {
                 </section>
             </section>
           </section>
-          <p>{ this.props.track.title }</p>
+          <section className="track-detail-add-comment-area">
+            
+          </section>
         </section>
       );
     }

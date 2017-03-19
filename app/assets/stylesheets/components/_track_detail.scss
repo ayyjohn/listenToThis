@@ -9,11 +9,6 @@ section#track-detail {
   color: white;
 }
 
-section.track-detail-billboard {
-  height: 380px;
-  background: linear-gradient(135deg, rgb(138, 86, 129) 0%, rgb(40, 32, 44) 100%);
-}
-
 img.track-detail-album-artwork {
   height: 334px;
   width: 334px;
@@ -23,6 +18,8 @@ img.track-detail-album-artwork {
 section.track-detail-billboard-0 {
   display: flex;
   justify-content: space-between;
+  height: 380px;
+  background: linear-gradient(135deg, rgb(138, 86, 129) 0%, rgb(40, 32, 44) 100%);
 }
 
 section.track-detail-billboard-1 {
