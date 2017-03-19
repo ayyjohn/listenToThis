@@ -48,13 +48,6 @@ t1 = Track.create!(title: "LUV",
   description: "Sit back and enjoy the cool relaxing melodies of my Giraffage. Let your mind float away",
   album_artwork: "https://s3-us-west-1.amazonaws.com/listentothis-dev/seed_album_artwork/comfort.jpg",
   mp3_file: "https://s3-us-west-1.amazonaws.com/listentothis-dev/seed_mp3s/Giraffage+-+LUV.mp3")
-t2 = Track.create!(title: "Mastermind",
-  release_date: "2016/06/18",
-  genre: "Rap",
-  user_id: u1.id,
-  description: "Hear Deltron describe the automator in a flow that will leave you speechless",
-  album_artwork: "https://s3-us-west-1.amazonaws.com/listentothis-dev/seed_album_artwork/deltron_3030.jpg",
-  mp3_file: "https://s3-us-west-1.amazonaws.com/listentothis-dev/seed_mp3s/Deltron+3030+-+Mastermind.mp3")
 t3 = Track.create!(title: "Planet",
   release_date: "2016/06/18",
   genre: "Electronica",
