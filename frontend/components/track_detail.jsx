@@ -9,14 +9,16 @@ class TrackDetail extends React.Component {
   render () {
     if (this.props.track.title) {
       return (
-        <div>
+        <section id="track-detail">
+          <section className="track-detail-billboard">
+          </section>
           <p>{ this.props.track.title }</p>
           <p>{ this.props.track.release_date }</p>
           <p>{ this.props.track.description }</p>
           <p>{ this.props.track.genre }</p>
           <p>{ this.props.track.user.username }</p>
           <img src={ this.props.track.album_artwork_url }></img>
-        </div>
+        </section>
       );
     }
     else {
