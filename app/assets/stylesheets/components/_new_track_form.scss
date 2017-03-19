@@ -1,17 +1,50 @@
 div.upload-form {
   width: 1200px;
+  position: relative;
   margin: auto;
+  margin-top: 46px;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
   height: 100%;
+  background: white;
+  font-family: $sans-serif;
+  text-align: center;
+  flex-shrink: 0;
+}
+
+form.new-track-form {
+  display: flex;
+  width: 800px;
+  height: 570px;
+  padding: 28px 0px 28px 28px;
+  border-radius: 5px;
+  border: 1px solid $gray;
+  flex-shrink: 0;
+}
+
+section.choose-a-song {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 10px;
+  flex-shrink: 0;
 }
 
 h1.upload-form-tagline {
   font-size: 32px;
-  font-family: $sans-serif;
-  text-align: center;
+  margin-bottom: 40px;
+  flex-shrink: 0;
+}
+
+h1.new-track-form-info-track-info {
+  color: $darker-orange;
+  border-bottom: 1px solid $gray;
+  text-align: left;
+  padding-left: 5px;
+  font-size: 32px;
+  flex-shrink: 0;
 }
 
 input[type="file"].new-mp3 {
@@ -21,4 +54,147 @@ input[type="file"].new-mp3 {
   overflow: hidden;
   position: absolute;
   z-index: -1;
+  flex-shrink: 0;
+}
+
+input[type="file"].choose-album-artwork-input {
+  width: 0.1px;
+  height: 0.1px;
+  opacity: 0;
+  overflow: hidden;
+  position: absolute;
+  z-index: -1;
+  flex-shrink: 0;
+}
+
+label.new-mp3-label {
+  padding: 2px 11px;
+  font-size: 14px;
+  width: 167px;
+  height: 26px;
+  display: flex;
+  margin-bottom: 5px;
+  background: $darker-orange;
+  padding: 2px 8px;
+  color: white;
+  border-radius: 5px;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+label.choose-album-artwork-label {
+  width: 130px;
+  height: 26px;
+  position: relative;
+  top: 232px;
+  background-color: $lightest-gray;
+  padding: 5px 7px;
+  border-radius: 5px;
+  flex-shrink: 0;
+  flex-shrink: 0;
+}
+
+ul.new-track-form-0 {
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 0;
+}
+
+ul.new-track-form-1 {
+  display: flex;
+  flex-shrink: 0;
+}
+
+ul.new-track-form-2 {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  flex-shrink: 0;
+}
+
+ul.new-track-cancel-and-save {
+  display: flex;
+  border-top: 1px solid $gray;
+  margin-top: 80px;
+  justify-content: flex-end;
+  padding-top: 20px;
+  flex-shrink: 0;
+}
+
+li.choose-album-artwork {
+  width: 260px;
+  padding-right: 25px;
+  flex-shrink: 0;
+}
+
+li.new-track-form-title {
+  margin-top: 5px;
+  margin-bottom: 10px;
+  flex-shrink: 0;
+}
+
+li.new-track-errors ul {
+  color: $darker-orange;
+  padding-top: 5px;
+  height: 57px;
+  display: flex;
+  flex-direction: column;
+  align-content: space-between;
+  flex-shrink: 0;
+}
+
+li.new-track-errors ul li {
+  margin-top: 4px;
+  flex-shrink: 0;
+}
+
+.upload-form input[type="text"] {
+  padding-left: 5px;
+  border: 1px solid $gray;
+  height: 26px;
+  border-radius: 4px;
+  flex-shrink: 0;
+}
+
+input[type="text"].name-your-track {
+  width: 470px;
+  flex-shrink: 0;
+}
+
+.upload-form textarea {
+  padding-top: 5px;
+  padding-left: 5px;
+  height: 132px;
+  width: 470px;
+  border-radius: 5px;
+  border: 1px solid $gray;
+  font-size: 14px;
+  flex-shrink: 0;
+}
+
+img.new-track-album-artwork {
+  width: 260px;
+  height: 260px;
+  flex-shrink: 0;
+}
+
+.upload-form p {
+  margin-bottom: 6px;
+  flex-shrink: 0;
+}
+
+.upload-form button {
+  width: 52px;
+  height: 26px;
+  padding: 3px 6px;
+  flex-shrink: 0;
+}
+
+.upload-form button.new-track-save-button {
+  margin-left: 5px;
+  border-radius: 5px;
+  background-color: $darker-orange;
+  color: white;
+  flex-shrink: 0;
 }

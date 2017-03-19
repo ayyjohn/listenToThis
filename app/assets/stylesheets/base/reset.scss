@@ -1,6 +1,6 @@
 @import "base/colors.scss";
 
-html, body, header, div, h1, h2, h3, h4, ul, input, button, label, a {
+html, body, header, div, h1, h2, h3, h4, ul, input, button, label, a, textarea {
   margin: 0;
   padding: 0;
   border: 0;
@@ -17,7 +17,6 @@ html, body, header, div, h1, h2, h3, h4, ul, input, button, label, a {
 html {
   height: 100%;
 }
-
 
 div#app {
   margin: auto;
@@ -51,7 +50,7 @@ ul {
   list-style: none
 }
 
-button, input[type="submit"] {
+button, input[type="submit"], label {
   cursor: pointer;
 }
 
