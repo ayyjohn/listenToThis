@@ -1,4 +1,4 @@
-json.extact! @user,
+json.extract! @user,
              :username,
              :location,
              :bio,
