@@ -6,10 +6,13 @@ import TrackIndexContainer from './track_index_container';
 class UserDetail extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {
-      userId: this.props.routeParams.userId
-    };
     this.props.getUser(this.props.params.userId);
+  }
+
+  componentWillReceiveProps(newProps) {
+    if (newProps.routeParams.userId !== this.props.routeParams.userId) {
+      this.props.getUser(newProps.routeParams.userId);
+    }
   }
 
   render() {
@@ -25,7 +28,7 @@ class UserDetail extends React.Component {
           </section>
           <h1 className="user-tracks-header">Tracks</h1>
           <section className="user-detail-section-1">
-            <TrackIndexContainer searchParam={ this.state.userId } />
+            <TrackIndexContainer searchParam={ this.props.routeParams.userId } />
             <section className="user-detail-bio">
               <h1>{this.props.user.bio}</h1>
             </section>
@@ -35,7 +38,7 @@ class UserDetail extends React.Component {
     }
     else {
       return (
-        <div></div>
+        <div className="empty-user-detail"></div>
       );
     }
   }
