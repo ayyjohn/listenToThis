@@ -39,8 +39,6 @@ class Api::TracksController < ApplicationController
   end
 
   def index
-    # implement a filterability here?
-    # @tracks = Track.find_by_sql()
     search_query = params[:searchParam]
     if /^\d+$/ === search_query
     else

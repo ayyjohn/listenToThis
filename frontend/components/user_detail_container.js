@@ -9,7 +9,7 @@ const mapStateToProps = ({ session, errors, user }) => ({
 });
 
 const mapDispatchToProps = dispatch => ({
-  getUser: id => dispatch(getUser(id)),
+  getUser: id => dispatch(getUser(id))
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(UserDetail);
