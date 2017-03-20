@@ -6,7 +6,8 @@ import { CLEAR_ERRORS,
          RECEIVE_LOG_OUT_ERRORS,
          RECEIVE_NEW_TRACK_ERRORS,
          RECEIVE_SIGN_UP_ERRORS,
-         RECEIVE_UPDATE_TRACK_ERRORS } from '../actions/error_actions';
+         RECEIVE_UPDATE_TRACK_ERRORS,
+         RECEIVE_UPDATE_USER_ERRORS } from '../actions/error_actions';
 
 // TODO: implement metaprogramming to make the errors reducer cleaner
 // TODO: make the default state for the errors reducer cleaner
@@ -17,7 +18,8 @@ const noErrors = {
   logOut: [],
   newTrack: [],
   signUp: [],
-  updateTrack: []
+  updateTrack: [],
+  updateUser: []
 };
 
 const ErrorsReducer = (state = noErrors, action) => {
@@ -42,6 +44,9 @@ const ErrorsReducer = (state = noErrors, action) => {
       return newState;
     case RECEIVE_UPDATE_TRACK_ERRORS:
       newState.updateTrack = action.errors;
+      return newState;
+    case RECEIVE_UPDATE_USER_ERRORS:
+      newState.updateUser = action.errors;
       return newState;
     case CLEAR_ERRORS:
       return noErrors;
