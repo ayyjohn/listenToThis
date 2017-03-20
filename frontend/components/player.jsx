@@ -9,10 +9,12 @@ class Player extends React.Component {
   render() {
     if (this.props.tracks.length > 0) {
       return (
-        <ReactHowler
-          className="music-player"
-          src={ this.props.tracks }
-          playing={ false } />
+        <footer className="music-player">
+          <ReactHowler
+            className="music-player"
+            src={ this.props.tracks }
+            playing={ false } />
+        </footer>
       );
     }
     else {
