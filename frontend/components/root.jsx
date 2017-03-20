@@ -10,7 +10,7 @@ import SplashPage from './splash_page';
 import SignUpFormContainer from './sign_up_form_container';
 import TrackDetailContainer from './track_detail_container';
 import UpdateTrackFormContainer from './update_track_form_container';
-{/* import UserDetailContainer from './user_detail_container'; */}
+import UserDetailContainer from './user_detail_container';
 
 
 const Root = ({ store }) => {
@@ -46,10 +46,8 @@ const Root = ({ store }) => {
           <Route path="/upload" component={ NewTrackFormContainer } />
           <Route path="/tracks/:trackId" component={ TrackDetailContainer } />
           <Route path="/tracks/:trackId/update" component={ UpdateTrackFormContainer } onEnter={ _ensureUserOwnsTrack }/>
+          <Route path="/users/:userId" component={ UserDetailContainer }/>
         </Route>
-        {/*
-        <Route path="/user/:id" component={ UserDetailContainer } />
-        */}
       </Router>
     </Provider>
   );
