@@ -1,0 +1,33 @@
+section#user-detail {
+  margin: auto;
+  margin-top: 46px;
+  background: white;
+  width: 1200px;
+  font-family: $sans-serif;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+}
+
+section.user-detail-billboard {
+  width: 1200px;
+  height: 260px;
+  background: linear-gradient(315deg, rgb(225, 229, 229) 0%, rgb(127, 125, 116) 100%);
+  display: flex;
+}
+
+h1.user-tracks-header {
+  color: $darker-orange;
+  font-size: 18px;
+  margin: 15px 20px;
+  padding-bottom: 5px;
+  border-bottom: 1px solid $light-gray;
+}
+
+.user-detail .track-index {
+  width: 850px;
+}
+
+.user-detail-section-1 {
+  display: flex;
+}
