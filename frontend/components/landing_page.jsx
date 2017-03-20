@@ -12,6 +12,10 @@ class LandingPage extends React.Component {
     };
   }
 
+  componentWillUnmount() {
+
+  }
+  
   render() {
     return(
       <section id="most-recent">
