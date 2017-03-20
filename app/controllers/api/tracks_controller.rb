@@ -33,7 +33,9 @@ class Api::TracksController < ApplicationController
   end
 
   def destroy
-
+    @track = Track.find_by_id(params[:id])
+    @track.delete
+    render :show
   end
 
   def index

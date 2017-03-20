@@ -5,6 +5,12 @@ class TrackDetail extends React.Component {
   constructor(props) {
     super(props);
     this.props.getTrack(this.props.params.trackId);
+    this.deleteTrack = this.deleteTrack.bind(this);
+  }
+
+  deleteTrack() {
+    this.props.removeTrack(this.props.params.trackId)
+      .then(() => this.props.router.push("/listen"));
   }
 
   render () {
@@ -52,6 +58,7 @@ class TrackDetail extends React.Component {
                 to={`/tracks/${this.props.params.trackId}/update`}
                 className="track-detail-edit-button">Edit</Link>
               <button
+                onClick={ this.deleteTrack }
                 className="track-detail-delete-button">Delete</button>
             </section>
           </section>

@@ -8,9 +8,9 @@ export const createTrack = formData => (
   })
 );
 
-export const removeTrack = track => (
+export const removeTrack = id => (
   $.ajax({
-    url: `api/tracks/${track.id}`,
+    url: `api/tracks/${id}`,
     method: "DELETE"
   })
 );

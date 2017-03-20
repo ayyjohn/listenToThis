@@ -13,10 +13,8 @@ export const createTrack = track => dispatch => (
     error => dispatch(receiveNewTrackErrors(error.responseJSON)))
 );
 
-export const updateTrack = (track, id) => dispatch => (
-  TrackAPIUtil.updateTrack(track, id)
-    .then( updatedTrack => dispatch(receiveTrack(updatedTrack)),
-    error => dispatch(receiveUpdateTrackErrors(error.responseJSON)))
+export const removeTrack = id => dispatch => (
+  TrackAPIUtil.removeTrack(id)
 );
 
 export const getTrack = id => dispatch => (
@@ -28,6 +26,12 @@ export const getTrack = id => dispatch => (
 export const getTracks = searchParam => dispatch => (
   TrackAPIUtil.getTracks(searchParam)
   .then( tracks => dispatch(receiveTracks(tracks)))
+);
+
+export const updateTrack = (track, id) => dispatch => (
+  TrackAPIUtil.updateTrack(track, id)
+  .then( updatedTrack => dispatch(receiveTrack(updatedTrack)),
+  error => dispatch(receiveUpdateTrackErrors(error.responseJSON)))
 );
 
 const receiveTrack = track => ({
