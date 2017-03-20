@@ -12,7 +12,7 @@ class Player extends React.Component {
         <ReactHowler
           className="music-player"
           src={ this.props.tracks }
-          playing={ true } />
+          playing={ false } />
       );
     }
     else {
