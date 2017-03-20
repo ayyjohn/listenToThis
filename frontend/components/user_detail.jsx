@@ -17,8 +17,11 @@ class UserDetail extends React.Component {
       return (
         <section id="user-detail">
           <section className="user-detail-billboard">
-            <img src={ this.props.user.avatar_url }></img>
-            <h1>{ this.props.user.username }</h1>
+            <img
+              className="user-detail-avatar"
+              src={ this.props.user.avatar_url }></img>
+            <h1
+              className="user-detail-billboard-username">{ this.props.user.username }</h1>
           </section>
           <h1 className="user-tracks-header">Tracks</h1>
           <section className="user-detail-section-1">

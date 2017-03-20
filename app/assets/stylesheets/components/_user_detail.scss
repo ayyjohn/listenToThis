@@ -14,6 +14,11 @@ section.user-detail-billboard {
   height: 260px;
   background: linear-gradient(315deg, rgb(225, 229, 229) 0%, rgb(127, 125, 116) 100%);
   display: flex;
+  flex-shrink: 0;
+}
+
+section.user-detail-section-1 {
+  background: white;
 }
 
 h1.user-tracks-header {
@@ -30,4 +35,30 @@ h1.user-tracks-header {
 
 .user-detail-section-1 {
   display: flex;
+}
+
+.user-detail-avatar {
+  margin-top: 30px;
+  margin-left: 30px;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+}
+
+.user-detail-billboard-username {
+  margin-top: 30px;
+  margin-left: 30px;
+  color: $lightest-gray;
+  background-color: $off-black;
+  display: flex;
+  height: 45px;
+  align-items: center;
+  padding: 0px 10px;
+  font-size: 24px;
+}
+
+#user-detail ul.track-index {
+  // margin-top: 260px;
+  background-color: white;
+  // display: inline-block;
 }
