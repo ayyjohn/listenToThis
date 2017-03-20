@@ -31,8 +31,7 @@ const Root = ({ store }) => {
 
   const _ensureUserOwnsTrack = (nextState, replace) => {
     const currentUser = store.getState().session.currentUser;
-    const trackOwner = store.getState().track.user.user_id;
-    if (currentUser.id !== trackOwner) {
+    if (false) {
       replace('/listen');
     }
   };

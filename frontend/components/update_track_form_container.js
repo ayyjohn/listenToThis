@@ -11,7 +11,7 @@ const mapStateToProps = ({ session, errors, track }) => ({
 
 const mapDispatchToProps = dispatch => ({
   getTrack: id => dispatch(getTrack(id)),
-  updateTrack: track => dispatch(updateTrack(track))
+  updateTrack: (track, id) => dispatch(updateTrack(track, id)),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(UpdateTrackForm);

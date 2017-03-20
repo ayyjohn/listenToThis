@@ -13,8 +13,8 @@ export const createTrack = track => dispatch => (
     error => dispatch(receiveNewTrackErrors(error.responseJSON)))
 );
 
-export const updateTrack = track => dispatch => (
-  TrackAPIUtil.updateTrack(track)
+export const updateTrack = (track, id) => dispatch => (
+  TrackAPIUtil.updateTrack(track, id)
     .then( updatedTrack => dispatch(receiveTrack(updatedTrack)),
     error => dispatch(receiveUpdateTrackErrors(error.responseJSON)))
 );

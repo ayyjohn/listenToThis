@@ -15,9 +15,9 @@ export const removeTrack = track => (
   })
 );
 
-export const updateTrack = track => (
+export const updateTrack = (track, id) => (
   $.ajax({
-    url: `api/tracks/${track.id}`,
+    url: `api/tracks/${id}`,
     method: "PATCH",
     data: {
       track
