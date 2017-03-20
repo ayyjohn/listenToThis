@@ -10,43 +10,53 @@ User.destroy_all
 u1 = User.create!(username: "guest",
   password: "password",
   location: "New York, NY",
-  bio: "I love life and music.")
+  bio: "I love life and music.",
+  avatar: "https://s3-us-west-1.amazonaws.com/listentothis-dev/no_user.jpg")
 u2 = User.create!(username: "ayyjohn",
   password: "password",
   location: "San Francisco, CA",
-  bio: "My inspirations include Kanye West and Kanye West.")
+  bio: "My inspirations include Kanye West and Kanye West.",
+  avatar: "https://s3-us-west-1.amazonaws.com/listentothis-dev/seed_user_avatars/ayyjohn.jpg")
 u3 = User.create!(username: "barkbark",
   password: "password",
   location: "San Luis Obispo, CA",
-  bio: "I like sadder music. Slow stuff helps me concentrate.")
+  bio: "I like sadder music. Slow stuff helps me concentrate.",
+  avatar: "https://s3-us-west-1.amazonaws.com/listentothis-dev/seed_user_avatars/autumn.jpg")
 u4 = User.create!(username: "warriorprincess",
   password: "password",
   location: "San Diego, CA",
-  bio: "I really only like oldies, new music is bad!")
+  bio: "I really only like oldies, new music is bad!",
+  avatar: "https://s3-us-west-1.amazonaws.com/listentothis-dev/seed_user_avatars/xena.jpg")
 u5 = User.create!(username: "thedykm",
   password: "password",
   location: "Seattle, WA",
-  bio: "I can vibe to whatever, but let's be real, the less people who've heard of it the cooler it is.")
+  bio: "I can vibe to whatever, but let's be real, the less people who've heard of it the cooler it is.",
+  avatar: "https://s3-us-west-1.amazonaws.com/listentothis-dev/seed_user_avatars/dylan.jpg")
 u6 = User.create!(username: "ridersofrray",
   password: "password",
   location: "Seattle, WA",
-  bio: "When I find a song I like I play it for two weeks until I'm sick of it. I can't help it.")
+  bio: "When I find a song I like I play it for two weeks until I'm sick of it. I can't help it.",
+  avatar: "https://s3-us-west-1.amazonaws.com/listentothis-dev/seed_user_avatars/rohan.jpg")
 u7 = User.create!(username: "ridethebus",
   password: "password",
   location: "San Francisco, CA",
-  bio: "I like trance mixes. They help me stay up through the night working.")
+  bio: "I like trance mixes. They help me stay up through the night working.",
+  avatar: "")
 u8 = User.create!(username: "strozzapreti",
   password: "password",
   location: "Montreal, Canada",
-  bio: "I like funk and rhythm stuff, but I have a keen ear for jazz too. I've been known to enjoy a really deep rap song or two.")
+  bio: "I like funk and rhythm stuff, but I have a keen ear for jazz too. I've been known to enjoy a really deep rap song or two.",
+  avatar: "https://s3-us-west-1.amazonaws.com/listentothis-dev/seed_user_avatars/silas.jpg")
 u9 = User.create!(username: "swarlos",
   password: "password",
   location: "Sacramento, California",
-  bio: "Tonight Alive Tonight Alive Tonight Alive Tonight Alive")
+  bio: "Tonight Alive Tonight Alive Tonight Alive Tonight Alive",
+  avatar: "https://s3-us-west-1.amazonaws.com/listentothis-dev/seed_user_avatars/carl.jpg")
 u10 = User.create!(username: "albahardcore",
   password: "password",
   location: "San Diego, California",
-  bio: "I play frisbee and I dress stylishly. Oh and I always sing along.")
+  bio: "I play frisbee and I dress stylishly. Oh and I always sing along.",
+  avatar: "https://s3-us-west-1.amazonaws.com/listentothis-dev/seed_user_avatars/alba.jpg")
 
 Track.destroy_all
 t1 = Track.create!(title: "LUV",
