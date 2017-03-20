@@ -32,7 +32,8 @@ class UpdateTrackForm extends React.Component {
 
   handleSubmit(event) {
     event.preventDefault();
-    this.props.updateTrack(this.state, this.props.params.trackId);
+    this.props.updateTrack(this.state, this.props.params.trackId)
+      .then(() => this.props.router.push("/listen"));
   }
 
   cancelAndGoBack(event) {
@@ -65,7 +66,7 @@ class UpdateTrackForm extends React.Component {
               <li className="choose-album-artwork">
                   <img
                     src={ this.state.album_artwork_url }
-                    className="new-track-album-artwork"/>
+                    className="update-track-album-artwork"/>
               </li>
               <ul className="new-track-form-2">
                 <li className="new-track-form-title">
