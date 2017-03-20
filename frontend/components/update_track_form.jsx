@@ -9,7 +9,6 @@ class UpdateTrackForm extends React.Component {
       genre: "",
       description: "",
       album_artwork_url: "https://s3-us-west-1.amazonaws.com/listentothis-dev/no_album.png",
-      upload_complete: false
     };
 
     this.props.getTrack(this.props.params.trackId)
