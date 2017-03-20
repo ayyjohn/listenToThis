@@ -42,8 +42,11 @@ class Api::TracksController < ApplicationController
     # implement a filterability here?
     # @tracks = Track.find_by_sql()
     search_query = params[:searchParam]
-    search_query = "%" + search_query + "%"
-    @tracks = Track.where("title ILIKE ? OR genre ILIKE ?", search_query, search_query).limit(10).order('created_at DESC')
+    if /^\d+$/ === search_query
+    else
+      search_query = "%" + search_query + "%"
+    end
+    @tracks = Track.where("title ILIKE ? OR genre ILIKE ? OR user_id = ?", search_query, search_query, search_query).limit(10).order('created_at DESC')
     render :index
   end
 
