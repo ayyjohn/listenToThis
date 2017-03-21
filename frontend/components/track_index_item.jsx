@@ -1,19 +1,19 @@
 import React from 'react';
 import { Link } from 'react-router';
 
-const TrackIndexItem = ({ track }) => (
+const TrackIndexItem = ({ track, populateQueue }) => (
   <ul className="track-index-item">
     <li className="track-index-item">
       <Link
         to={`/tracks/${track.id}`}
-        className="track-index-item-album-artwork-link" >  
+        className="track-index-item-album-artwork-link" >
       <img
         className="track-index-item-album-artwork"
         src={ track.album_artwork_url }>
       </img>
     </Link>
     </li>
-    <li>
+    <li onClick={ populateQueue }>
       <i className="fa fa-play fa-lg" aria-hidden="true"></i>
     </li>
     <ul className="track-index-item-information">
