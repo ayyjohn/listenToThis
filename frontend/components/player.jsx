@@ -36,20 +36,24 @@ class Player extends React.Component {
   componentWillUnMount() {
 
   }
-  
+
   handleSkipForwards() {
+    let index = this.state.index;
     if (this.state.index < this.state.queue.length - 1) {
       this.setState({
         index: this.state.index + 1
       });
+      this.props.updateIndex(index + 1);
     }
   }
 
   handleSkipBackwards() {
+    let index = this.state.index;
     if (this.state.index > 0) {
       this.setState({
         index: this.state.index - 1
       });
+      this.props.updateIndex(index - 1);
     }
   }
 
