@@ -17,7 +17,6 @@ class Player extends React.Component {
     this.handleOnLoad = this.handleOnLoad.bind(this);
     this.handleOnEnd = this.handleOnEnd.bind(this);
     this.handleOnPlay = this.handleOnPlay.bind(this);
-    this.handleStop = this.handleStop.bind(this);
     this.renderSeekPos = this.renderSeekPos.bind(this);
     this.handleLoopToggle = this.handleLoopToggle.bind(this);
     this.handleMuteToggle = this.handleMuteToggle.bind(this);
@@ -54,14 +53,6 @@ class Player extends React.Component {
     });
   }
 
-  handleStop() {
-    this.player.stop();
-    this.setState({
-      playing: false
-    });
-    this.renderSeekPos();
-  }
-
   handleLoopToggle() {
     this.setState({
       loop: !this.state.loop
@@ -94,26 +85,21 @@ class Player extends React.Component {
             mute={ this.state.mute }
             volume={ this.state.volume }
             ref={(ref) => (this.player = ref)} />
-          <button onClick={ this.handleToggle }>
-            { this.state.playing ? 'Pause' : "Play" }
+          <button>
+            <i className="fa fa-step-backward" aria-hidden="true"></i>
           </button>
-          <button onClick={ this.handleStop }>
-            Stop
+          <button onClick={ this.handleToggle }>
+            { this.state.playing ? <i className="fa fa-pause" aria-hidden="true"></i> : <i className="fa fa-play" aria-hidden="true"></i> }
+          </button>
+          <button>
+            <i className="fa fa-step-forward" aria-hidden="true"></i>
           </button>
           <p>{ this.state.loaded ? 'Loaded' : 'Loading...' }</p>
-          <label>
-            Loop:
-            <input type="checkbox"
+          <i  className="fa fa-repeat"
+              aria-hidden="true"
               checked={ this.state.loop }
-              onChange={ this.handleLoopToggle } />
-          </label>
-          <label>
-            Mute:
-            <input
-              type="checkbox"
-              checked={ this.state.mute }
-              onChange={ this.handleMuteToggle } />
-          </label>
+              onChange={ this.handleLoopToggle }>
+          </i>
           <section className="player-volume">
             <label>
               <input
