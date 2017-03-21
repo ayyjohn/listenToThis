@@ -3,8 +3,8 @@ import { connect } from 'react-redux';
 import Player from './player';
 import { selectMP3s } from '../reducers/selectors';
 
-const mapStateToProps = ({ tracks }) => ({
-  tracks: selectMP3s(tracks)
+const mapStateToProps = ({ queue }) => ({
+  track: queue.tracks[queue.index],
 });
 
 const mapDispatchToProps = dispatch => ({
