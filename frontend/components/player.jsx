@@ -24,6 +24,7 @@ class Player extends React.Component {
     this.handleMuteToggle = this.handleMuteToggle.bind(this);
     this.handleSkipForwards = this.handleSkipForwards.bind(this);
     this.handleSkipBackwards = this.handleSkipBackwards.bind(this);
+    this.formatDuration = this.formatDuration.bind(this);
   }
 
   componentWillReceiveProps(nextProps) {
@@ -73,9 +74,15 @@ class Player extends React.Component {
   }
 
   handleOnEnd() {
-    this.setState({
-      playing: false
-    });
+    if (this.state.index < this.state.tracks.length) {
+      debugger;
+      this.handleSkipForwards();
+    }
+    else {
+      this.setState({
+        playing: false
+      });
+    }
   }
 
   handleLoopToggle() {
@@ -96,6 +103,14 @@ class Player extends React.Component {
     });
   }
 
+  formatDuration() {
+    let songLength = Math.round(this.state.duration);
+    let mins = Math.floor(songLength / 60);
+    let secs = songLength % 60;
+    if (secs < 10) { secs = `0${secs}`; }
+    return `${mins}:${secs}`;
+  }
+
   render() {
     if (this.props.tracks.length > 0) {
       return (
@@ -114,17 +129,20 @@ class Player extends React.Component {
             <i className="fa fa-step-backward" aria-hidden="true"></i>
           </button>
           <button onClick={ this.handleToggle }>
-            { this.state.playing ? <i className="fa fa-pause" aria-hidden="true"></i> : <i className="fa fa-play" aria-hidden="true"></i> }
+            { this.state.playing ? <i className="fa fa-pause fa-lg" aria-hidden="true"></i> : <i className="fa fa-play fa-lg" aria-hidden="true"></i> }
           </button>
           <button onClick={ this.handleSkipForwards }>
             <i className="fa fa-step-forward" aria-hidden="true"></i>
           </button>
-          <p>{ this.state.loaded ? 'Loaded' : 'Loading...' }</p>
+          <p>{ this.state.loaded ? '' : 'Loading...' }</p>
           <i  className="fa fa-repeat"
               aria-hidden="true"
               checked={ this.state.loop }
               onChange={ this.handleLoopToggle }>
           </i>
+          <section className="player-progress-bar">
+            <p>{ this.formatDuration() }</p>
+          </section>
           <section className="player-volume">
             <label>
               <input
