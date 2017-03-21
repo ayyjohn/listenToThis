@@ -1,6 +1,7 @@
 import React from 'react';
 
 import TrackIndexItem from './track_index_item';
+import { selectMP3s } from '../reducers/selectors';
 
 class TrackIndex extends React.Component {
   constructor(props) {
@@ -16,7 +17,11 @@ class TrackIndex extends React.Component {
     else {
       return (
         <ul className="track-index">
-          {tracks.map( track => <TrackIndexItem key={`track-${track.id}`} track={ track }/>)}
+          {tracks.map( (track, index) => <TrackIndexItem
+            populateQueue={ () => this.props.populateQueue(selectMP3s(this.props.tracks), index) }
+            key={`track-${track.id}`}
+            track={ track }
+            index={ index }/>)}
         </ul>
       );
     }
