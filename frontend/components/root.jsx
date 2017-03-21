@@ -12,7 +12,6 @@ import TrackDetailContainer from './track_detail_container';
 import UpdateTrackFormContainer from './update_track_form_container';
 import UserDetailContainer from './user_detail_container';
 
-
 const Root = ({ store }) => {
 
   const _ensureLoggedIn = (nextState, replace) => {
