@@ -21,3 +21,21 @@ const QueueReducer = (state = _defaultState, action) => {
 };
 
 export default QueueReducer;
+
+
+// case SKIP_FORWARDS:
+//   if (newState.index >= action.tracks.length) {
+//     return newState;
+//   }
+//   else {
+//     newState.index = newState.index + 1;
+//   }
+//   return newState;
+// case SKIP_BACKWARDS:
+//   if (newState.index === 0) {
+//     return newState;
+//   }
+//   else {
+//     newState.index = newState.index - 1;
+//   }
+//   return newState;

@@ -5,13 +5,15 @@ class Player extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      src: this.props.track,
+      index: this.props.index,
+      src: "",
       playing: true,
       loop: false,
       mute: false,
       volume: 1.0,
       html5: true,
-      loaded: false
+      loaded: false,
+      tracks: this.props.tracks
     };
     this.handleToggle = this.handleToggle.bind(this);
     this.handleOnLoad = this.handleOnLoad.bind(this);
@@ -20,12 +22,35 @@ class Player extends React.Component {
     this.renderSeekPos = this.renderSeekPos.bind(this);
     this.handleLoopToggle = this.handleLoopToggle.bind(this);
     this.handleMuteToggle = this.handleMuteToggle.bind(this);
+    this.handleSkipForwards = this.handleSkipForwards.bind(this);
+    this.handleSkipBackwards = this.handleSkipBackwards.bind(this);
   }
 
   componentWillReceiveProps(nextProps) {
+    if (nextProps.tracks.length > 0) {
+      this.setState({
+        src: nextProps.tracks[nextProps.index].mp3_file_url,
+        index: nextProps.index,
+        tracks: nextProps.tracks
+      });
+    }
+  }
+
+  handleSkipForwards() {
+    if (this.state.index < this.state.tracks.length)
     this.setState({
-      src: nextProps.track
+      index: this.state.index + 1,
+      src: this.props.tracks[this.state.index].mp3_file_url
     });
+  }
+
+  handleSkipBackwards() {
+    if (this.state.index > 0) {
+      this.setState({
+        index: this.state.index + 1,
+        src: this.props.tracks[this.state.index].mp3_file_url
+      });
+    }
   }
 
   handleToggle() {
@@ -72,7 +97,7 @@ class Player extends React.Component {
   }
 
   render() {
-    if (this.props.track) {
+    if (this.props.tracks.length > 0) {
       return (
         <footer className="music-player">
           <ReactHowler
@@ -85,13 +110,13 @@ class Player extends React.Component {
             mute={ this.state.mute }
             volume={ this.state.volume }
             ref={(ref) => (this.player = ref)} />
-          <button>
+          <button onClick={ this.handleSkipBackwards }>
             <i className="fa fa-step-backward" aria-hidden="true"></i>
           </button>
           <button onClick={ this.handleToggle }>
             { this.state.playing ? <i className="fa fa-pause" aria-hidden="true"></i> : <i className="fa fa-play" aria-hidden="true"></i> }
           </button>
-          <button>
+          <button onClick={ this.handleSkipForwards }>
             <i className="fa fa-step-forward" aria-hidden="true"></i>
           </button>
           <p>{ this.state.loaded ? 'Loaded' : 'Loading...' }</p>

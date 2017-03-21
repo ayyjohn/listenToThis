@@ -18,7 +18,7 @@ class TrackIndex extends React.Component {
       return (
         <ul className="track-index">
           {tracks.map( (track, index) => <TrackIndexItem
-            populateQueue={ () => this.props.populateQueue(selectMP3s(this.props.tracks), index) }
+            populateQueue={ () => this.props.populateQueue(this.props.tracks, index) }
             key={`track-${track.id}`}
             track={ track }
             index={ index }/>)}
