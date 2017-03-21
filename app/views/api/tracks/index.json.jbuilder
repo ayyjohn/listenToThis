@@ -6,5 +6,6 @@ json.array! @tracks do |track|
   json.user do
     json.username track.user.username
     json.user_id track.user.id
+    json.avatar track.user.avatar.url
   end
 end
