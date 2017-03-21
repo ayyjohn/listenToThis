@@ -20,7 +20,7 @@ class Api::UsersController < ApplicationController
       render json: ["That user doesn't exist"], status: 404
     end
   end
-  
+
   private
 
   def user_params
