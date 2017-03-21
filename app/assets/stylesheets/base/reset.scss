@@ -1,6 +1,6 @@
 @import "base/colors.scss";
 
-html, body, header, div, h1, h2, h3, h4, ul, input, button, label, a, textarea {
+html, body, header, div, h1, h2, h3, h4, ul, input, button, label, a, p, textarea, progress {
   margin: 0;
   padding: 0;
   border: 0;
@@ -46,6 +46,13 @@ body {
   align-items: center;
 }
 
+progress {
+  /* Reset the default appearance */
+  -webkit-appearance: none;
+   appearance: none;
+}
+
+progress::-webkit-progress-value { background: $orange; }
 
 ul {
   list-style: none

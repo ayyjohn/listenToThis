@@ -43,6 +43,11 @@ a.track-index-track-title {
   margin-right: 5px;
 }
 
+.track-index-item i.fa-play:hover {
+  cursor: pointer;
+  background-color: $darker-orange;
+}
+
 .track-index-item i.fa-play:before {
   position: relative;
   left: 3px;

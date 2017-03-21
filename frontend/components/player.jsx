@@ -25,6 +25,7 @@ class Player extends React.Component {
     this.handleSkipForwards = this.handleSkipForwards.bind(this);
     this.handleSkipBackwards = this.handleSkipBackwards.bind(this);
     this.formatDuration = this.formatDuration.bind(this);
+    this.formatSeek = this.formatSeek.bind(this);
   }
 
   componentWillReceiveProps(nextProps) {
@@ -32,23 +33,26 @@ class Player extends React.Component {
       this.setState({
         src: nextProps.tracks[nextProps.index].mp3_file_url,
         index: nextProps.index,
-        tracks: nextProps.tracks
+        tracks: nextProps.tracks,
+        track: nextProps.tracks[nextProps.index]
       });
     }
   }
 
   handleSkipForwards() {
-    if (this.state.index < this.state.tracks.length)
-    this.setState({
-      index: this.state.index + 1,
-      src: this.props.tracks[this.state.index].mp3_file_url
-    });
+    debugger;
+    if (this.state.index < this.state.tracks.length - 1) {
+      this.setState({
+        index: this.state.index + 1,
+        src: this.props.tracks[this.state.index].mp3_file_url
+      });
+    }
   }
 
   handleSkipBackwards() {
     if (this.state.index > 0) {
       this.setState({
-        index: this.state.index + 1,
+        index: this.state.index - 1,
         src: this.props.tracks[this.state.index].mp3_file_url
       });
     }
@@ -71,6 +75,7 @@ class Player extends React.Component {
     this.setState({
       playing: true
     });
+    setInterval(() => this.renderSeekPos(), 1000);
   }
 
   handleOnEnd() {
@@ -111,6 +116,14 @@ class Player extends React.Component {
     return `${mins}:${secs}`;
   }
 
+  formatSeek() {
+    let currentTime = Math.floor(this.state.seek);
+    let mins = Math.floor(currentTime / 60);
+    let secs = currentTime % 60;
+    if (secs < 10) { secs = `0${secs}`; }
+    return `${mins}:${secs}`;
+  }
+
   render() {
     if (this.props.tracks.length > 0) {
       return (
@@ -140,8 +153,13 @@ class Player extends React.Component {
               checked={ this.state.loop }
               onChange={ this.handleLoopToggle }>
           </i>
-          <section className="player-progress-bar">
-            <p>{ this.formatDuration() }</p>
+          <section className="player-time-info">
+            <p className="player-current-time">{ this.formatSeek() }</p>
+            <progress
+              className="player-progress-bar"
+              value={ this.state.seek }
+              max={ this.state.duration }></progress>
+            <p className="player-song-length">{ this.formatDuration() }</p>
           </section>
           <section className="player-volume">
             <label>
@@ -154,6 +172,15 @@ class Player extends React.Component {
                 onChange={ e =>  this.setState({ volume: parseFloat(e.target.value) }) } />
               Volume: { this.state.volume }
             </label>
+          </section>
+          <section className="player-song-info">
+            <img
+              src={ this.state.track.album_artwork_url }
+              className="player-album-artwork-mini"></img>
+            <div className="player-song-title-and-user">
+              <p>{ this.state.track.title }</p>
+              <p>{ this.state.track.user.username }</p>
+            </div>
           </section>
         </footer>
       );

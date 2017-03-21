@@ -3,9 +3,50 @@ footer.music-player {
   position: fixed;
   bottom: 0;
   display: flex;
-  height: 48px;
+  flex-shrink: 0;
+  height: 60px;
   background: $light-gray;
   justify-content: space-between;
   align-items: center;
   border-top: 1px solid $gray;
+}
+
+section.player-time-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 400px;
+}
+
+section.player-time-info p {
+  font-family: $sans-serif;
+}
+
+section.player-time-info .player-current-time {
+  color: $orange;
+}
+
+progress.player-progress-bar {
+  width: 315px;
+  height:2px;
+  background: $orange;
+}
+
+img.player-album-artwork-mini {
+  width: 30px;
+  height: 30px;
+}
+
+section.player-song-info {
+  display: flex;
+  align-items: center;
+  height: 60px;
+}
+
+.player-song-title-and-user {
+  height: 60px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-right: 20px;
 }
