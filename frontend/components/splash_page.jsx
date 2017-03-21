@@ -62,7 +62,7 @@ class SplashPage extends React.Component {
           </section>
         </header>
         <section className="splash-tag-line">
-          <h1 id="tag-line">Love to Explore. Love to Share</h1>
+          <h1 id="tag-line">Love to Explore Music. Love to Share Music</h1>
           <Link id="splash-get-started" onClick={ this.openSignUpModal }>Get Started</Link>
         </section>
         <Modal
