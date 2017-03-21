@@ -4,7 +4,7 @@ import Player from './player';
 import { selectMP3s } from '../reducers/selectors';
 
 const mapStateToProps = ({ queue }) => ({
-  tracks: queue.tracks,
+  queue: queue.tracks,
   index: queue.index
 });
 

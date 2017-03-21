@@ -13,8 +13,10 @@ class Player extends React.Component {
       volume: 1.0,
       html5: true,
       loaded: false,
-      tracks: this.props.tracks
+      queue: this.props.queue,
+      track: this.props.queue[this.props.index]
     };
+
     this.handleToggle = this.handleToggle.bind(this);
     this.handleOnLoad = this.handleOnLoad.bind(this);
     this.handleOnEnd = this.handleOnEnd.bind(this);
@@ -29,22 +31,22 @@ class Player extends React.Component {
   }
 
   componentWillReceiveProps(nextProps) {
-    if (nextProps.tracks.length > 0) {
+    if (nextProps.queue.length > 0) {
       this.setState({
-        src: nextProps.tracks[nextProps.index].mp3_file_url,
+        src: nextProps.queue[nextProps.index].mp3_file_url,
         index: nextProps.index,
-        tracks: nextProps.tracks,
-        track: nextProps.tracks[nextProps.index]
+        queue: nextProps.queue,
+        track: nextProps.queue[nextProps.index]
       });
     }
   }
 
   handleSkipForwards() {
     debugger;
-    if (this.state.index < this.state.tracks.length - 1) {
+    if (this.state.index < this.state.queue.length - 1) {
       this.setState({
         index: this.state.index + 1,
-        src: this.props.tracks[this.state.index].mp3_file_url
+        src: this.props.queue[this.state.index].mp3_file_url
       });
     }
   }
@@ -53,7 +55,7 @@ class Player extends React.Component {
     if (this.state.index > 0) {
       this.setState({
         index: this.state.index - 1,
-        src: this.props.tracks[this.state.index].mp3_file_url
+        src: this.props.queue[this.state.index].mp3_file_url
       });
     }
   }
@@ -79,7 +81,7 @@ class Player extends React.Component {
   }
 
   handleOnEnd() {
-    if (this.state.index < this.state.tracks.length) {
+    if (this.state.index < this.state.queue.length) {
       debugger;
       this.handleSkipForwards();
     }
@@ -125,7 +127,7 @@ class Player extends React.Component {
   }
 
   render() {
-    if (this.props.tracks.length > 0) {
+    if (this.props.queue.length > 0) {
       return (
         <footer className="music-player">
           <ReactHowler
