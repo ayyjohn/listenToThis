@@ -4,18 +4,6 @@ import ReactHowler from 'react-howler';
 class Player extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {
-      index: this.props.index,
-      src: "",
-      playing: true,
-      loop: false,
-      mute: false,
-      volume: 1.0,
-      html5: true,
-      loaded: false,
-      queue: this.props.queue,
-      track: this.props.queue[this.props.index]
-    };
 
     this.handleToggle = this.handleToggle.bind(this);
     this.handleOnLoad = this.handleOnLoad.bind(this);
@@ -23,30 +11,36 @@ class Player extends React.Component {
     this.handleOnPlay = this.handleOnPlay.bind(this);
     this.renderSeekPos = this.renderSeekPos.bind(this);
     this.handleLoopToggle = this.handleLoopToggle.bind(this);
-    this.handleMuteToggle = this.handleMuteToggle.bind(this);
     this.handleSkipForwards = this.handleSkipForwards.bind(this);
     this.handleSkipBackwards = this.handleSkipBackwards.bind(this);
     this.formatDuration = this.formatDuration.bind(this);
     this.formatSeek = this.formatSeek.bind(this);
+    this.getCurrentSong = this.getCurrentSong.bind(this);
   }
 
   componentWillReceiveProps(nextProps) {
     if (nextProps.queue.length > 0) {
       this.setState({
-        src: nextProps.queue[nextProps.index].mp3_file_url,
         index: nextProps.index,
         queue: nextProps.queue,
-        track: nextProps.queue[nextProps.index]
+        playing: true,
+        loop: false,
+        mute: false,
+        volume: 1.0,
+        html5: true,
+        loaded: false
       });
     }
   }
 
+  componentWillUnMount() {
+
+  }
+  
   handleSkipForwards() {
-    debugger;
     if (this.state.index < this.state.queue.length - 1) {
       this.setState({
-        index: this.state.index + 1,
-        src: this.props.queue[this.state.index].mp3_file_url
+        index: this.state.index + 1
       });
     }
   }
@@ -54,8 +48,7 @@ class Player extends React.Component {
   handleSkipBackwards() {
     if (this.state.index > 0) {
       this.setState({
-        index: this.state.index - 1,
-        src: this.props.queue[this.state.index].mp3_file_url
+        index: this.state.index - 1
       });
     }
   }
@@ -82,7 +75,6 @@ class Player extends React.Component {
 
   handleOnEnd() {
     if (this.state.index < this.state.queue.length) {
-      debugger;
       this.handleSkipForwards();
     }
     else {
@@ -95,12 +87,6 @@ class Player extends React.Component {
   handleLoopToggle() {
     this.setState({
       loop: !this.state.loop
-    });
-  }
-
-  handleMuteToggle() {
-    this.setState({
-      mute: !this.state.mute
     });
   }
 
@@ -126,12 +112,16 @@ class Player extends React.Component {
     return `${mins}:${secs}`;
   }
 
+  getCurrentSong() {
+    return this.state.queue[this.state.index];
+  }
+
   render() {
     if (this.props.queue.length > 0) {
       return (
         <footer className="music-player">
           <ReactHowler
-            src={ this.state.src }
+            src={ this.getCurrentSong().mp3_file_url }
             playing={ this.state.playing }
             onLoad={ this.handleOnLoad }
             onPlay={ this.handleOnPlay }
@@ -177,11 +167,11 @@ class Player extends React.Component {
           </section>
           <section className="player-song-info">
             <img
-              src={ this.state.track.album_artwork_url }
+              src={ this.getCurrentSong().album_artwork_url }
               className="player-album-artwork-mini"></img>
             <div className="player-song-title-and-user">
-              <p>{ this.state.track.title }</p>
-              <p>{ this.state.track.user.username }</p>
+              <p>{ this.getCurrentSong().title }</p>
+              <p>{ this.getCurrentSong().user.username }</p>
             </div>
           </section>
         </footer>

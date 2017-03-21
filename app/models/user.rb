@@ -25,8 +25,8 @@ class User < ApplicationRecord
   after_initialize :ensure_session_token
 
 
-  has_attached_file :avatar, defalt_url: "https://s3-us-west-1.amazonaws.com/listentothis-dev/no_user.jpg"
-  
+  has_attached_file :avatar, default_url: "https://s3-us-west-1.amazonaws.com/listentothis-dev/no_user.jpg"
+
   attr_reader :password
 
   has_many :tracks
