@@ -16,6 +16,7 @@ class Player extends React.Component {
     this.formatDuration = this.formatDuration.bind(this);
     this.formatSeek = this.formatSeek.bind(this);
     this.getCurrentSong = this.getCurrentSong.bind(this);
+    this.interval = null
   }
 
   componentWillReceiveProps(nextProps) {
@@ -32,8 +33,12 @@ class Player extends React.Component {
     }
   }
 
-  componentWillUnMount() {
-
+  componentWillUnmount() {
+    console.log("here-1");
+    if (this.interval) {
+      console.log("here");
+      clearInterval(this.interval);
+    }
   }
 
   handleSkipForwards() {
@@ -72,7 +77,7 @@ class Player extends React.Component {
     this.setState({
       playing: true
     });
-    setInterval(() => this.renderSeekPos(), 1000);
+    this.interval = setInterval(this.renderSeekPos, 1000);
   }
 
   handleOnEnd() {

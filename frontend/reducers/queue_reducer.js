@@ -15,7 +15,10 @@ const QueueReducer = (state = _defaultState, action) => {
 
   switch(action.type) {
     case CLEAR_QUEUE:
-      newState = {};
+      newState = {
+        tracks: [],
+        index: 0
+      };
       return newState;
     case POPULATE_QUEUE:
       newState.tracks = action.tracks;
