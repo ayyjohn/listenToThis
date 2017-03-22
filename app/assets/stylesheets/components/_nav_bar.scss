@@ -1,6 +1,6 @@
 header.nav-bar {
   position: fixed;
-  right: 7px;
+  right: 14px;
   width: 100%;
   height: 46px;
   font-size: 18px;
@@ -13,7 +13,7 @@ header.nav-bar {
 
 .nav-bar ul.nav-bar-list {
   margin: auto;
-  flex-shrink: 0;
+  // flex-shrink: 0;
   width: 1200px;
   height: 46px;
   display: flex;
@@ -34,6 +34,10 @@ header.nav-bar {
 
 .nav-bar ul li:last-of-type {
   margin-right: 40px;
+}
+
+.nav-bar ul li:first-of-type {
+  margin-left: 7px;
 }
 
 .nav-bar input.nav-bar-search {
