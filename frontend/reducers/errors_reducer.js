@@ -1,6 +1,7 @@
 import { merge } from 'lodash';
 
 import { CLEAR_ERRORS,
+         RECEIVE_COMMENT_ERRORS,
          RECEIVE_GET_TRACK_ERRORS,
          RECEIVE_LOG_IN_ERRORS,
          RECEIVE_LOG_OUT_ERRORS,
@@ -13,6 +14,7 @@ import { CLEAR_ERRORS,
 // TODO: make the default state for the errors reducer cleaner
 
 const noErrors = {
+  comments: [],
   getTrack: [],
   logIn: [],
   logOut: [],
@@ -27,6 +29,9 @@ const ErrorsReducer = (state = noErrors, action) => {
   let newState = merge({}, state);
 
   switch (action.type) {
+    case RECEIVE_COMMENT_ERRORS:
+      newState.comment = action.errors;
+      return newState;
     case RECEIVE_GET_TRACK_ERRORS:
       newState.getTrack = action.errors;
       return newState;
