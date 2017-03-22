@@ -6,9 +6,15 @@ export const RECEIVE_NEW_TRACK_ERRORS = 'RECEIVE_NEW_TRACK_ERRORS';
 export const RECEIVE_GET_TRACK_ERRORS = 'RECEIVE_GET_TRACK_ERRORS';
 export const RECEIVE_UPDATE_TRACK_ERRORS = 'RECEIVE_UPDATE_TRACK_ERRORS';
 export const RECEIVE_UPDATE_USER_ERRORS = 'RECEIVE_UPDATE_USER_ERRORS';
+export const RECEIVE_COMMENT_ERRORS = 'RECEIVE_COMMENT_ERRORS';
 
 export const clearErrors = errors => ({
   type: CLEAR_ERRORS
+});
+
+export const ReceiveCommentErrors = errors => ({
+  type: RECEIVE_COMMENT_ERRORS,
+  errors
 });
 
 export const receiveGetTrackErrors = errors => ({
