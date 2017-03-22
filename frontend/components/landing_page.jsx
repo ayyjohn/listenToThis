@@ -13,9 +13,9 @@ class LandingPage extends React.Component {
   }
 
   componentWillUnmount() {
-
+    this.props.clearTracks();
   }
-  
+
   render() {
     return(
       <section id="most-recent">

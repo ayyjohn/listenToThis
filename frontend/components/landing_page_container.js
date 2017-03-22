@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 
-import { getTracks } from '../actions/track_actions';
+import { getTracks, clearTracks } from '../actions/track_actions';
 import { logOut } from '../actions/session_actions';
 import LandingPage from './landing_page';
 
@@ -11,7 +11,8 @@ const mapStateToProps = ({ session, tracks }) => ({
 
 const mapDispatchToProps = dispatch => ({
   logOut: () => dispatch(logOut()),
-  getTracks: (searchParam) => dispatch(getTracks(searchParam))
+  getTracks: (searchParam) => dispatch(getTracks(searchParam)),
+  clearTracks: () => dispatch(clearTracks())
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(LandingPage);
