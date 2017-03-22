@@ -51,6 +51,10 @@ class CommentIndex extends React.Component {
         </section>
         <p>{ this.props.errors }</p>
         <section className="track-detail-user-info">
+          <img src={ this.props.user.avatar_url }
+            className="track-detail-user-photo" />
+          <p>{ this.props.user.location }</p>
+          <p>{ this.props.user.username }</p>
         </section>
         <h1 className="comments-header">{ this.props.comments.length } comments</h1>
         <ul className="comment-index">
