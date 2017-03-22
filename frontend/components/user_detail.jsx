@@ -32,12 +32,7 @@ class UserDetail extends React.Component {
               className="user-detail-billboard-username">{ this.props.user.username }</h1>
           </section>
           <h1 className="user-tracks-header">Tracks</h1>
-          <section className="user-detail-section-1">
-            <TrackIndexContainer searchParam={ this.props.routeParams.userId } />
-            <section className="user-detail-bio">
-              <h1>{this.props.user.bio}</h1>
-            </section>
-          </section>
+          <TrackIndexContainer searchParam={ this.props.routeParams.userId } />
         </section>
       );
     }
@@ -51,3 +46,8 @@ class UserDetail extends React.Component {
 }
 
 export default UserDetail;
+
+// <section className="user-detail-bio">
+//   <h1>Bio</h1>
+//   <h1>{this.props.user.bio}</h1>
+// </section>

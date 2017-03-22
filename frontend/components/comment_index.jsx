@@ -33,6 +33,18 @@ class CommentIndex extends React.Component {
   render() {
     return (
       <section className="track-detail-add-comment-area">
+        <section className="track-detail-user-info">
+          <img src={ this.props.user.avatar_url }
+            className="track-detail-user-photo" />
+          <section className="track-detail-user-info-2">
+            <p className="track-detail-user-info-3">Uploader: { this.props.user.username }</p>
+            <p className="track-detail-user-info-4">Location: { this.props.user.location }</p>
+          </section>
+        </section>
+        <section className="comments-header-and-count">
+          <h1 className="comments-header">Comments</h1>
+          <h1 className="comments-count">{ this.props.comments.length } comments</h1>
+        </section>
         <section className="track-detail-add-comment-box">
           <img
             src={ this.props.currentUser.avatar_url }
@@ -48,19 +60,12 @@ class CommentIndex extends React.Component {
             <input type="submit" value=""></input>
           </form>
         </section>
-        <p>{ this.props.errors }</p>
-        <section className="track-detail-user-info">
-          <img src={ this.props.user.avatar_url }
-            className="track-detail-user-photo" />
-          <p>{ this.props.user.location }</p>
-          <p>{ this.props.user.username }</p>
-        </section>
-        <h1 className="comments-header">{ this.props.comments.length } comments</h1>
         <ul className="comment-index">
           {this.props.comments.map( (comment, index) => <CommentIndexItem
           key={`comment-${comment.id}`}
           removeComment={ () => this.props.removeComment(comment.id) }
-          comment={ comment } /> )}
+          comment={ comment }
+          currentUser={ this.props.currentUser }/> )}
         </ul>
       </section>
     );
