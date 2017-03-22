@@ -1,11 +1,16 @@
 import React from 'react';
 import { Link } from 'react-router';
+import CommentIndexContainer from './comment_index_container';
 
 class TrackDetail extends React.Component {
   constructor(props) {
     super(props);
     this.props.getTrack(this.props.params.trackId);
     this.deleteTrack = this.deleteTrack.bind(this);
+  }
+
+  componentWillUnmount() {
+    this.props.clearTrack();
   }
 
   deleteTrack() {
@@ -41,18 +46,7 @@ class TrackDetail extends React.Component {
             </section>
           </section>
           <section className="track-detail-center" >
-            <section className="track-detail-add-comment-area">
-              <section className="track-detail-add-comment-box">
-                <img
-                  src="https://s3-us-west-1.amazonaws.com/listentothis-dev/no_user.jpg"
-                  className="track-detail-add-comment-user-picture"></img>
-                <input
-                  className="track-detail-new-comment"
-                  type="text"
-                  placeholder="What did you think of the song?">
-                </input>
-              </section>
-            </section>
+            <CommentIndexContainer />
             <section className={this.props.track.user.user_id === this.props.currentUser.id ? "track-detail-edit-and-delete" : "track-detail-edit-and-delete-hidden" }>
               <Link
                 to={`/tracks/${this.props.params.trackId}/update`}
