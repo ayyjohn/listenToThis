@@ -2,7 +2,7 @@ import React from 'react';
 import { hashHistory, IndexRedirect, IndexRoute, Route, Router } from 'react-router';
 import { Provider } from 'react-redux';
 
-import App from './app';
+import AppContainer from './app_container';
 import LandingPageContainer from './landing_page_container';
 import LogInFormContainer from './log_in_form_container';
 import NewTrackFormContainer from './new_track_form_container';
@@ -32,7 +32,7 @@ const Root = ({ store }) => {
     <Provider store={ store }>
       <Router history={ hashHistory }>
         <Route path="/welcome" component={ SplashPage } onEnter={ _redirectIfLoggedIn }/>
-        <Route path="/" component={ App } onEnter={ _ensureLoggedIn } >
+        <Route path="/" component={ AppContainer } onEnter={ _ensureLoggedIn } >
           <IndexRedirect to="/listen" />
           <Route path="/listen" component={ LandingPageContainer } />
           <Route path="/upload" component={ NewTrackFormContainer } />

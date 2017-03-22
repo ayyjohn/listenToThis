@@ -1,4 +1,5 @@
-import { POPULATE_QUEUE,
+import { CLEAR_QUEUE,
+         POPULATE_QUEUE,
          UPDATE_INDEX } from '../actions/queue_actions';
 
 import { merge } from 'lodash';
@@ -13,6 +14,9 @@ const QueueReducer = (state = _defaultState, action) => {
   let newState = merge({}, state);
 
   switch(action.type) {
+    case CLEAR_QUEUE:
+      newState = {};
+      return newState;
     case POPULATE_QUEUE:
       newState.tracks = action.tracks;
       newState.index = action.index;

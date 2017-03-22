@@ -4,15 +4,24 @@ import ReactHowler from 'react-howler';
 import NavBarContainer from './nav_bar_container';
 import PlayerContainer from './player_container';
 
-const App = ({ children }) => {
-  // console.log("render");
-  return (
-    <div id="app">
-      <NavBarContainer/>
-      { children }
-      <PlayerContainer />
-    </div>
-  );
-};
+class App extends React.Component {
+  constructor(props) {
+    super(props);
+  }
+
+  componentWillUnmount() {
+    this.props.clearQueue();
+  }
+
+  render() {
+    return (
+      <div id="app">
+        <NavBarContainer/>
+        { this.props.children }
+        <PlayerContainer />
+      </div>
+    );
+  }
+}
 
 export default App;
