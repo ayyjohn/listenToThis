@@ -28,13 +28,6 @@ const Root = ({ store }) => {
     }
   };
 
-  const _ensureUserOwnsTrack = (nextState, replace) => {
-    const currentUser = store.getState().session.currentUser;
-    if (false) {
-      replace('/listen');
-    }
-  };
-
   return (
     <Provider store={ store }>
       <Router history={ hashHistory }>
@@ -44,7 +37,7 @@ const Root = ({ store }) => {
           <Route path="/listen" component={ LandingPageContainer } />
           <Route path="/upload" component={ NewTrackFormContainer } />
           <Route path="/tracks/:trackId" component={ TrackDetailContainer } />
-          <Route path="/tracks/:trackId/update" component={ UpdateTrackFormContainer } onEnter={ _ensureUserOwnsTrack }/>
+          <Route path="/tracks/:trackId/update" component={ UpdateTrackFormContainer }/>
           <Route path="/users/:userId" component={ UserDetailContainer }/>
         </Route>
       </Router>
