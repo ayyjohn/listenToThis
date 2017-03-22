@@ -6,6 +6,7 @@ import { clearErrors,
 
 export const RECEIVE_TRACK = 'RECEIVE_TRACK';
 export const RECEIVE_TRACKS = 'RECEIVE_TRACKS';
+export const CLEAR_TRACK = 'CLEAR_TRACK';
 
 export const createTrack = track => dispatch => (
   TrackAPIUtil.createTrack(track)
@@ -33,6 +34,10 @@ export const updateTrack = (track, id) => dispatch => (
   .then( updatedTrack => dispatch(receiveTrack(updatedTrack)),
   error => dispatch(receiveUpdateTrackErrors(error.responseJSON)))
 );
+
+export const clearTrack = () => ({
+  type: CLEAR_TRACK
+});
 
 const receiveTrack = track => ({
   type: RECEIVE_TRACK,
