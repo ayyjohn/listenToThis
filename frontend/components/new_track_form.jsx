@@ -97,6 +97,7 @@ class NewTrackForm extends React.Component {
             onChange={ this.updateMP3 }
             type="file" />
           </label>
+          <h1 className="mp3-file-name">{ this.state.mp3_file.name }</h1>
         </section>
         <form className="new-track-form">
           <ul className="new-track-form-0">
