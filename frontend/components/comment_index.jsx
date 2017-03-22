@@ -49,12 +49,14 @@ class CommentIndex extends React.Component {
             <input type="submit" value=""></input>
           </form>
         </section>
+        <p>{ this.props.errors }</p>
         <section className="track-detail-user-info">
         </section>
         <h1 className="comments-header">{ this.props.comments.length } comments</h1>
         <ul className="comment-index">
           {this.props.comments.map( (comment, index) => <CommentIndexItem
           key={`comment-${comment.id}`}
+          removeComment={ () => this.props.removeComment(comment.id) }
           comment={ comment } /> )}
         </ul>
       </section>

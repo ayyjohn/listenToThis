@@ -12,7 +12,7 @@ export const clearErrors = errors => ({
   type: CLEAR_ERRORS
 });
 
-export const ReceiveCommentErrors = errors => ({
+export const receiveCommentErrors = errors => ({
   type: RECEIVE_COMMENT_ERRORS,
   errors
 });

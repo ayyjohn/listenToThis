@@ -5,7 +5,8 @@ import { createComment,
          getComments,
          removeComment } from '../actions/comment_actions';
 
-const mapStateToProps = ({ track, session }) => ({
+const mapStateToProps = ({ track, session, errors }) => ({
+  errors: errors.comment,
   track_id: track.id,
   user: track.user,
   comments: track.comments,
