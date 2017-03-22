@@ -4,6 +4,7 @@ import { clearErrors,
 
 export const RECEIVE_COMMENT = 'RECEIVE_COMMENT';
 export const RECEIVE_COMMENTS = 'RECEIVE_COMMENTS';
+export const DELETE_COMMENT = 'DELETE_COMMENT';
 
 export const createComment = comment => dispatch => (
   CommentAPIUtil.createComment(comment)
@@ -13,6 +14,7 @@ export const createComment = comment => dispatch => (
 
 export const removeComment = id => dispatch => (
   CommentAPIUtil.removeComment(id)
+    .then( () => dispatch(deleteComment(id)))
 );
 
 export const getComments = trackId => dispatch => (
@@ -28,4 +30,9 @@ export const receiveComment = comment => ({
 export const receiveComments = comments => ({
   type: RECEIVE_COMMENTS,
   comments
+});
+
+export const deleteComment = id => ({
+  type: DELETE_COMMENT,
+  id
 });

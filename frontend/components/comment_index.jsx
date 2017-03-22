@@ -31,7 +31,6 @@ class CommentIndex extends React.Component {
   }
 
   render() {
-
     return (
       <section className="track-detail-add-comment-area">
         <section className="track-detail-add-comment-box">

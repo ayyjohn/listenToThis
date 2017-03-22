@@ -1,6 +1,6 @@
 import { merge } from 'lodash';
 import { RECEIVE_TRACK, CLEAR_TRACK } from '../actions/track_actions';
-import { RECEIVE_COMMENT } from '../actions/comment_actions';
+import { DELETE_COMMENT, RECEIVE_COMMENT } from '../actions/comment_actions';
 
 const TrackReducer = (state = {}, action) => {
   Object.freeze(state);
@@ -12,6 +12,9 @@ const TrackReducer = (state = {}, action) => {
       return newState;
     case RECEIVE_COMMENT:
       newState.comments = newState.comments.concat(action.comment.comment);
+      return newState;
+    case DELETE_COMMENT:
+      newState.comments = newState.comments.filter( (comment) => comment.id !== action.id);
       return newState;
     case CLEAR_TRACK:
       return {};
