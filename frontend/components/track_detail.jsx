@@ -7,6 +7,7 @@ class TrackDetail extends React.Component {
     super(props);
     this.props.getTrack(this.props.params.trackId);
     this.deleteTrack = this.deleteTrack.bind(this);
+    this.renderDeleteAndEdit = this.renderDeleteAndEdit.bind(this);
   }
 
   componentWillUnmount() {
@@ -16,6 +17,25 @@ class TrackDetail extends React.Component {
   deleteTrack() {
     this.props.removeTrack(this.props.params.trackId)
       .then(() => this.props.router.push("/listen"));
+  }
+
+  renderDeleteAndEdit() {
+    debugger;
+    if (true) {
+      return (
+        <section className="track-detail-edit-and-delete">
+          <Link
+            to={`/tracks/${this.props.params.trackId}/update`}
+            className={ this.props.track.user.user_id === this.props.currentUser.id ? "track-detail-edit-button" : "track-detail-edit-button-hidden"}>Edit</Link>
+          <button
+            onClick={ this.deleteTrack }
+            className={this.props.track.user.user_id === this.props.currentUser.id ? "track-detail-delete-button" : "track-detail-delete-button-hidden" }>Delete</button>
+      </section>
+    );
+    }
+    else {
+      return <section className="track-detail-edit-and-delete"></section>;
+    }
   }
 
   render () {
@@ -46,14 +66,7 @@ class TrackDetail extends React.Component {
             </section>
           </section>
           <CommentIndexContainer />
-          <section className="track-detail-edit-and-delete">
-            <Link
-              to={`/tracks/${this.props.params.trackId}/update`}
-              className={ this.props.track.user.user_id === this.props.currentUser.id ? "track-detail-edit-button" : "track-detail-edit-button-hidden"}>Edit</Link>
-            <button
-              onClick={ this.deleteTrack }
-              className={this.props.track.user.user_id === this.props.currentUser.id ? "track-detail-delete-button" : "track-detail-delete-button-hidden" }>Delete</button>
-        </section>
+          { this.renderDeleteAndEdit() }
         </section>
       );
     }

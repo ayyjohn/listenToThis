@@ -22,14 +22,16 @@ class CommentIndexItem extends React.Component {
   render() {
     return (
       <section className="comment-index-item">
-        <img className="comment-avatar"
-             src={ this.props.comment.avatar_url }>
-        </img>
-        <section className="comment-main">
-          <p className="comment-username">{ this.props.comment.username }</p>
-          <p className="comment-body">{ this.props.comment.body }</p>
-          { this.renderDeleteButton() }
+        <section className="comment-index-item-1">
+          <img className="comment-avatar"
+            src={ this.props.comment.avatar_url }>
+          </img>
+          <section className="comment-main">
+            <p className="comment-username">{ this.props.comment.username }</p>
+            <p className="comment-body">{ this.props.comment.body }</p>
+          </section>
         </section>
+        { this.renderDeleteButton() }
       </section>
     );
   }
