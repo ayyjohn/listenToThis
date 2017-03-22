@@ -32,12 +32,12 @@ class UpdateTrackForm extends React.Component {
   handleSubmit(event) {
     event.preventDefault();
     this.props.updateTrack(this.state, this.props.params.trackId)
-      .then(() => this.props.router.push("/listen"));
+      .then(() => this.props.router.push(`/tracks/${this.props.track.id}`));
   }
 
   cancelAndGoBack(event) {
     event.preventDefault();
-    this.props.router.push("/");
+    this.props.router.push(`/tracks/${this.props.track.id}`);
   }
 
   renderErrors() {
