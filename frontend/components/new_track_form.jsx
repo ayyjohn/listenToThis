@@ -1,5 +1,5 @@
 import React from 'react';
-import { withRouter } from 'react-router';
+import { hashHistory, withRouter } from 'react-router';
 
 class NewTrackForm extends React.Component {
   constructor(props) {
@@ -38,7 +38,7 @@ class NewTrackForm extends React.Component {
     formData.append("track[user_id]", this.state.user_id);
     formData.append("track[album_artwork]", this.state.album_artwork);
     formData.append("track[mp3_file]", this.state.mp3_file);
-    this.props.createTrack(formData).then(() => this.props.router.push("/listen"));
+    this.props.createTrack(formData).then((newTrack) => this.props.router.push(`/tracks/${this.props.newTrack.id}`));
   }
 
   updateMP3(event) {
@@ -60,7 +60,7 @@ class NewTrackForm extends React.Component {
 
   cancelAndGoBack(event) {
     event.preventDefault();
-    this.props.router.push("/");
+    hashHistory.goBack();
   }
 
   renderErrors() {
