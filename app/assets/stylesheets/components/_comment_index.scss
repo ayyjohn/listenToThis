@@ -16,16 +16,6 @@ img.comment-avatar {
   margin-right: 10px;
 }
 
-section.track-detail-center {
-  display: flex;
-  align-items: center;
-}
-
-.track-detail-add-comment-area {
-  display: flex;
-  flex-direction: column;
-}
-
 .comment-main {
   display: flex;
   flex-direction: column;
@@ -40,8 +30,81 @@ ul.comment-index {
   width: 782px;
   display: flex;
   flex-direction: column-reverse;
+  margin-top: 0;
 }
 
 .track-detail-user-info {
   display: flex;
+}
+
+section.track-detail-add-comment-area {
+  display: flex;
+  flex-direction: column;
+  padding: 20px 0;
+  padding-left: 30px;
+  width: 813px;
+  align-items: center;
+  border-right: 1px solid $light-gray;
+  margin-top: 0;
+  height: auto;
+}
+
+section.track-detail-add-comment-box {
+  display: flex;
+  align-items: center;
+  background-color: $comment-box-gray;
+  padding-right: 10px;
+  border: 1px solid $gray;
+  margin-top: 0px;
+}
+
+input.track-detail-new-comment {
+  width: 710px;
+  height: 27px;
+  border-radius: 4px;
+  padding-left: 5px;
+  background-color: white;
+  margin-left: 10px;
+  border: 1px solid $gray;
+}
+
+img.track-detail-add-comment-user-picture {
+  width: 42px;
+  height: 42px;
+  border-right: 1px solid $gray;
+}
+
+section.track-detail-center {
+  display: flex;
+  align-items: center;
+  margin: 10px 0;
+  height: 100%;
+}
+
+section.track-detail-edit-and-delete {
+  width: 358px;
+  display: flex;
+  justify-content: center;
+}
+section.track-detail-edit-and-delete-hidden {
+  display: none;
+}
+
+button.track-detail-delete-button {
+  padding: 5px 8px;
+  border: 1px solid $gray;
+  border-radius: 5px;
+  margin-left: 10px;
+}
+
+a.track-detail-edit-button {
+  padding: 5px 8px;
+  border: 1px solid $gray;
+  border-radius: 5px;
+}
+
+img.track-detail-user-photo {
+  height: 120px;
+  width: 120px;
+  border-radius: 50%;
 }
