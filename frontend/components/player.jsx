@@ -28,7 +28,6 @@ class Player extends React.Component {
         mute: false,
         volume: 1.0,
         html5: true,
-        loaded: false
       });
     }
   }
@@ -65,7 +64,6 @@ class Player extends React.Component {
 
   handleOnLoad() {
     this.setState({
-      loaded: true,
       duration: this.player.duration()
     });
   }
@@ -143,7 +141,6 @@ class Player extends React.Component {
           <button onClick={ this.handleSkipForwards }>
             <i className="fa fa-step-forward" aria-hidden="true"></i>
           </button>
-          <p>{ this.state.loaded ? '' : 'Loading...' }</p>
           <i  className="fa fa-repeat"
               aria-hidden="true"
               checked={ this.state.loop }

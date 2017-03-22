@@ -1,4 +1,5 @@
 json.extract! @track,
+              :id,
               :title,
               :release_date,
               :description,

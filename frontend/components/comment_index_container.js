@@ -6,6 +6,7 @@ import { createComment,
          removeComment } from '../actions/comment_actions';
 
 const mapStateToProps = ({ track, session }) => ({
+  track_id: track.id,
   user: track.user,
   comments: track.comments,
   currentUser: session.currentUser

@@ -89,7 +89,7 @@ class NewTrackForm extends React.Component {
     return (
       <div className="upload-form">
         <section className="choose-a-song">
-          <h1 className="upload-form-tagline">Spread your Music</h1>
+          <h1 className="upload-form-tagline">Share your Music</h1>
           <label className="new-mp3-label">Choose a song to upload
           <input
             name="new-mp3"

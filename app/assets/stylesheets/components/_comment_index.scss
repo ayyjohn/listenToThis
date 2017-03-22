@@ -38,4 +38,6 @@ section.track-detail-center {
 
 ul.comment-index {
   width: 782px;
+  display: flex;
+  flex-direction: column-reverse;
 }
