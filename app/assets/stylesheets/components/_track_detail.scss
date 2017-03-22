@@ -12,8 +12,10 @@ section#track-detail {
 }
 
 section.track-detail-billboard {
+  margin-top: 46px;
   height: 380px;
   background: linear-gradient(135deg, rgb(138, 86, 129) 0%, rgb(40, 32, 44) 100%);
+  margin-bottom: 150px;
 }
 
 img.track-detail-album-artwork {
@@ -151,4 +153,10 @@ a.track-detail-edit-button {
   padding: 5px 8px;
   border: 1px solid $gray;
   border-radius: 5px;
+}
+
+img.track-detail-user-photo {
+  height: 120px;
+  width: 120px;
+  border-radius: 50%;
 }
