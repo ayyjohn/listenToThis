@@ -15,6 +15,10 @@ class UserDetail extends React.Component {
     }
   }
 
+  componentWillUnmount() {
+    this.props.clearUser();
+  }
+
   render() {
     if (this.props.user.username) {
       return (

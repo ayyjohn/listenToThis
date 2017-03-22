@@ -4,6 +4,7 @@ import {
   receiveUpdateUserErrors } from './error_actions';
 
 export const RECEIVE_USER = 'RECEIVE_USER';
+export const CLEAR_USER = 'CLEAR_USER';
 
 export const getUser = id => dispatch => (
   UserAPIUtil.getUser(id)
@@ -18,4 +19,8 @@ export const updateUser = (user, id) => dispatch => (
 export const receiveUser = user => ({
   type: RECEIVE_USER,
   user
+});
+
+export const clearUser = () => ({
+  type: CLEAR_USER
 });
