@@ -17,6 +17,7 @@ class UserDetail extends React.Component {
 
   componentWillUnmount() {
     this.props.clearUser();
+    this.props.clearTracks();
   }
 
   render() {
