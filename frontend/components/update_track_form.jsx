@@ -12,12 +12,18 @@ class UpdateTrackForm extends React.Component {
     };
 
     this.props.getTrack(this.props.params.trackId)
-      .then(res => this.setState({
-        title: `${res.track.title}`,
-        genre: `${res.track.genre}`,
-        description: `${res.track.description}`,
-        album_artwork_url: `${res.track.album_artwork_url}`
-      }));
+      .then(res => {
+        if (res.track.user.user_id !== this.props.currentUser.id) {
+          this.props.router.push(`/tracks/${this.props.track.id}`);
+        }
+        else {
+          this.setState({
+            title: `${res.track.title}`,
+            genre: `${res.track.genre}`,
+            description: `${res.track.description}`,
+            album_artwork_url: `${res.track.album_artwork_url}`
+          });
+        }});
 
     this.cancelAndGoBack = this.cancelAndGoBack.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
