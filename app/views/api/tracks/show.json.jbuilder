@@ -9,6 +9,7 @@ json.set! :user do
   json.set! :username, @track.user.username
   json.set! :user_id, @track.user.id
   json.set! :avatar_url, @track.user.avatar.url
+  json.set! :location, @track.user.location
 end
 json.set! :comments do
   json.array! @track.comments do |comment|
