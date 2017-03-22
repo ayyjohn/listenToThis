@@ -16,7 +16,7 @@ class Player extends React.Component {
     this.formatDuration = this.formatDuration.bind(this);
     this.formatSeek = this.formatSeek.bind(this);
     this.getCurrentSong = this.getCurrentSong.bind(this);
-    this.interval = null
+    this.interval = null;
   }
 
   componentWillReceiveProps(nextProps) {
@@ -34,9 +34,7 @@ class Player extends React.Component {
   }
 
   componentWillUnmount() {
-    console.log("here-1");
     if (this.interval) {
-      console.log("here");
       clearInterval(this.interval);
     }
   }
@@ -127,58 +125,60 @@ class Player extends React.Component {
     if (this.props.queue.length > 0) {
       return (
         <footer className="music-player">
-          <ReactHowler
-            src={ this.getCurrentSong().mp3_file_url }
-            playing={ this.state.playing }
-            onLoad={ this.handleOnLoad }
-            onPlay={ this.handleOnPlay }
-            onEnd={ this.handleOnEnd }
-            loop={ this.state.loop }
-            mute={ this.state.mute }
-            volume={ this.state.volume }
-            ref={(ref) => (this.player = ref)} />
-          <button onClick={ this.handleSkipBackwards }>
-            <i className="fa fa-step-backward" aria-hidden="true"></i>
-          </button>
-          <button onClick={ this.handleToggle }>
-            { this.state.playing ? <i className="fa fa-pause fa-lg" aria-hidden="true"></i> : <i className="fa fa-play fa-lg" aria-hidden="true"></i> }
-          </button>
-          <button onClick={ this.handleSkipForwards }>
-            <i className="fa fa-step-forward" aria-hidden="true"></i>
-          </button>
-          <i  className="fa fa-repeat"
+          <section className="player-content-and-buttons">
+            <ReactHowler
+              src={ this.getCurrentSong().mp3_file_url }
+              playing={ this.state.playing }
+              onLoad={ this.handleOnLoad }
+              onPlay={ this.handleOnPlay }
+              onEnd={ this.handleOnEnd }
+              loop={ this.state.loop }
+              mute={ this.state.mute }
+              volume={ this.state.volume }
+              ref={(ref) => (this.player = ref)} />
+            <button onClick={ this.handleSkipBackwards }>
+              <i className="fa fa-step-backward" aria-hidden="true"></i>
+            </button>
+            <button onClick={ this.handleToggle }>
+              { this.state.playing ? <i className="fa fa-pause fa-lg" aria-hidden="true"></i> : <i className="fa fa-play fa-lg" aria-hidden="true"></i> }
+            </button>
+            <button onClick={ this.handleSkipForwards }>
+              <i className="fa fa-step-forward" aria-hidden="true"></i>
+            </button>
+            <i  className="fa fa-repeat"
               aria-hidden="true"
               checked={ this.state.loop }
               onChange={ this.handleLoopToggle }>
-          </i>
-          <section className="player-time-info">
-            <p className="player-current-time">{ this.formatSeek() }</p>
-            <progress
-              className="player-progress-bar"
-              value={ this.state.seek }
-              max={ this.state.duration }></progress>
-            <p className="player-song-length">{ this.formatDuration() }</p>
-          </section>
-          <section className="player-volume">
-            <label>
-              <input
-                type="range"
-                min='0'
-                max='1'
-                step='.05'
-                value={ this.state.volume }
-                onChange={ e =>  this.setState({ volume: parseFloat(e.target.value) }) } />
-              Volume: { this.state.volume }
-            </label>
-          </section>
-          <section className="player-song-info">
-            <img
-              src={ this.getCurrentSong().album_artwork_url }
-              className="player-album-artwork-mini"></img>
-            <div className="player-song-title-and-user">
-              <p>{ this.getCurrentSong().title }</p>
-              <p>{ this.getCurrentSong().user.username }</p>
-            </div>
+            </i>
+            <section className="player-time-info">
+              <p className="player-current-time">{ this.formatSeek() }</p>
+              <progress
+                className="player-progress-bar"
+                value={ this.state.seek }
+                max={ this.state.duration }></progress>
+              <p className="player-song-length">{ this.formatDuration() }</p>
+            </section>
+            <section className="player-volume">
+              <label>
+                <input
+                  type="range"
+                  min='0'
+                  max='1'
+                  step='.05'
+                  value={ this.state.volume }
+                  onChange={ e =>  this.setState({ volume: parseFloat(e.target.value) }) } />
+                Volume: { this.state.volume }
+              </label>
+            </section>
+            <section className="player-song-info">
+              <img
+                src={ this.getCurrentSong().album_artwork_url }
+                className="player-album-artwork-mini"></img>
+              <div className="player-song-title-and-user">
+                <p>{ this.getCurrentSong().title }</p>
+                <p>{ this.getCurrentSong().user.username }</p>
+              </div>
+            </section>
           </section>
         </footer>
       );
