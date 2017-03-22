@@ -1,0 +1,41 @@
+input.track-detail-new-comment {
+  width: 710px;
+  height: 27px;
+  border-radius: 4px;
+  padding-left: 5px;
+  background-color: white;
+  margin-left: 10px;
+  border: 1px solid $gray;
+}
+
+img.comment-avatar {
+  width: 42px;
+  height: 42px;
+  border: 1px solid $gray;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+section.track-detail-center {
+  display: flex;
+  align-items: center;
+}
+
+.track-detail-add-comment-area {
+  display: flex;
+  flex-direction: column;
+}
+
+.comment-main {
+  display: flex;
+  flex-direction: column;
+}
+
+.comment-index-item {
+  display: flex;
+  margin: 20px 0;
+}
+
+ul.comment-index {
+  width: 782px;
+}

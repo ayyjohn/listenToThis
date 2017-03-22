@@ -21,6 +21,7 @@ class CommentIndex extends React.Component {
             placeholder="What did you think of the song?">
           </input>
         </section>
+        <h1 className="comments-header">{ this.props.comments.length } comments</h1>
         <ul className="comment-index">
           {this.props.comments.map( (comment, index) => <CommentIndexItem
           key={`comment-${comment.id}`}
