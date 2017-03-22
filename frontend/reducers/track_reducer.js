@@ -1,5 +1,5 @@
 import { merge } from 'lodash';
-import { RECEIVE_TRACK } from '../actions/track_actions';
+import { RECEIVE_TRACK, CLEAR_TRACK } from '../actions/track_actions';
 
 const TrackReducer = (state = {}, action) => {
   Object.freeze(state);
@@ -9,6 +9,8 @@ const TrackReducer = (state = {}, action) => {
     case RECEIVE_TRACK:
       newState = merge({}, newState, action.track);
       return newState;
+    case CLEAR_TRACK:
+      return {};
     default:
       return newState;
   }
