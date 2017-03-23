@@ -10,6 +10,7 @@ import SplashPage from './splash_page';
 import SignUpFormContainer from './sign_up_form_container';
 import TrackDetailContainer from './track_detail_container';
 import UpdateTrackFormContainer from './update_track_form_container';
+import UpdateUserFormContainer from './update_user_form_container';
 import UserDetailContainer from './user_detail_container';
 
 const Root = ({ store }) => {
@@ -34,11 +35,12 @@ const Root = ({ store }) => {
         <Route path="/welcome" component={ SplashPage } onEnter={ _redirectIfLoggedIn }/>
         <Route path="/" component={ AppContainer } onEnter={ _ensureLoggedIn } >
           <IndexRedirect to="/listen" />
-          <Route path="/listen" component={ LandingPageContainer } />
-          <Route path="/upload" component={ NewTrackFormContainer } />
-          <Route path="/tracks/:trackId" component={ TrackDetailContainer } />
+          <Route path="/listen" component={ LandingPageContainer }/>
+          <Route path="/upload" component={ NewTrackFormContainer }/>
+          <Route path="/tracks/:trackId" component={ TrackDetailContainer }/>
           <Route path="/tracks/:trackId/update" component={ UpdateTrackFormContainer }/>
           <Route path="/users/:userId" component={ UserDetailContainer }/>
+          <Route path="/users/:userId/update" component={ UpdateUserFormContainer }/>
         </Route>
       </Router>
     </Provider>
