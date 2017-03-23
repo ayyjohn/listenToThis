@@ -31,7 +31,7 @@ class UpdateUserForm extends React.Component {
   componentWillUnmount() {
     this.props.clearUser();
   }
-  
+
   update(field) {
     return event => this.setState({
       [field]: event.currentTarget.value
@@ -95,7 +95,7 @@ class UpdateUserForm extends React.Component {
                     onChange={ this.update("location") } />
                 </li>
                 <li>
-                  <p>Bio</p>
+                  <p className="update-user-bio-header">Bio</p>
                   <textarea
                     value={this.state.bio}
                     className="describe-your-track"
