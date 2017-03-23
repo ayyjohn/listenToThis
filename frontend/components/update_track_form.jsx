@@ -87,6 +87,7 @@ class UpdateTrackForm extends React.Component {
                   <p>Genre</p>
                   <input
                     value={this.state.genre}
+                    className="pick-your-genre"
                     type="text"
                     placeholder="Genre"
                     onChange={ this.update("genre") } />

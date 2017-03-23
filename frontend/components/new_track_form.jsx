@@ -129,6 +129,7 @@ class NewTrackForm extends React.Component {
                   <p>Genre</p>
                   <input
                     type="text"
+                    className="pick-your-genre"
                     placeholder="Genre"
                     onChange={ this.update("genre") } />
                 </li>
