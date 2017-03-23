@@ -17,6 +17,7 @@ json.set! :comments do
     json.body comment.body
     json.username comment.user.username
     json.avatar_url comment.user.avatar.url
+    json.user_id comment.user.id
   end
 end
 json.album_artwork_url @track.album_artwork.url
