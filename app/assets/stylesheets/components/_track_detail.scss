@@ -74,6 +74,10 @@ h1.track-detail-billboard-4-genre {
   margin-right: 10px;
 }
 
+.track-detail-billboard i.fa-play:hover {
+  background-color: $darker-orange;
+  cursor: pointer;
+}
 .track-detail-billboard i.fa-play:before {
   position: relative;
   left: 3px;
