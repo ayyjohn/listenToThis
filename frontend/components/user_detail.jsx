@@ -9,6 +9,7 @@ class UserDetail extends React.Component {
     this.props.getUser(this.props.params.userId);
     this.renderUserLocation = this.renderUserLocation.bind(this);
     this.renderUserBio = this.renderUserBio.bind(this);
+    this.renderUpdateLink = this.renderUpdateLink.bind(this);
   }
 
   componentWillReceiveProps(newProps) {
@@ -44,6 +45,20 @@ class UserDetail extends React.Component {
       return <div></div>;
     }
   }
+
+  renderUpdateLink() {
+    if (this.props.user.id !== this.props.currentUser.id) {
+      return <div></div>;
+    }
+    else {
+      return (
+        <Link
+          to={`/users/${ this.props.user.id }/update`}
+          className="user-detail-edit-link">Update</Link>
+      );
+    }
+  }
+
   render() {
     if (this.props.user.username) {
       return (
@@ -52,6 +67,7 @@ class UserDetail extends React.Component {
             <img
               className="user-detail-avatar"
               src={ this.props.user.avatar_url }></img>
+            { this.renderUpdateLink() }
             <section className="user-detail-1">
               <h1 className="user-detail-billboard-username">{ this.props.user.username }</h1>
               { this.renderUserLocation() }

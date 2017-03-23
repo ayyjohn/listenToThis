@@ -104,7 +104,7 @@ section.user-detail-1 {
   flex-wrap: wrap;
   width: 400px;
   flex-direction: column;
-  top: 281px;
+  top: 266px;
   right: 5vw;
   border-left: 1px solid $light-gray;
   padding: 15px;
@@ -117,4 +117,25 @@ p.user-detail-bio-header {
   color: $orange;
   font-size: 24px;
   margin-bottom: 20px;
+  padding-bottom: 7px;
+}
+
+a.user-detail-edit-link {
+  width: 60px;
+  height: 20px;
+  right: 133px;
+  position: relative;
+  top: 182px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: $lightest-gray;
+  padding: 5px 7px;
+  border-radius: 5px;
+  flex-shrink: 0;
+  flex-shrink: 0;
+}
+
+.update-user-bio-header {
+  margin-top: 5px;
 }
