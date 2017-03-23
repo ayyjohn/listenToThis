@@ -27,7 +27,9 @@ class TrackIndex extends React.Component {
             populateQueue={ () => this.props.populateQueue(this.props.tracks, index) }
             key={`track-${track.id}`}
             track={ track }
-            index={ index }/>)}
+            index={ index }
+            queue={ this.props.queue }
+            updateId={ () => this.props.updateId(track.id) }/>)}
         </ul>
       );
     }
