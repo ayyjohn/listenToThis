@@ -105,7 +105,7 @@ button.track-detail-delete-button {
 }
 
 button.track-detail-delete-button:hover {
-  color: $orange;
+  border: 1px solid $orange;
 }
 
 a.track-detail-edit-button {
@@ -122,7 +122,7 @@ a.track-detail-edit-button {
 }
 
 a.track-detail-edit-button:hover {
-  font-color: $orange;
+  border: 1px solid $orange;
 }
 
 img.track-detail-user-photo {
@@ -171,7 +171,7 @@ section.comment-index-item-1 {
 button.delete-comment-button {
   margin-right: 10px;
   padding: 3px 6px;
-  border: 1px solid black;
+  border: 1px solid $gray;
   height: 18px;
   border-radius: 5px;
 }
