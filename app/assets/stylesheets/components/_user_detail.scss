@@ -26,12 +26,14 @@ h1.user-tracks-header {
   padding-bottom: 5px;
   border-bottom: 1px solid $light-gray;
 }
-//
-// .user-detail .track-index {
-//   width: 850px;
-//   height: auto;
-//   background: white;
-// }
+
+#user-detail .track-index {
+  position: absolute;
+  top: 363px;
+  width: 1200px;
+  height: auto;
+  background: white;
+}
 
 
 .user-detail-avatar {

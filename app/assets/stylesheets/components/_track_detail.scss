@@ -94,3 +94,23 @@ h1.track-detail-billboard-4-genre {
   color: white;
   font-size: 24px;
 }
+
+.user-detail-bio {
+  z-index: 4;
+  position: absolute;
+  display: flex;
+  flex-wrap: wrap;
+  width: 400px;
+  flex-direction: column;
+  top: 380px;
+  right: 100px;
+  border: 1px solid $gray;
+  padding: 15px;
+  border-radius: 5px;
+}
+
+p.user-detail-bio-header {
+  color: $orange;
+  font-size: 24px;
+  margin-bottom: 20px;
+}

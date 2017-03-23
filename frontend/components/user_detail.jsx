@@ -8,6 +8,7 @@ class UserDetail extends React.Component {
     super(props);
     this.props.getUser(this.props.params.userId);
     this.renderUserLocation = this.renderUserLocation.bind(this);
+    this.renderUserBio = this.renderUserBio.bind(this);
   }
 
   componentWillReceiveProps(newProps) {
@@ -30,6 +31,19 @@ class UserDetail extends React.Component {
     }
   }
 
+  renderUserBio() {
+    if (this.props.user.bio) {
+      return (
+        <section className="user-detail-bio">
+          <p className="user-detail-bio-header">Bio</p>
+          <p>{ this.props.user.bio }</p>
+        </section>
+      );
+    }
+    else {
+      return <div></div>;
+    }
+  }
   render() {
     if (this.props.user.username) {
       return (
@@ -43,6 +57,7 @@ class UserDetail extends React.Component {
               { this.renderUserLocation() }
             </section>
           </section>
+          { this.renderUserBio() }
           <h1 className="user-tracks-header">Tracks</h1>
           <TrackIndexContainer
             className="user-detail-track-list" searchParam={ this.props.routeParams.userId } />
