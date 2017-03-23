@@ -56,9 +56,11 @@ class UserDetail extends React.Component {
               <h1 className="user-detail-billboard-username">{ this.props.user.username }</h1>
               { this.renderUserLocation() }
             </section>
+            { this.renderUserBio() }
           </section>
-          { this.renderUserBio() }
-          <h1 className="user-tracks-header">Tracks</h1>
+          <section className="user-tracks-header">
+            <h1 className="user-tracks-header">Tracks</h1>
+          </section>
           <TrackIndexContainer
             className="user-detail-track-list" searchParam={ this.props.routeParams.userId } />
         </section>

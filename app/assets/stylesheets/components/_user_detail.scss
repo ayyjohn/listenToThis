@@ -8,10 +8,10 @@ section#user-detail {
   display: flex;
   flex-direction: column;
   height: auto;
-  margin-bottom: 60
 }
 
 section.user-detail-billboard {
+  position: absolute;
   width: 1200px;
   height: 260px;
   background: linear-gradient(315deg, rgb(225, 229, 229) 0%, rgb(127, 125, 116) 100%);
@@ -20,13 +20,27 @@ section.user-detail-billboard {
 }
 
 h1.user-tracks-header {
+  position: absolute;
   color: $darker-orange;
   font-size: 18px;
-  margin: 15px 20px;
-  padding-bottom: 5px;
-  border-bottom: 1px solid $light-gray;
+  border-bottom: 1px solid $orange;
+  background-color: white;
+  width: 160px;
+  height: 34px;
+  z-index: 1;
 }
 
+section.user-tracks-header {
+  position: absolute;
+  top: 307px;
+  color: $darker-orange;
+  font-size: 18px;
+  padding-top: 20px;
+  padding-left: 25px;
+  background-color: white;
+  width: 1175px;
+  height: 50px;
+}
 #user-detail .track-index {
   position: absolute;
   top: 363px;
@@ -35,6 +49,9 @@ h1.user-tracks-header {
   background: white;
 }
 
+#user-detail ul.track-index-item:last-of-type {
+  padding-bottom: 60px;
+}
 
 .user-detail-avatar {
   margin-top: 30px;
@@ -78,4 +95,24 @@ section.user-detail-1 {
   display: absolute;
   top: 500px;
   background: white;
+}
+
+.user-detail-bio {
+  z-index: 4;
+  position: absolute;
+  display: flex;
+  flex-wrap: wrap;
+  width: 400px;
+  flex-direction: column;
+  top: 350px;
+  right: 5vw;
+  border: 1px solid $gray;
+  padding: 15px;
+  border-radius: 5px;
+}
+
+p.user-detail-bio-header {
+  color: $orange;
+  font-size: 24px;
+  margin-bottom: 20px;
 }
