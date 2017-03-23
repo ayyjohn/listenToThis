@@ -108,7 +108,7 @@ section.user-detail-1 {
   right: 5vw;
   border-left: 1px solid $light-gray;
   padding: 15px;
-  padding-bottom: 400px;
+  padding-bottom: 100px;
 }
 
 p.user-detail-bio-header {
@@ -121,10 +121,11 @@ p.user-detail-bio-header {
 }
 
 a.user-detail-edit-link {
+  border: 1px solid $gray;
   width: 60px;
   height: 20px;
-  right: 133px;
-  position: relative;
+  left: 92px;
+  position: absolute;
   top: 182px;
   display: flex;
   justify-content: center;
