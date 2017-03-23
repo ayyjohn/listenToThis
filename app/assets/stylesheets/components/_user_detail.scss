@@ -106,12 +106,14 @@ section.user-detail-1 {
   flex-direction: column;
   top: 281px;
   right: 5vw;
-  border: 1px solid $gray;
+  border-left: 1px solid $light-gray;
   padding: 15px;
-  border-radius: 5px;
+  padding-bottom: 400px;
 }
 
 p.user-detail-bio-header {
+  border-bottom: 1px solid $orange;
+  width: 90px;
   color: $orange;
   font-size: 24px;
   margin-bottom: 20px;
