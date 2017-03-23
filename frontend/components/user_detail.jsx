@@ -23,7 +23,7 @@ class UserDetail extends React.Component {
   }
 
   renderUserLocation() {
-    if (this.props.user.location) {
+    if (this.props.user.location.length > 1) {
       return <h1 className="user-detail-billboard-location">{ this.props.user.location }</h1>;
     }
     else {
@@ -32,7 +32,7 @@ class UserDetail extends React.Component {
   }
 
   renderUserBio() {
-    if (this.props.user.bio) {
+    if (this.props.user.bio.length > 1) {
       return (
         <section className="user-detail-bio">
           <p className="user-detail-bio-header">Bio</p>
