@@ -55,7 +55,7 @@ class SplashPage extends React.Component {
     return (
       <div className="splash-page">
         <header className="splash-nav-bar">
-          <h1 className="splash-logo">Listen to This!</h1>
+          <h1 className="splash-logo"><img id="splash-page-logo-image" src="https://s3-us-west-1.amazonaws.com/listentothis-dev/white_headphones.png" />Listen to This!</h1>
           <section className="splash-buttons">
             <button className="splash-auth-button" onClick={ this.openSignUpModal }>Sign Up</button>
             <button className="splash-auth-button" onClick={ this.openLogInModal }>Log In</button>
