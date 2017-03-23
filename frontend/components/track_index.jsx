@@ -9,6 +9,12 @@ class TrackIndex extends React.Component {
     this.props.getTracks(this.props.searchParam);
   }
 
+  componentWillReceiveProps(newProps) {
+    if (newProps.searchParam !== this.props.searchParam) {
+      this.props.getTracks(newProps.searchParam);
+    }
+  }
+
   render() {
     const { tracks } = this.props;
     if (this.props.tracks.length === 0) {
