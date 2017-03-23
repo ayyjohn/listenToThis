@@ -19,8 +19,8 @@ class UpdateUserForm extends React.Component {
         else {
           this.setState({
             username: `${res.user.username}`,
-            location: `${res.user.location}`,
-            bio: `${res.user.bio}`,
+            location: res.user.location ? `${res.user.location}` : "",
+            bio: res.user.bio ? `${res.user.bio}` : "",
             avatar: `${res.user.avatar_url}`,
           });
         }});
