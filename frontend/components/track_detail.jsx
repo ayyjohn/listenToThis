@@ -20,16 +20,15 @@ class TrackDetail extends React.Component {
   }
 
   renderDeleteAndEdit() {
-    debugger;
-    if (true) {
+    if (this.props.track.user.user_id === this.props.currentUser.id) {
       return (
         <section className="track-detail-edit-and-delete">
           <Link
             to={`/tracks/${this.props.params.trackId}/update`}
-            className={ this.props.track.user.user_id === this.props.currentUser.id ? "track-detail-edit-button" : "track-detail-edit-button-hidden"}>Edit</Link>
+            className="track-detail-edit-button">Edit</Link>
           <button
             onClick={ this.deleteTrack }
-            className={this.props.track.user.user_id === this.props.currentUser.id ? "track-detail-delete-button" : "track-detail-delete-button-hidden" }>Delete</button>
+            className="track-detail-delete-button">Delete</button>
       </section>
     );
     }
