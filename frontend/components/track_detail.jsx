@@ -8,6 +8,7 @@ class TrackDetail extends React.Component {
     this.props.getTrack(this.props.params.trackId);
     this.deleteTrack = this.deleteTrack.bind(this);
     this.renderDeleteAndEdit = this.renderDeleteAndEdit.bind(this);
+    this.addTrackToQueue = this.addTrackToQueue.bind(this);
   }
 
   componentWillUnmount() {
@@ -37,6 +38,10 @@ class TrackDetail extends React.Component {
     }
   }
 
+  addTrackToQueue() {
+    return this.props.populateQueue([this.props.track], 0);
+  }
+
   render () {
     if (this.props.track.title) {
       return (
@@ -44,7 +49,9 @@ class TrackDetail extends React.Component {
           <section className="track-detail-billboard">
             <section className="track-detail-billboard-0">
                 <section className="track-detail-billboard-1">
-                  <i className="fa fa-play fa-2x" aria-hidden="true"></i>
+                  <i className="fa fa-play fa-2x"
+                     aria-hidden="true"
+                     onClick={ this.addTrackToQueue }></i>
                     <ul className="track-detail-billboard-2">
                       <li><Link
                         to={`/users/${this.props.track.user.user_id}`}
