@@ -1,5 +1,6 @@
 import { CLEAR_QUEUE,
          POPULATE_QUEUE,
+         UPDATE_ID,
          UPDATE_INDEX,
          UPDATE_PLAYING } from '../actions/queue_actions';
 
@@ -8,7 +9,8 @@ import { merge } from 'lodash';
 const _defaultState = {
   tracks: [],
   index: null,
-  playing: true
+  playing: true,
+  id: -1
 };
 
 const QueueReducer = (state = _defaultState, action) => {
@@ -32,6 +34,9 @@ const QueueReducer = (state = _defaultState, action) => {
       return newState;
     case UPDATE_INDEX:
       newState.index = action.index;
+      return newState;
+    case UPDATE_ID:
+      newState.id = action.id;
       return newState;
     default:
       return newState;
