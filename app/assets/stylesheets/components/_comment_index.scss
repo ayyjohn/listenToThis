@@ -48,6 +48,7 @@ section.track-detail-add-comment-area {
   padding-left: 50px;
   height: auto;
   background-color: white;
+  padding-bottom: 60px;
 }
 
 section.track-detail-add-comment-box {
@@ -169,4 +170,16 @@ section.comment-index-item-1 {
 
 button.delete-comment-button {
   margin-right: 10px;
+  padding: 3px 6px;
+  border: 1px solid black;
+  height: 18px;
+  border-radius: 5px;
+}
+
+button.delete-comment-button:hover {
+  border: 1px solid $orange;
+}
+
+.comment-username {
+  color: $gray;
 }
