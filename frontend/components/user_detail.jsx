@@ -7,6 +7,7 @@ class UserDetail extends React.Component {
   constructor(props) {
     super(props);
     this.props.getUser(this.props.params.userId);
+    this.renderUserLocation = this.renderUserLocation.bind(this);
   }
 
   componentWillReceiveProps(newProps) {
@@ -20,6 +21,15 @@ class UserDetail extends React.Component {
     this.props.clearTracks();
   }
 
+  renderUserLocation() {
+    if (this.props.user.location) {
+      return <h1 className="user-detail-billboard-location">{ this.props.user.location }</h1>;
+    }
+    else {
+      return <div></div>;
+    }
+  }
+
   render() {
     if (this.props.user.username) {
       return (
@@ -30,7 +40,7 @@ class UserDetail extends React.Component {
               src={ this.props.user.avatar_url }></img>
             <section className="user-detail-1">
               <h1 className="user-detail-billboard-username">{ this.props.user.username }</h1>
-              <h1 className="user-detail-billboard-location">{ this.props.user.location }</h1>
+              { this.renderUserLocation() }
             </section>
           </section>
           <h1 className="user-tracks-header">Tracks</h1>
