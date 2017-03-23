@@ -28,6 +28,10 @@ class UpdateUserForm extends React.Component {
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
+  componentWillUnmount() {
+    this.props.clearUser();
+  }
+  
   update(field) {
     return event => this.setState({
       [field]: event.currentTarget.value
@@ -103,11 +107,9 @@ class UpdateUserForm extends React.Component {
             </ul>
             <ul className="new-track-cancel-and-save">
               <li>
-                <input
-                  type="submit"
+                <button
                   className="new-track-save-button"
-                  value="Save"
-                  onClick={ this.handleSubmit }></input>
+                  onClick={ this.handleSubmit }>Save</button>
               </li>
               <li>
                 <button
