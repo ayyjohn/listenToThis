@@ -161,13 +161,14 @@ class Player extends React.Component {
             <section className="player-volume">
               <label>
                 <input
+                  className="player-volume-controller"
                   type="range"
                   min='0'
                   max='1'
                   step='.05'
                   value={ this.state.volume }
                   onChange={ e =>  this.setState({ volume: parseFloat(e.target.value) }) } />
-                Volume: { this.state.volume }
+                Volume
               </label>
             </section>
             <section className="player-song-info">
