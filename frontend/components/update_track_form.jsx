@@ -29,6 +29,10 @@ class UpdateTrackForm extends React.Component {
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
+  componentWillUnmount() {
+    this.props.clearTrack();
+  }
+  
   update(field) {
     return event => this.setState({
       [field]: event.currentTarget.value
