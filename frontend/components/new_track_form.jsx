@@ -38,7 +38,7 @@ class NewTrackForm extends React.Component {
     formData.append("track[user_id]", this.state.user_id);
     formData.append("track[album_artwork]", this.state.album_artwork);
     formData.append("track[mp3_file]", this.state.mp3_file);
-    this.props.createTrack(formData).then((newTrack) => this.props.router.push(`/tracks/${this.props.newTrack.id}`));
+    this.props.createTrack(formData).then(res => this.props.router.push(`/tracks/${res.track.id}`));
   }
 
   updateMP3(event) {
