@@ -33,9 +33,6 @@ h1.user-tracks-header {
 //   background: white;
 // }
 
-.user-detail-section-1 {
-  display: flex;
-}
 
 .user-detail-avatar {
   margin-top: 30px;
@@ -57,13 +54,26 @@ h1.user-tracks-header {
   font-size: 24px;
 }
 
-#user-detail ul.track-index {
-  // margin-top: 260px;
-  // background-color: white;
-  // display: inline-block;
+.user-detail-billboard-location {
+  margin-top: 10px;
+  margin-left: 30px;
+  color: $lightest-gray;
+  background-color: $off-black;
+  display: flex;
+  height: 40px;
+  align-items: center;
+  padding: 0px 10px;
+  font-size: 24px;
 }
 
-section.user-detail-bio {
+section.user-detail-1 {
   display: flex;
-  height: 100px;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.user-detail-track-list {
+  display: absolute;
+  top: 500px;
+  background: white;
 }

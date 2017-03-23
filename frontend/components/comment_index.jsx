@@ -38,7 +38,9 @@ class CommentIndex extends React.Component {
             className="track-detail-user-photo" />
           <section className="track-detail-user-info-2">
             <p className="track-detail-user-info-3">Uploader: { this.props.user.username }</p>
+            <br />
             <p className="track-detail-user-info-4">Location: { this.props.user.location }</p>
+            <p className="track-detail-track-description">Description: { this.props.track.description }</p>
           </section>
         </section>
         <section className="comments-header-and-count">

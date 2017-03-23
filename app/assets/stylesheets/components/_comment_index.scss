@@ -35,6 +35,7 @@ ul.comment-index {
 
 .track-detail-user-info {
   display: flex;
+  align-items: center;
 }
 
 section.track-detail-add-comment-area {
@@ -126,6 +127,7 @@ a.track-detail-edit-button:hover {
 }
 
 img.track-detail-user-photo {
+  margin-top: 15px;
   height: 120px;
   width: 120px;
   border-radius: 50%;
@@ -133,6 +135,10 @@ img.track-detail-user-photo {
   margin-right: 20px;
 }
 
+section.track-user-detail-info-2 {
+  display: flex;
+  flex-direction: column;
+}
 p.track-detail-user-info-3 {
   margin-bottom: 10px;
   background-color: $lightest-gray;
@@ -143,8 +149,18 @@ p.track-detail-user-info-3 {
 p.track-detail-user-info-4 {
   background-color: $lightest-gray;
   padding: 5px;
+  display: inline-block;
 }
 
+p.track-detail-track-description {
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 400px;
+  margin-top: 10px;
+  background: $lightest-gray;
+  padding: 5px;
+
+}
 .comments-header-and-count {
   display: flex;
   justify-content: space-between;

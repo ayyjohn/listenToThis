@@ -28,11 +28,14 @@ class UserDetail extends React.Component {
             <img
               className="user-detail-avatar"
               src={ this.props.user.avatar_url }></img>
-            <h1
-              className="user-detail-billboard-username">{ this.props.user.username }</h1>
+            <section className="user-detail-1">
+              <h1 className="user-detail-billboard-username">{ this.props.user.username }</h1>
+              <h1 className="user-detail-billboard-location">{ this.props.user.location }</h1>
+            </section>
           </section>
           <h1 className="user-tracks-header">Tracks</h1>
-          <TrackIndexContainer searchParam={ this.props.routeParams.userId } />
+          <TrackIndexContainer
+            className="user-detail-track-list" searchParam={ this.props.routeParams.userId } />
         </section>
       );
     }

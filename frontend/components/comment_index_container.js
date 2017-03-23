@@ -7,6 +7,7 @@ import { createComment,
 
 const mapStateToProps = ({ track, session, errors }) => ({
   errors: errors.comments,
+  track: track,
   track_id: track.id,
   user: track.user,
   comments: track.comments,
