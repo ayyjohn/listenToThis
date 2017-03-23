@@ -196,13 +196,19 @@ img.new-track-album-artwork {
   flex-shrink: 0;
 }
 
-.upload-form button.new-track-save-button {
+.upload-form input.new-track-save-button {
+  width: 52px;
+  height: 26px;
+  padding: 3px 6px;
+  flex-shrink: 0;
   margin-left: 5px;
   border-radius: 5px;
   background-color: $darker-orange;
   color: white;
   flex-shrink: 0;
 }
+
+
 
 h1.mp3-file-name {
   width: 800px;

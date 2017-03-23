@@ -103,14 +103,16 @@ class UpdateUserForm extends React.Component {
             </ul>
             <ul className="new-track-cancel-and-save">
               <li>
-                <button
-                  className="new-track-cancel-button"
-                  onClick={ this.cancelAndGoBack }>Cancel</button>
+                <input
+                  type="submit"
+                  className="new-track-save-button"
+                  value="Save"
+                  onClick={ this.handleSubmit }></input>
               </li>
               <li>
                 <button
-                  className="new-track-save-button"
-                  onClick={ this.handleSubmit }>Save</button>
+                  className="new-track-cancel-button"
+                  onClick={ this.cancelAndGoBack }>Cancel</button>
               </li>
             </ul>
           </ul>
