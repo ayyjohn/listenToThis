@@ -1,10 +1,13 @@
 section#track-detail {
   margin: auto;
+  margin-top: 46px;
   background: white;
   width: 1200px;
   font-family: $sans-serif;
   display: flex;
   flex-direction: column;
+  justify-content: flex-start;
+  background-color: white;
 }
 
 #track-detail a:hover {
@@ -12,10 +15,8 @@ section#track-detail {
 }
 
 section.track-detail-billboard {
-  margin-top: 46px;
   height: 380px;
   background: linear-gradient(135deg, rgb(138, 86, 129) 0%, rgb(40, 32, 44) 100%);
-  margin-bottom: 150px;
 }
 
 img.track-detail-album-artwork {
@@ -92,71 +93,4 @@ h1.track-detail-billboard-4-genre {
   background-color: $off-black;
   color: white;
   font-size: 24px;
-}
-
-section.track-detail-add-comment-area {
-  display: flex;
-  margin: 10px 0;
-  padding: 20px 0;
-  padding-left: 30px;
-  width: 813px;
-  align-items: center;
-  border-right: 1px solid $light-gray;
-}
-
-section.track-detail-add-comment-box {
-  display: flex;
-  align-items: center;
-  background-color: $comment-box-gray;
-  padding-right: 10px;
-  border: 1px solid $gray;
-}
-
-input.track-detail-new-comment {
-  width: 710px;
-  height: 27px;
-  border-radius: 4px;
-  padding-left: 5px;
-  background-color: white;
-  margin-left: 10px;
-  border: 1px solid $gray;
-}
-
-img.track-detail-add-comment-user-picture {
-  width: 42px;
-  height: 42px;
-  border-right: 1px solid $gray;
-}
-
-section.track-detail-center {
-  display: flex;
-  align-items: center;
-}
-
-section.track-detail-edit-and-delete {
-  width: 358px;
-  display: flex;
-  justify-content: center;
-}
-section.track-detail-edit-and-delete-hidden {
-  display: none;
-}
-
-button.track-detail-delete-button {
-  padding: 5px 8px;
-  border: 1px solid $gray;
-  border-radius: 5px;
-  margin-left: 10px;
-}
-
-a.track-detail-edit-button {
-  padding: 5px 8px;
-  border: 1px solid $gray;
-  border-radius: 5px;
-}
-
-img.track-detail-user-photo {
-  height: 120px;
-  width: 120px;
-  border-radius: 50%;
 }

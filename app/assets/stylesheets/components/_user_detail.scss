@@ -7,6 +7,8 @@ section#user-detail {
   background-color: white;
   display: flex;
   flex-direction: column;
+  height: auto;
+  margin-bottom: 60
 }
 
 section.user-detail-billboard {
@@ -17,10 +19,6 @@ section.user-detail-billboard {
   flex-shrink: 0;
 }
 
-section.user-detail-section-1 {
-  background: white;
-}
-
 h1.user-tracks-header {
   color: $darker-orange;
   font-size: 18px;
@@ -28,10 +26,12 @@ h1.user-tracks-header {
   padding-bottom: 5px;
   border-bottom: 1px solid $light-gray;
 }
-
-.user-detail .track-index {
-  width: 850px;
-}
+//
+// .user-detail .track-index {
+//   width: 850px;
+//   height: auto;
+//   background: white;
+// }
 
 .user-detail-section-1 {
   display: flex;
@@ -59,6 +59,11 @@ h1.user-tracks-header {
 
 #user-detail ul.track-index {
   // margin-top: 260px;
-  background-color: white;
+  // background-color: white;
   // display: inline-block;
+}
+
+section.user-detail-bio {
+  display: flex;
+  height: 100px;
 }
