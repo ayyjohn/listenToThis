@@ -152,13 +152,13 @@ class NewTrackForm extends React.Component {
             <ul className="new-track-cancel-and-save">
               <li>
                 <button
-                  className="new-track-cancel-button"
-                  onClick={ this.cancelAndGoBack }>Cancel</button>
+                  className="new-track-save-button"
+                  onClick={ this.handleSubmit }>Save</button>
               </li>
               <li>
                 <button
-                  className="new-track-save-button"
-                  onClick={ this.handleSubmit }>Save</button>
+                  className="new-track-cancel-button"
+                  onClick={ this.cancelAndGoBack }>Cancel</button>
               </li>
             </ul>
           </ul>
