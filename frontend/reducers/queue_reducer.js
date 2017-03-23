@@ -1,12 +1,14 @@
 import { CLEAR_QUEUE,
          POPULATE_QUEUE,
-         UPDATE_INDEX } from '../actions/queue_actions';
+         UPDATE_INDEX,
+         UPDATE_PLAYING } from '../actions/queue_actions';
 
 import { merge } from 'lodash';
 
 const _defaultState = {
   tracks: [],
-  index: 0
+  index: 0,
+  playing: true
 };
 
 const QueueReducer = (state = _defaultState, action) => {
@@ -17,12 +19,16 @@ const QueueReducer = (state = _defaultState, action) => {
     case CLEAR_QUEUE:
       newState = {
         tracks: [],
-        index: 0
+        index: 0,
+        playing: false
       };
       return newState;
     case POPULATE_QUEUE:
       newState.tracks = action.tracks;
       newState.index = action.index;
+      return newState;
+    case UPDATE_PLAYING:
+      newState.playing = !newState.playing;
       return newState;
     case UPDATE_INDEX:
       newState.index = action.index;

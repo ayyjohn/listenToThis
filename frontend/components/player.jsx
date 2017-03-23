@@ -24,7 +24,7 @@ class Player extends React.Component {
       this.setState({
         index: nextProps.index,
         queue: nextProps.queue,
-        playing: true,
+        playing: nextProps.playing,
         loop: false,
         mute: false,
         volume: 1.0,
@@ -63,6 +63,7 @@ class Player extends React.Component {
     this.setState({
       playing: !this.state.playing
     });
+    this.props.updatePlaying();
   }
 
   handleOnLoad() {
