@@ -31,7 +31,7 @@ a.track-index-track-title {
   color: black;
 }
 
-.track-index-item i.fa-play {
+.track-index-item i.fa-play, .track-index-item i.fa-pause {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -43,7 +43,7 @@ a.track-index-track-title {
   margin-right: 5px;
 }
 
-.track-index-item i.fa-play:hover {
+.track-index-item i.fa-play:hover, .track-index-item i.fa-pause:hover {
   cursor: pointer;
   background-color: $darker-orange;
 }
