@@ -29,7 +29,6 @@ class Player extends React.Component {
         mute: false,
         volume: 1.0,
         html5: true,
-        loaded: true
       });
     }
     if (nextProps.index !== this.props.index && this.props.index) {
