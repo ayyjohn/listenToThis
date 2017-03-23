@@ -29,7 +29,15 @@ class Player extends React.Component {
         mute: false,
         volume: 1.0,
         html5: true,
+        loaded: true
       });
+    }
+    if (nextProps.index !== this.props.index && this.props.index) {
+      this.setState({
+        loaded: false,
+        playing: true
+      });
+      this.props.updatePlaying(true);
     }
   }
 
@@ -63,20 +71,25 @@ class Player extends React.Component {
     this.setState({
       playing: !this.state.playing
     });
-    this.props.updatePlaying();
+    this.props.updatePlaying(!this.state.playing);
   }
 
   handleOnLoad() {
     this.setState({
+      loaded: true,
       duration: this.player.duration()
     });
+    this.renderSeekPos();
+    if (this.interval) {
+      clearInterval(this.interval);
+    }
+    this.interval = setInterval(this.renderSeekPos, 1000);
   }
 
   handleOnPlay() {
     this.setState({
       playing: true
     });
-    this.interval = setInterval(this.renderSeekPos, 1000);
   }
 
   handleOnEnd() {
@@ -103,19 +116,29 @@ class Player extends React.Component {
   }
 
   formatDuration() {
-    let songLength = Math.round(this.state.duration);
-    let mins = Math.floor(songLength / 60);
-    let secs = songLength % 60;
-    if (secs < 10) { secs = `0${secs}`; }
-    return `${mins}:${secs}`;
+    if (this.state.loaded) {
+      let songLength = Math.round(this.state.duration);
+      let mins = Math.floor(songLength / 60);
+      let secs = songLength % 60;
+      if (secs < 10) { secs = `0${secs}`; }
+      return `${mins}:${secs}`;
+    }
+    else {
+      return "";
+    }
   }
 
   formatSeek() {
-    let currentTime = Math.floor(this.state.seek);
-    let mins = Math.floor(currentTime / 60);
-    let secs = currentTime % 60;
-    if (secs < 10) { secs = `0${secs}`; }
-    return `${mins}:${secs}`;
+    if (this.state.loaded) {
+      let currentTime = Math.floor(this.state.seek);
+      let mins = Math.floor(currentTime / 60);
+      let secs = currentTime % 60;
+      if (secs < 10) { secs = `0${secs}`; }
+      return `${mins}:${secs}`;
+    }
+    else {
+      return "";
+    }
   }
 
   getCurrentSong() {

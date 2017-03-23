@@ -12,7 +12,7 @@ const mapStateToProps = ({ queue }) => ({
 
 const mapDispatchToProps = dispatch => ({
   updateIndex: index => dispatch(updateIndex(index)),
-  updatePlaying: () => dispatch(updatePlaying())
+  updatePlaying: playing => dispatch(updatePlaying(playing))
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(Player);

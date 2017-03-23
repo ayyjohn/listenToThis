@@ -14,8 +14,9 @@ export const updateIndex = index => ({
   index
 });
 
-export const updatePlaying = () => ({
-  type: UPDATE_PLAYING
+export const updatePlaying = playing => ({
+  type: UPDATE_PLAYING,
+  playing
 });
 
 export const clearQueue = () => ({
