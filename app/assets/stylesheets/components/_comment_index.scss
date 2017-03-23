@@ -39,14 +39,15 @@ ul.comment-index {
 
 section.track-detail-add-comment-area {
   display: flex;
+  position: absolute;
+  top: 466px;
   flex-direction: column;
-  padding: 20px 0;
-  padding-left: 30px;
-  width: 813px;
-  align-items: center;
-  border-right: 1px solid $light-gray;
+  width: 1150px;
+  align-items: flex-start;
   margin-top: 0;
+  padding-left: 50px;
   height: auto;
+  background-color: white;
 }
 
 section.track-detail-add-comment-box {
@@ -56,6 +57,7 @@ section.track-detail-add-comment-box {
   padding-right: 10px;
   border: 1px solid $gray;
   margin-top: 0px;
+  margin-bottom: 10px;
 }
 
 input.track-detail-new-comment {
@@ -77,17 +79,15 @@ img.track-detail-add-comment-user-picture {
 section.track-detail-center {
   display: flex;
   align-items: center;
-  margin: 10px 0;
-  height: 100%;
+  height: 1000px;
 }
 
 section.track-detail-edit-and-delete {
-  width: 358px;
+  width: 1200px;
   display: flex;
-  justify-content: center;
-}
-section.track-detail-edit-and-delete-hidden {
-  display: none;
+  justify-content: flex-end;
+  height: 40px;
+  align-items: center;
 }
 
 button.track-detail-delete-button {
@@ -95,16 +95,78 @@ button.track-detail-delete-button {
   border: 1px solid $gray;
   border-radius: 5px;
   margin-left: 10px;
+  margin-right: 20px;
+  width: 50px;
+  height: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+button.track-detail-delete-button:hover {
+  color: $orange;
 }
 
 a.track-detail-edit-button {
   padding: 5px 8px;
   border: 1px solid $gray;
   border-radius: 5px;
+  margin-left: 10px;
+  margin-right: 20px;
+  width: 50px;
+  height: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+a.track-detail-edit-button:hover {
+  font-color: $orange;
 }
 
 img.track-detail-user-photo {
   height: 120px;
   width: 120px;
   border-radius: 50%;
+  margin-bottom: 20px;
+  margin-right: 20px;
+}
+
+p.track-detail-user-info-3 {
+  margin-bottom: 10px;
+  background-color: $lightest-gray;
+  display: inline-block;
+  padding: 5px;
+}
+
+p.track-detail-user-info-4 {
+  background-color: $lightest-gray;
+  padding: 5px;
+}
+
+.comments-header-and-count {
+  display: flex;
+  justify-content: space-between;
+  width: 782px;
+  padding-bottom: 4px;
+  border-bottom: 1px solid $gray;
+  align-items: center;
+  margin-bottom: 15px;
+}
+.comments-header {
+  color: $orange;
+  font-size: 24px;
+}
+
+section.comment-index-item {
+  display: flex;
+  justify-content: space-between;
+}
+
+section.comment-index-item-1 {
+  display: flex;
+}
+
+button.delete-comment-button {
+  margin-right: 10px;
 }
