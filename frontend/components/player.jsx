@@ -65,12 +65,18 @@ class Player extends React.Component {
 
   handleSkipBackwards() {
     let index = this.state.index;
-    if (this.state.index > 0) {
-      this.setState({
-        index: this.state.index - 1
-      });
-      this.props.updateIndex(index - 1);
-      this.props.updateId(this.getPreviousSong().id);
+    if (this.state.seek > 6) {
+      this.player.stop();
+      this.player.play();
+    }
+    else {
+      if (this.state.index > 0) {
+        this.setState({
+          index: this.state.index - 1
+        });
+        this.props.updateIndex(index - 1);
+        this.props.updateId(this.getPreviousSong().id);
+      }
     }
   }
 
