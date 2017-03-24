@@ -5,12 +5,6 @@ import Modal from 'react-modal';
 import LogInFormContainer from './log_in_form_container';
 import SignUpFormContainer from './sign_up_form_container';
 
-const fadeStyles = {
-  overlay: {
-    backgroundColor: 'rgba(255, 255, 255, 0)'
-  }
-};
-
 class SplashPage extends React.Component {
 
   constructor(props) {
@@ -66,20 +60,20 @@ class SplashPage extends React.Component {
           <Link id="splash-get-started" onClick={ this.openSignUpModal }>Get Started</Link>
         </section>
         <Modal
+          overlayClassName={ this.state.signUpModalIsShown ? "splash-sign-up-overlay-show" : "splash-sign-up-overlay-hide" }
           className={ this.state.signUpModalIsShown ? "splash-sign-up-modal-show" : "splash-sign-up-modal-hide" }
           isOpen={ this.state.signUpModalIsOpen }
           onRequestClose={ this.closeSignUpModal }
           contentLabel="Modal"
-          style={ fadeStyles }
           >
           <SignUpFormContainer />
         </Modal>
         <Modal
+          overlayClassName={ this.state.logInModalIsShown? "splash-log-in-overlay-show" : "splash-log-in-overlay-hide" }
           className={this.state.logInModalIsShown ? "splash-log-in-modal-show" : "splash-log-in-modal-hide" }
           isOpen={ this.state.logInModalIsOpen }
           onRequestClose={ this.closeLogInModal }
           contentLabel="Modal"
-          style={ fadeStyles }
           >
           <LogInFormContainer />
         </Modal>

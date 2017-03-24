@@ -10,16 +10,44 @@
   border-radius: 5%;
   font-family: $sans-serif;
   font-size: 18px;
+  opacity: 1;
 }
 
 .splash-sign-up-modal-hide {
-  transition: opacity 1s;
-  opacity: 0;
+  position: fixed;
+  top: -1000px;
+  left: calc(100vw - 50% - 227px);
+  transition: top .7s;
 }
 
 .splash-sign-up-modal-show {
-  transition: opacity 1s;
+  position: fixed;
+  top: calc(100vh - 50% - 177px);
+  left: calc(100vw - 50% - 227px);
+  transition: top .7s;
+  z-index: 10;
   opacity: 1;
+}
+
+
+.splash-sign-up-overlay-show {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  background-color: rgba(255,255,255, .75);
+  transition: background-color .4s;
+}
+
+.splash-sign-up-overlay-hide {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  background-color: rgba(255,255,255, 0);
+  transition: background-color .4s;
 }
 
 input.signup-submit {

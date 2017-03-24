@@ -1,7 +1,4 @@
 .login-form {
-  // position: fixed;
-  // top: calc(100vh - 50% - 200px);
-  // left: calc(100vw - 50% - 232px);
   background: white;
   height: 350px;
   width: 450px;
@@ -16,13 +13,40 @@
 }
 
 .splash-log-in-modal-hide {
-  opacity: 0;
-  transition: opacity .75s;
+  position: fixed;
+  top: -1000px;
+  left: calc(100vw - 50% - 227px);
+  transition: top .7s;
 }
 
 .splash-log-in-modal-show {
+  position: fixed;
+  top: calc(100vh - 50% - 177px);
+  left: calc(100vw - 50% - 227px);
+  transition: top .7s;
+  z-index: 10;
   opacity: 1;
-  transition: opacity .75s;
+}
+
+
+.splash-log-in-overlay-show {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  background-color: rgba(255,255,255, .75);
+  transition: background-color .4s;
+}
+
+.splash-log-in-overlay-hide {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  background-color: rgba(255,255,255, 0);
+  transition: background-color .4s;
 }
 
 input.login-submit {
