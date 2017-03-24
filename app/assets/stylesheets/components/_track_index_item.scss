@@ -57,6 +57,10 @@ a.track-index-track-title {
   border: 1px solid $medium-gray;
 }
 
+.track-index-item i.fa-pause:hover {
+  cursor: pointer;
+}
+
 .track-index-item i.fa-play:hover {
   cursor: pointer;
   background-color: $darker-orange;

@@ -29,6 +29,7 @@ class TrackIndex extends React.Component {
             track={ track }
             index={ index }
             queue={ this.props.queue }
+            updatePlaying={ this.props.updatePlaying }
             updateId={ () => this.props.updateId(track.id) }/>)}
         </ul>
       );

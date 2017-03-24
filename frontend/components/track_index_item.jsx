@@ -11,6 +11,9 @@ class TrackIndexItem extends React.Component {
   populateQueueAndUpdateId() {
     this.props.populateQueue();
     this.props.updateId();
+    if (this.props.queue.index !== -1) {
+      this.props.updatePlaying(!this.props.queue.playing);
+    }
   }
 
   renderPlayPause() {
