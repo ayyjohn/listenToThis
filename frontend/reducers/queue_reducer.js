@@ -8,7 +8,7 @@ import { merge } from 'lodash';
 
 const _defaultState = {
   tracks: [],
-  index: null,
+  index: -1,
   playing: true,
   id: -1
 };

@@ -16,6 +16,8 @@ class Player extends React.Component {
     this.formatDuration = this.formatDuration.bind(this);
     this.formatSeek = this.formatSeek.bind(this);
     this.getCurrentSong = this.getCurrentSong.bind(this);
+    this.getNextSong = this.getNextSong.bind(this);
+    this.getPreviousSong = this.getPreviousSong.bind(this);
     this.interval = null;
   }
 
@@ -31,7 +33,7 @@ class Player extends React.Component {
         html5: true,
       });
     }
-    if (nextProps.index !== this.props.index && this.props.index) {
+    if (this.props.index !== -1 && nextProps.index !== this.props.index) {
       this.setState({
         loaded: false,
         playing: true
@@ -53,6 +55,7 @@ class Player extends React.Component {
         index: this.state.index + 1
       });
       this.props.updateIndex(index + 1);
+      this.props.updateId(this.getNextSong().id);
     }
   }
 
@@ -63,6 +66,7 @@ class Player extends React.Component {
         index: this.state.index - 1
       });
       this.props.updateIndex(index - 1);
+      this.props.updateId(this.getPreviousSong().id);
     }
   }
 
@@ -142,6 +146,14 @@ class Player extends React.Component {
 
   getCurrentSong() {
     return this.state.queue[this.state.index];
+  }
+
+  getPreviousSong() {
+    return this.state.queue[this.state.index - 1];
+  }
+
+  getNextSong() {
+    return this.state.queue[this.state.index + 1];
   }
 
   render() {
