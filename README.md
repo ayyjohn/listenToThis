@@ -1,5 +1,5 @@
 # ListenToThis
-[Live Version](www.listentothis.media)
+[Live Version](http://www.listentothis.media)
 
 ListenToThis is a full stack web application made for people who love to find new music and who love to share what they've found. It uses Ruby on Rails with Postgres for a backend to store links to songs on AWS and the frontend is curated using React.js following Redux flow. ListenToThis was inspired by the idea that many good streaming sites currently do not have a good community for discovery and their algorithms are generally not particularly good at helping a user branch out. ListenToThis provides a constant stream of music being uploaded to sample as well as pages for each song where the uploader and commenters can point future listeners to music that they think others would like. It runs because it is held up by a community of users who all enjoy the feeling of sharing music that they love with others.
 
