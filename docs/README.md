@@ -62,5 +62,4 @@ reset while navigating other pages unless a new song is selected
 ### Bonus Features (TBD)
 - [ ] Wave Forms
 - [ ] Search
-- [ ] Playlists
-- [ ] Likes
+- [ ] Related Tracks Webs
