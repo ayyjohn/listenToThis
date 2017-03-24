@@ -27,11 +27,24 @@ class SignUpForm extends React.Component {
 
   guestLogin(event) {
     event.preventDefault();
+    let demoLogin = "guest_user123".split('');
+    let demoPassword = "aLongerPass".split('');
     this.setState({
-      username: "guest",
-      password: "password"
+      username: "",
+      password: ""
     });
-    setTimeout(() => this.props.logIn(this.state), 0);
+    let interval = setInterval( () => {
+      if (demoLogin.length) {
+        this.setState({ username: this.state.username + demoLogin.shift()});
+      }
+      else if (demoPassword.length) {
+        this.setState({ password: this.state.password + demoPassword.shift()});
+      }
+      else {
+        clearInterval(interval);
+        this.props.logIn(this.state);
+      }
+    }, 100);
   }
 
   handleSubmit(event) {
