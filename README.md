@@ -1,6 +1,6 @@
 # ListenToThis
-[Live Version][Live Version]
-[Live Version]: www.listentothis.media
+[Live Version][live_version]
+[live_version]: www.listentothis.media
 
 ListenToThis is a full stack web application made for people who love to find new music and who love to share what they've found. It uses Ruby on Rails with Postgres for a backend to store links to songs on AWS and the frontend is curated using React.js following Redux flow. ListenToThis was inspired by the idea that many good streaming sites currently do not have a good community for discovery and their algorithms are generally not particularly good at helping a user branch out. ListenToThis provides a constant stream of music being uploaded to sample as well as pages for each song where the uploader and commenters can point future listeners to music that they think others would like. It runs because it is held up by a community of users who all enjoy the feeling of sharing music that they love with others.
 
@@ -62,9 +62,40 @@ renderPlayPause() {
     return <i className="fa fa-play fa-lg" aria-hidden="true"></i>;
   }
 }
-
 ```
 
+### Live Preview of Uploaded Album Artwork
+![not_live](https://s3-us-west-1.amazonaws.com/listentothis-pro/not_preview.png)
+
+![live_preview](https://s3-us-west-1.amazonaws.com/listentothis-pro/live_preview.png)
+
+When uploading a track it only makes sense that the user would be able to tell what photo they're uploading. With MP3s, the file name is usually descriptive enough, but often times photos names are much less descriptive, and the last thing that a user wants is to upload the wrong album artwork. The upload form on ListenToThis provides a previewed image by parsing the file immediately using `fileReader`, in addition to the storage on AWS once the track is actually submitted.
+
+```javascript
+<label className="choose-album-artwork-label"><i className="fa fa-camera" aria-hidden="true"></i>Update image
+  <input
+    className="choose-album-artwork-input"
+    type="file"
+    onChange={ this.updateAlbumArtwork }/>
+</label>
+  <img
+    src={ this.state.album_artwork_url }
+    className="new-track-album-artwork"/>
+```
+
+```javascript
+updateAlbumArtwork(event) {
+  let artwork = event.currentTarget.files[0];
+  let fileReader = new FileReader();
+  fileReader.onloadend = () => {
+    this.setState({ album_artwork: artwork, album_artwork_url: fileReader.result });
+  };
+
+  if (artwork) {
+    fileReader.readAsDataURL(artwork);
+  }
+}
+```
 ## Future Plans
 ### Waveforms
 Since the site is styled after SoundCloud the styling feels a bit empty without the classic SoundCloud waveforms. I plan to use a waveform generator to parse songs on upload and store the waveform in the database in the tracks table. Then on display all tracks will show their waveform in the index and on their detail page. In addition, I would like to make this waveform the background of a progress bar that fills synchronously with the playback of the current song similar to how SoundCloud does.
