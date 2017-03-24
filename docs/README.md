@@ -46,7 +46,7 @@ sufficient CSS styling:
 **Objective:** Songs can be created, read, edited and destroyed through
 the API.
 
-### Phase 3: Music Player (2 days, W2 F 6pm)
+### Phase 3: Music Player (2 days, W1 F 6pm)
 
 **Objective:** A music player API will be locked to the bottom of the page and not
 reset while navigating other pages unless a new song is selected
@@ -55,11 +55,12 @@ reset while navigating other pages unless a new song is selected
 
 **Objective:** Users can comment on songs.
 
-### Phase 5: User Pages (2 days, W2 F 6pm)
+### Phase 5: User Pages (2 days, W2 F 4:15pm)
 
 **Objective:** Songs belong to Users that can be created, read, edited and destroyed through the API.
 
 ### Bonus Features (TBD)
 - [ ] Wave Forms
+- [ ] Search
 - [ ] Playlists
 - [ ] Likes
