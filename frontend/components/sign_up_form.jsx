@@ -44,7 +44,7 @@ class SignUpForm extends React.Component {
         clearInterval(interval);
         this.props.logIn(this.state);
       }
-    }, 100);
+    }, 80);
   }
 
   handleSubmit(event) {
