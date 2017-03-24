@@ -31,7 +31,7 @@ a.track-index-track-title {
   color: black;
 }
 
-.track-index-item i.fa-play, .track-index-item i.fa-pause {
+.track-index-item i.fa-play {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -41,9 +41,23 @@ a.track-index-track-title {
   background-color: $orange;
   color: white;
   margin-right: 5px;
+  border: 1px solid $medium-gray;
 }
 
-.track-index-item i.fa-play:hover, .track-index-item i.fa-pause:hover {
+.track-index-item i.fa-pause {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 100%;
+  background-color: white;
+  color: $darker-orange;
+  margin-right: 5px;
+  border: 1px solid $medium-gray;
+}
+
+.track-index-item i.fa-play:hover {
   cursor: pointer;
   background-color: $darker-orange;
 }
