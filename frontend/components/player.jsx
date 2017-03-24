@@ -181,7 +181,9 @@ class Player extends React.Component {
             <button onClick={ this.handleSkipBackwards }>
               <i className="fa fa-step-backward" aria-hidden="true"></i>
             </button>
-            <button onClick={ this.handleToggle }>
+            <button
+              className="player-play-pause-button"
+              onClick={ this.handleToggle }>
               { this.state.playing ? <i className="fa fa-pause fa-lg" aria-hidden="true"></i> : <i className="fa fa-play fa-lg" aria-hidden="true"></i> }
             </button>
             <button onClick={ this.handleSkipForwards }>
