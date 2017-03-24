@@ -3,7 +3,6 @@ footer.music-player {
   position: fixed;
   bottom: 0;
   display: flex;
-  flex-shrink: 0;
   height: 60px;
   background: $light-gray;
   justify-content: center;
@@ -11,6 +10,7 @@ footer.music-player {
   border-top: 1px solid $gray;
   font-family: $sans-serif;
   right: 14px;
+  left: 0px;
 }
 
 section.player-content-and-buttons {
@@ -21,8 +21,8 @@ section.player-content-and-buttons {
   background: $light-gray;
   justify-content: space-between;
   align-items: center;
-  border-top: 1px solid $gray;
   font-family: $sans-serif;
+  // left: 0px;
   right: 14px;
 }
 
