@@ -1,8 +1,10 @@
 footer.music-player {
   width: 100%;
+  min-width: 1200px;
   position: fixed;
   bottom: 0;
   display: flex;
+  flex-shrink: 0;
   height: 60px;
   background: $light-gray;
   justify-content: center;
@@ -67,8 +69,4 @@ section.player-song-info {
 
 input.player-volume-controller {
   margin-right: 5px;
-}
-
-button.player-play-pause-button {
-  width: 15px;
 }
