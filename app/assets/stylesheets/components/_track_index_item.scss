@@ -40,8 +40,8 @@ a.track-index-track-title {
   border-radius: 100%;
   background-color: $orange;
   color: white;
-  margin-right: 5px;
-  border: 1px solid $medium-gray;
+  margin-right: 10px;
+  border: 2px solid $orange;
 }
 
 .track-index-item i.fa-pause {
@@ -53,8 +53,8 @@ a.track-index-track-title {
   border-radius: 100%;
   background-color: white;
   color: $darker-orange;
-  margin-right: 5px;
-  border: 1px solid $medium-gray;
+  margin-right: 10px;
+  border: 2px solid $orange;
 }
 
 .track-index-item i.fa-pause:hover {
@@ -69,4 +69,9 @@ a.track-index-track-title {
 .track-index-item i.fa-play:before {
   position: relative;
   left: 3px;
+}
+
+.track-index-item i.fa-pause:before {
+  position: relative;
+  left: 1px;
 }
