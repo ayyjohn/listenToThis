@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactHowler from 'react-howler';
+import { Link, withRouter } from 'react-router';
 
 class Player extends React.Component {
   constructor(props) {
@@ -39,10 +40,6 @@ class Player extends React.Component {
         playing: true
       });
       this.props.updatePlaying(true);
-      // if (this.player) {
-      //   this.player.stop();
-      //   this.player.play();
-      // }
     }
   }
 
@@ -190,7 +187,7 @@ class Player extends React.Component {
             <button onClick={ this.handleSkipForwards }>
               <i className="fa fa-step-forward" aria-hidden="true"></i>
             </button>
-            <i  className="fa fa-repeat"
+            <i className="fa fa-repeat"
               aria-hidden="true"
               checked={ this.state.loop }
               onChange={ this.handleLoopToggle }>
@@ -217,12 +214,14 @@ class Player extends React.Component {
               </label>
             </section>
             <section className="player-song-info">
-              <img
-                src={ this.getCurrentSong().album_artwork_url }
-                className="player-album-artwork-mini"></img>
+              <Link to={ `tracks/${ this.getCurrentSong().id }`}>
+                <img
+                  src={ this.getCurrentSong().album_artwork_url }
+                  className="player-album-artwork-mini"></img>
+              </Link>
               <div className="player-song-title-and-user">
-                <p>{ this.getCurrentSong().title }</p>
-                <p>{ this.getCurrentSong().user.username }</p>
+                <Link to={ `tracks/${ this.getCurrentSong().id }` }><p>{ this.getCurrentSong().title }</p></Link>
+                <Link to={ `users/${ this.getCurrentSong().user.user_id }` }><p>{ this.getCurrentSong().user.username }</p></Link>
               </div>
             </section>
           </section>
@@ -235,4 +234,4 @@ class Player extends React.Component {
   }
 }
 
-export default Player;
+export default withRouter(Player);
