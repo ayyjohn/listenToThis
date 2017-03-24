@@ -62,7 +62,7 @@ h1.track-detail-billboard-4-genre {
   padding: 4px 8px;
   border-radius: 13px;
 }
-.track-detail-billboard i.fa-play {
+.track-detail-billboard i.fa-play, .track-detail-billboard i.fa-pause {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -74,7 +74,7 @@ h1.track-detail-billboard-4-genre {
   margin-right: 10px;
 }
 
-.track-detail-billboard i.fa-play:hover {
+.track-detail-billboard i.fa-play:hover, .track-detail-billboard i.fa-pause:hover {
   background-color: $darker-orange;
   cursor: pointer;
 }
@@ -82,6 +82,11 @@ h1.track-detail-billboard-4-genre {
 .track-detail-billboard i.fa-play:before {
   position: relative;
   left: 3px;
+}
+
+.track-detail-billboard i.fa-pause:before {
+  position: relative;
+  left: 1px;
 }
 
 .track-detail-billboard-username {
