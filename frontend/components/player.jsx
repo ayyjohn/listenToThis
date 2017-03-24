@@ -39,6 +39,10 @@ class Player extends React.Component {
         playing: true
       });
       this.props.updatePlaying(true);
+      // if (this.player) {
+      //   this.player.stop();
+      //   this.player.play();
+      // }
     }
   }
 
