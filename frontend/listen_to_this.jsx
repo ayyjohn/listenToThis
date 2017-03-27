@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 
 import configureStore from './store/store';
 import Root from './components/root';
-import { createTrack } from './actions/track_actions';
+// import { createTrack } from './actions/track_actions';
 // import { logIn, logOut, signUp } from './actions/session_actions';
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -16,11 +16,11 @@ document.addEventListener('DOMContentLoaded', () => {
   else {
     store = configureStore();
   }
-  window.store = store;
+  // window.store = store;
   ReactDOM.render(<Root store={ store } />, root);
 });
 
 // window.logIn = logIn;
 // window.logOut = logOut;
 // window.signUp = signUp;
-window.createTrack = createTrack;
+// window.createTrack = createTrack;
