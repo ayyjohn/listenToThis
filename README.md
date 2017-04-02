@@ -33,7 +33,7 @@ ListenToThis is a full stack web application made for people who love to find ne
 ## Feature Implementation Highlights
 
 ### Continuous Music Playback with Queues
-![player_and_playing](https://s3-us-west-1.amazonaws.com/listentothis-pro/player_and_playing.png)
+![player_and_playing](https://s3-us-west-1.amazonaws.com/listentothis-dev/playback.gif)
 
 The music player shows up immediately on playing a song, and retains whatever the next song to play was at that moment. This means that until the user actually tries to play a new set of songs the next and back buttons will navigate through the queue that they initially clicked on, the same as on Google Music or Spotify. This is accomplished by giving each track in the list a `populateQueue` function that closes over what the queue was at that point in time, as well as the index of the track in that queue. This way, when the player is initialized, it has the index of the song it should start at, and if that song is NOT the first song in the queue, the back button will skip back to the previous song, even if the previous song was never played.
 
@@ -64,9 +64,7 @@ renderPlayPause() {
 ```
 
 ### Live Preview of Uploaded Album Artwork
-![not_live](https://s3-us-west-1.amazonaws.com/listentothis-pro/not_preview.png)
-
-![live_preview](https://s3-us-west-1.amazonaws.com/listentothis-pro/live_preview.png)
+![live_preview](https://s3-us-west-1.amazonaws.com/listentothis-dev/upload.gif)
 
 When uploading a track it only makes sense that the user would be able to tell what photo they're uploading. With MP3s, the file name is usually descriptive enough, but often times photos names are much less descriptive, and the last thing that a user wants is to upload the wrong album artwork. The upload form on ListenToThis provides a previewed image by parsing the file immediately using `fileReader`, in addition to the storage on AWS once the track is actually submitted.
 
