@@ -49,6 +49,17 @@ section.user-tracks-header {
   background: white;
 }
 
+#user-detail .nothing-here {
+  position: relative;
+  top: 350px;
+  width: 500px;
+  height: auto;
+  background: white;
+  left: 25px;
+  color: $darker-orange;
+  font-size: 32px;
+}
+
 #user-detail ul.track-index-item:last-of-type {
   padding-bottom: 60px;
 }

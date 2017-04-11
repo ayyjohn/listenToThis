@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router';
 
 import TrackIndexItem from './track_index_item';
 import { selectMP3s } from '../reducers/selectors';
@@ -18,7 +19,7 @@ class TrackIndex extends React.Component {
   render() {
     const { tracks } = this.props;
     if (this.props.tracks.length === 0) {
-      return (<div></div>);
+      return (<h1 className="nothing-here">Nothing here yet... <br/> Try <strong><Link to="/upload">uploading</Link></strong> something!</h1>);
     }
     else {
       return (
