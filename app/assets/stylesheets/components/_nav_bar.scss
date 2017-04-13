@@ -1,18 +1,17 @@
 header.nav-bar {
-  position: fixed;
-  right: 14px;
-  width: 100vw;
+  position: absolute;
+  // right: 14px;
+  width: 100%;
   height: 46px;
   font-size: 18px;
   font-family: $sans-serif;
   color: $light-gray;
-  display: flex;
   background-color: #333333;
-  z-index: 5;
+  // z-index: 5;
 }
 
 .nav-bar ul.nav-bar-list {
-  margin: auto;
+  margin: 0 auto;
   flex-shrink: .7;
   width: 1200px;
   height: 46px;
@@ -34,10 +33,6 @@ header.nav-bar {
 
 .nav-bar ul li:last-of-type {
   margin-right: 40px;
-}
-
-.nav-bar ul li:first-of-type {
-  margin-left: 7px;
 }
 
 .nav-bar input.nav-bar-search {
