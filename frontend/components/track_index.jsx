@@ -7,18 +7,44 @@ import { selectMP3s } from '../reducers/selectors';
 class TrackIndex extends React.Component {
   constructor(props) {
     super(props);
-    this.props.getTracks(this.props.searchParam);
+    this.state = {
+        loading: true
+    };
   }
 
+  componentDidMount() {
+    this.setState({
+        loading: true
+    });
+    this.props.getTracks(this.props.searchParam)
+        .then(this.setState({
+            loading: false
+        }));
+  }
+
+    componentWillUnmount() {
+        this.setState({
+            loading: true
+        });
+    }
   componentWillReceiveProps(newProps) {
+    this.setState({
+        loading: true
+    });
     if (newProps.searchParam !== this.props.searchParam) {
       this.props.getTracks(newProps.searchParam);
-    }
+     }
+    this.setState({
+        loading: false
+    });
   }
 
   render() {
     const { tracks } = this.props;
-    if (this.props.tracks.length === 0) {
+    if (this.state.loading) {
+        return <div></div>;
+    }
+    else if (this.props.tracks.length === 0) {
       return (<h1 className="nothing-here">Nothing here yet... <br/> Try <strong><Link to="/upload">uploading</Link></strong> something!</h1>);
     }
     else {
@@ -38,4 +64,4 @@ class TrackIndex extends React.Component {
 
   }
 }
-export default TrackIndex;
+ export default TrackIndex;
