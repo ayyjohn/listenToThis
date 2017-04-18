@@ -11,7 +11,7 @@ class Api::CommentsController < ApplicationController
   end
 
   def index
-    @comments = Comment.where("track_id = ?", params[:trackId])
+    @comments = Comment.where("track_id = ?", params[:trackId]).includes(:user)
     render :index
   end
 

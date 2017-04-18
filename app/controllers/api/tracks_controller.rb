@@ -44,7 +44,7 @@ class Api::TracksController < ApplicationController
     else
       search_query = "%" + search_query + "%"
     end
-    @tracks = Track.where("title ILIKE ? OR genre ILIKE ? OR user_id = ?", search_query, search_query, search_query).limit(10).order('created_at DESC')
+    @tracks = Track.where("title ILIKE ? OR genre ILIKE ? OR user_id = ?", search_query, search_query, search_query).limit(10).order('created_at DESC').includes(:user)
     render :index
   end
 
