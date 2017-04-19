@@ -10,7 +10,6 @@ bundle.js.map
 .byebug_history
 .DS_store
 npm-debug.log
-Gemfile.lock
 bug_log.txt
 proposal_updates/
 work_log.txt
