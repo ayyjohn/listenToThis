@@ -34,4 +34,8 @@ class Track < ApplicationRecord
 
   has_attached_file :mp3_file
   validates_attachment_content_type :mp3_file, content_type: /\Aaudio\/.*\Z/
+
+  has_attached_file :waveform
+
+  validates_attachment_content_type :waveform, content_type: /\Aimage\/.*\Z/
 end
