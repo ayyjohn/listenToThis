@@ -22,3 +22,4 @@ json.set! :comments do
 end
 json.album_artwork_url @track.album_artwork.url
 json.mp3_file_url @track.mp3_file.url
+json.waveform_url @track.waveform.url
