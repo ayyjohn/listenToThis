@@ -23,6 +23,12 @@ img.track-index-item-album-artwork {
   margin-right: 20px;
 }
 
+img.track-index-track-waveform {
+    position: relative;
+    top: 53px;
+    right: 53px;
+}
+
 a.track-index-username:hover {
   color: $gray;
 }

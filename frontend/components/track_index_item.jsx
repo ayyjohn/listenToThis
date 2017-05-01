@@ -56,6 +56,9 @@ class TrackIndexItem extends React.Component {
                 { this.props.track.title }
               </Link>
             </li>
+            <li>
+                <img className="track-index-track-waveform" src={ this.props.track.waveform_url }/>
+            </li>
           </ul>
         </ul>
     );
