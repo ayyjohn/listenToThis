@@ -25,17 +25,18 @@ class Track < ApplicationRecord
   validates :title, :release_date, :genre, :user, presence: true
   validates :album_artwork, presence: true
   validates :mp3_file, presence: true
+  validates :waveform, presence: true
 
   belongs_to :user
   has_many :comments #, dependent: :destroy
 
   has_attached_file :album_artwork, default_url: "https://s3-us-west-1.amazonaws.com/listentothis-dev/no_album.png"
-  validates_attachment_content_type :album_artwork, content_type: /\Aimage\/.*\Z/
+  # validates_attachment_content_type :album_artwork, content_type: /\Aimage\/.*\Z/
 
   has_attached_file :mp3_file
-  validates_attachment_content_type :mp3_file, content_type: /\Aaudio\/.*\Z/
+  # validates_attachment_content_type :mp3_file, content_type: /\Aaudio\/.*\Z/
 
   has_attached_file :waveform
 
-  validates_attachment_content_type :waveform, content_type: /\Aimage\/.*\Z/
+  # validates_attachment_content_type :waveform, content_type: /\Aimage\/.*\Z/
 end
