@@ -43,12 +43,13 @@ export const clearTrack = () => ({
 export const clearTracks = () => ({
   type: CLEAR_TRACKS
 });
-const receiveTrack = track => ({
+
+export const receiveTrack = track => ({
   type: RECEIVE_TRACK,
   track
 });
 
-const receiveTracks = tracks => ({
+export const receiveTracks = tracks => ({
   type: RECEIVE_TRACKS,
   tracks
 });
