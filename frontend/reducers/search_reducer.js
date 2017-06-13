@@ -1,5 +1,5 @@
 import { merge } from 'lodash';
-import { RECEIVE_SEARCHPARAM } from '../actions/seach_actions';
+import { RECEIVE_SEARCHPARAM } from '../actions/search_actions';
 
 const SearchReducer = (state = {}, action) => {
   Object.freze(state);
