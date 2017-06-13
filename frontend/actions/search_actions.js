@@ -1,6 +1,6 @@
 export const RECEIVE_SEARCHPARAM = 'RECEIVE_SEARCHPARAM';
 
-export const receiveSearchParam = seachParam => ({
+export const receiveSearchParam = searchParam => ({
   type: RECEIVE_SEARCHPARAM,
   searchParam
-})
+});
