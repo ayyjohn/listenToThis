@@ -4,9 +4,10 @@ import TrackIndex from './track_index';
 import { getTracks } from '../actions/track_actions';
 import { populateQueue, updateId, updatePlaying } from '../actions/queue_actions';
 
-const mapStateToProps = ({ tracks, queue }) => ({
+const mapStateToProps = ({ tracks, queue, searchParam }) => ({
   tracks: tracks,
-  queue: queue
+  queue: queue,
+  searchParam: searchParam
 });
 
 const mapDispatchToProps = dispatch => ({
