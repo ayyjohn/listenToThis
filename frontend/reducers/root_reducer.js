@@ -10,7 +10,7 @@ import UserReducer from './user_reducer';
 const RootReducer = combineReducers({
   errors: ErrorsReducer,
   queue: QueueReducer,
-  searchParam: searchReducer,
+  searchParam: SearchReducer,
   session: SessionReducer,
   track: TrackReducer,
   tracks: TracksReducer,
