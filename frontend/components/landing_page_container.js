@@ -4,9 +4,10 @@ import { getTracks, clearTracks } from '../actions/track_actions';
 import { logOut } from '../actions/session_actions';
 import LandingPage from './landing_page';
 
-const mapStateToProps = ({ session, tracks }) => ({
+const mapStateToProps = ({ session, tracks, searchParam }) => ({
   currentUser: session.currentUser,
-  tracks: tracks
+  tracks: tracks,
+  searchParam: searchParam
 });
 
 const mapDispatchToProps = dispatch => ({
