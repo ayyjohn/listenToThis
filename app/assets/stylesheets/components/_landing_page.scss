@@ -21,3 +21,13 @@ h1#new-tracks-header {
 .nothing-here {
     color: white;
 }
+
+.song-not-found {
+  margin-left: 25px;
+  color: $orange;
+  font-family: $sans-serif;
+  font-size: 18px;
+  margin-top: 30px;
+  padding-bottom: 10px;
+  height: 22em;
+}
