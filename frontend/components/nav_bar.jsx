@@ -4,8 +4,12 @@ import { Link, withRouter } from 'react-router';
 class NavBar extends React.Component {
   constructor(props) {
     super(props);
+    this.state = {
+      searchParam: ""
+    };
+    this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleChange = this.handleChange.bind(this);
   }
-
 
   componentWillReceiveProps(nextProps) {
     this.ensureLoggedIn(nextProps);
@@ -19,6 +23,17 @@ class NavBar extends React.Component {
 
   shouldComponentUpdate(nextProps) {
     return Boolean(nextProps.currentUser);
+  }
+
+  handleChange(event) {
+    this.setState({
+      searchParam: event.currentTarget.value
+    });
+    console.log(event.currentTarget.value);
+  }
+
+  handleSubmit(event) {
+    this.props.updateSearchParam(this.state.searchParam);
   }
 
   render() {
@@ -35,12 +50,19 @@ class NavBar extends React.Component {
             <Link to="/listen">Home</Link>
           </li>
           <li>
-            <input
-              className="nav-bar-search"
-              type="text"
-              placeholder="Search by song name, artist, or genre"
-              ></input>
-            <i className="fa fa-search" aria-hidden="true"></i>
+            <form onSubmit={this.handleSubmit}>
+              <input
+                className="nav-bar-search"
+                type="text"
+                placeholder="Search by song name, artist, or genre"
+                value={this.state.searchParam}
+                onChange={this.handleChange}
+                ></input>
+              <i className="fa fa-search" aria-hidden="true"></i>
+              <input
+                type="submit">
+              </input>
+            </form>
           </li>
           <li>
             <Link to="/upload">Upload</Link>
