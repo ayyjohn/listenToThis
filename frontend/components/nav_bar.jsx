@@ -9,6 +9,7 @@ class NavBar extends React.Component {
     };
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleChange = this.handleChange.bind(this);
+    this.clearSearch = this.clearSearch.bind(this);
   }
 
   componentWillReceiveProps(nextProps) {
@@ -21,6 +22,10 @@ class NavBar extends React.Component {
     }
   }
 
+  componentWillUnmount() {
+    this.props.updateSearchParam("");
+  }
+  
   shouldComponentUpdate(nextProps) {
     return Boolean(nextProps.currentUser);
   }
@@ -29,11 +34,17 @@ class NavBar extends React.Component {
     this.setState({
       searchParam: event.currentTarget.value
     });
-    console.log(event.currentTarget.value);
   }
 
   handleSubmit(event) {
     this.props.updateSearchParam(this.state.searchParam);
+  }
+
+  clearSearch() {
+    this.props.updateSearchParam("");
+    this.setState({
+      searchParam: ""
+    });
   }
 
   render() {
@@ -41,13 +52,16 @@ class NavBar extends React.Component {
       <header className="nav-bar">
         <ul className="nav-bar-list">
           <li id="nav-bar-logo">
-            <Link to="/listen" >
+            <Link to="/listen"
+              onClick={this.clearSearch}>
             <img id="nav-bar-logo-image" src="https://s3-us-west-1.amazonaws.com/listentothis-dev/white_headphones.png" />
             <h1 className="nav-bar-tagline">Listen To This</h1>
             </Link>
           </li>
           <li>
-            <Link to="/listen">Home</Link>
+            <Link
+              to="/listen"
+              onClick={this.clearSearch}>Home</Link>
           </li>
           <li>
             <form onSubmit={this.handleSubmit}>
@@ -59,16 +73,17 @@ class NavBar extends React.Component {
                 onChange={this.handleChange}
                 ></input>
               <i className="fa fa-search" aria-hidden="true"></i>
-              <input
-                type="submit">
-              </input>
+              <input type="submit" value=""></input>
             </form>
           </li>
           <li>
-            <Link to="/upload">Upload</Link>
+            <Link
+              to="/upload"
+              onClick={this.clearSearch}>Upload</Link>
           </li>
           <li>
-            <Link to={`/users/${ this.props.currentUser.id }`} >{ this.props.currentUser.username }</Link>
+            <Link to={`/users/${ this.props.currentUser.id }`}
+                  onClick={this.clearSearch}>{ this.props.currentUser.username }</Link>
           </li>
           <li>
             <button
