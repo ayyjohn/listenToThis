@@ -25,7 +25,7 @@ class NavBar extends React.Component {
   componentWillUnmount() {
     this.props.updateSearchParam("");
   }
-  
+
   shouldComponentUpdate(nextProps) {
     return Boolean(nextProps.currentUser);
   }
@@ -68,7 +68,7 @@ class NavBar extends React.Component {
               <input
                 className="nav-bar-search"
                 type="text"
-                placeholder="Search by song name, artist, or genre"
+                placeholder="Search by song name or genre"
                 value={this.state.searchParam}
                 onChange={this.handleChange}
                 ></input>
