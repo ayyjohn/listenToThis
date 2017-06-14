@@ -44,8 +44,11 @@ class TrackIndex extends React.Component {
     if (this.state.loading) {
         return <div></div>;
     }
-    else if (this.props.tracks.length === 0) {
+    else if (this.props.tracks.length === 0 && !this.props.searchParam) {
       return (<h1 className="nothing-here">Nothing here yet... <br/> Try <strong><Link to="/upload">uploading</Link></strong> something!</h1>);
+    }
+    else if (this.props.tracks.length === 0) {
+      return (<h1 className="song-not-found">Looks like nobody has suggested that song before. Maybe you should <Link to="/upload"><strong>upload</strong></Link> it!</h1>);
     }
     else {
       return (
