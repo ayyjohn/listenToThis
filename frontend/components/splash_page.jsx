@@ -48,17 +48,27 @@ class SplashPage extends React.Component {
   render() {
     return (
       <div className="splash-page">
-        <header className="splash-nav-bar">
-          <h1 className="splash-logo"><img id="splash-page-logo-image" src="https://s3-us-west-1.amazonaws.com/listentothis-dev/white_headphones.png" />Listen to This!</h1>
+        <nav className="splash-nav-bar">
+          <section className="splash-logo">
+            <img id="splash-page-logo-image" src="https://s3-us-west-1.amazonaws.com/listentothis-dev/white_headphones.png" />
+            <h1 className="splash-logo-name">Listen to This</h1>
+          </section>
           <section className="splash-buttons">
             <button className="splash-auth-button" onClick={ this.openSignUpModal }>Sign Up</button>
             <button className="splash-auth-button" onClick={ this.openLogInModal }>Log In</button>
           </section>
-        </header>
-        <section className="splash-tag-line">
-          <h1 id="tag-line">Love to Explore Music <br /> Love to Share Music</h1>
-          <Link id="splash-get-started" onClick={ this.openSignUpModal }>Get Started</Link>
-        </section>
+        </nav>
+        <main className="splash-page-main">
+          <img src="https://s3-us-west-1.amazonaws.com/listentothis-dev/new_splash_2.jpg" className="splash-hero" />
+          <section className="splash-tag-line">
+            <h1 id="tag-line">Love to Explore Music, Love to Share Music</h1>
+            <Link id="splash-get-started" onClick={ this.openSignUpModal }>Get Started</Link>
+          </section>
+        </main>
+        <footer className="splash-footer">
+          <p className="footer-text">https://github.com/ayyjohn</p>
+          <img className="splash-github" src="https://s3-us-west-1.amazonaws.com/listentothis-dev/github.png" />
+        </footer>
         <Modal
           overlayClassName={ this.state.signUpModalIsShown ? "splash-sign-up-overlay-show" : "splash-sign-up-overlay-hide" }
           className={ this.state.signUpModalIsShown ? "splash-sign-up-modal-show" : "splash-sign-up-modal-hide" }
