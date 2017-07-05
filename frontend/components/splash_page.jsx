@@ -58,7 +58,7 @@ class SplashPage extends React.Component {
               <button className="splash-auth-button" id="splash-sign-up" onClick={ this.openSignUpModal }>SIGN UP AND START EXPLORING</button>
               <button className="splash-auth-button" id="splash-log-in" onClick={ this.openLogInModal }>LOG IN</button>
             </section>
-            <p className="splash-terms-of-use">By signing up you agree to <span className="guidelines">have an open mind</span> and <span className="guidelines">interact responsibly with others</span></p>
+            <p className="splash-terms-of-use">By signing up you agree to <span className="guidelines">have an open mind</span> and <span className="guidelines">interact respectfully with others</span></p>
             <div id="horizontal-bar" ></div>
             <p className="splash-try-demo" onClick={ this.openSignUpModal }>Don't want to sign up yet? Try the demo here</p>
           </nav>
