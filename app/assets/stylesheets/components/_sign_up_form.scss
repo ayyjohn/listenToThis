@@ -56,7 +56,7 @@ input.signup-submit {
   height: 40px;
   width: 400px;
   justify-content: center;
-  border-radius: 5px;
+  border-radius: 256px;
   color: white;
   margin-top: 10px;
   margin-bottom: 20px;
@@ -94,4 +94,17 @@ li.signup-error {
 div.signup-errors {
   height: 50px;
   width: 400px;
+}
+
+button.guest-login {
+  width: 400px;
+  height: 40px;
+  text-align: center;
+  border-radius: 256px;
+  border: 1px solid $gray;
+  box-sizing: border-box;
+}
+
+button.guest-login:focus {
+  border: 1px solid black;
 }
